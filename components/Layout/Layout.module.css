@@ -1,0 +1,19 @@
+.next {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  grid-template-rows: var(--nav-height) 1fr;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: var(--screen-xl);
+  padding: var(--page-padding);
+}
+
+.footer {
+  align-self: end;
+  bottom: 0;
+  padding-block-end: var(--page-padding);
+  padding-inline-end: var(--page-padding);
+  position: sticky;
+}
