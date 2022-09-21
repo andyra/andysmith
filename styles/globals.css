@@ -1,18 +1,15 @@
-@import "./colors.css";
-@import "./typography.css";
-@import "./screens.css";
-
-@import "./reset.css";
-@import "./default.css";
-
 :root {
+  --ground: #111827;
+  --ground-accent: #d8b5fe;
+  --primary: white;
+  --accent: tomato;
+
   --nav-height: 56px;
+  --nav-width: 360px;
   --page-padding: 4vmax;
   --z-nav: 100;
 }
 
-/*
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-*/

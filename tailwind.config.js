@@ -1,52 +1,52 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./pages/**/*.{js,jsx}",
-    "./components/**/*.{js,jsx}",
-  ],
+  content: ["./pages/**/*.{js,jsx}", "./components/**/*.{js,jsx}"],
   theme: {
     extend: {
       colors: {
-        "ground": "var(--ground)",
-        "ground-50": "var(--ground-50)",
-        "ground-100": "var(--ground-100)",
-        "ground-200": "var(--ground-200)",
-        "ground-300": "var(--ground-300)",
-        "ground-400": "var(--ground-400)",
-        "ground-500": "var(--ground-500)",
-        "ground-600": "var(--ground-600)",
-        "ground-700": "var(--ground-700)",
-        "ground-800": "var(--ground-800)",
-        "ground-900": "var(--ground-900)",
-        "primary": "var(--primary)",
-        "primary-50": "var(--primary-50)",
-        "primary-100": "var(--primary-100)",
-        "primary-200": "var(--primary-200)",
-        "primary-300": "var(--primary-300)",
-        "primary-400": "var(--primary-400)",
-        "primary-500": "var(--primary-500)",
-        "primary-600": "var(--primary-600)",
-        "primary-700": "var(--primary-700)",
-        "primary-800": "var(--primary-800)",
-        "primary-900": "var(--primary-900)",
-        "accent": "var(--accent)",
-        "accent-50": "var(--accent-50)",
-        "accent-100": "var(--accent-100)",
-        "accent-200": "var(--accent-200)",
-        "accent-300": "var(--accent-300)",
-        "accent-400": "var(--accent-400)",
-        "accent-500": "var(--accent-500)",
-        "accent-600": "var(--accent-600)",
-        "accent-700": "var(--accent-700)",
-        "accent-800": "var(--accent-800)",
-        "accent-900": "var(--accent-900)",
+        ground: "var(--ground)",
+        "ground-accent": "var(--ground-accent)",
+        primary: "var(--primary)",
+        accent: "var(--accent)"
+      },
+      fontFamily: {
+        base: [
+          "'Maison Neue'",
+          "'Gratimo Classic'",
+          "'Gratimo Grotesk'",
+          "ui-sans-serif",
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "'Segoe UI'",
+          "Roboto",
+          "'Helvetica Neue'",
+          "Arial",
+          "'Noto Sans'",
+          "sans-serif"
+        ]
       }
+    },
+    // Overrides
+    fontSize: {
+      "2xs": ["0.75rem", { lineHeight: "1rem" }],
+      xs: ["0.875rem", { lineHeight: "1.25rem" }],
+      sm: ["1rem", { lineHeight: "1.5rem" }],
+      base: ["1.25rem", { lineHeight: "1.75rem" }],
+      lg: ["1.5rem", { lineHeight: "2rem" }],
+      xl: ["1.875rem", { lineHeight: "2.25rem" }],
+      "2xl": ["2.25rem", { lineHeight: "2.5rem" }],
+      "3xl": ["3rem", { lineHeight: "1" }],
+      "4xl": ["3.75rem", { lineHeight: "1" }],
+      "5xl": ["4.5rem", { lineHeight: "1" }],
+      "6xl": ["6rem", { lineHeight: "1" }],
+      "7xl": ["8rem", { lineHeight: "1" }]
     },
     screens: {
       xs: "480px",
       sm: "640px",
-      md: "768px",
-      lg: "1024px",
+      md: "800px",
+      lg: "960px",
       xl: "1280px",
       "2xl": "1536px",
       "3xl": "1920px"
@@ -91,5 +91,5 @@ module.exports = {
       "1/4em": "0.25em"
     }
   },
-  plugins: [],
-}
+  plugins: []
+};

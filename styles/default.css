@@ -6,8 +6,8 @@ html,
 body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background-color: var(--ground);
-  color: var(--primary);
+  /* background-color: var(--ground); */
+  /* color: var(--primary); */
   font-family: var(--font-sans);
   font-size: var(--text-base);
 }
