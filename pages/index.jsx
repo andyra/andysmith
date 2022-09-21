@@ -54,7 +54,7 @@ const Projects = () => (
                   <h2 className="font-medium text-lg">{project.title}</h2>
                   <p>{project.details}</p>
                 </div>
-                <figure className="w-full lg:w-1/2 h-256 border-2 border-black rounded-lg" />
+                <figure className="w-full lg:w-1/2 h-256 border-2 border-primary rounded-lg" />
               </a>
             </Link>
           </li>

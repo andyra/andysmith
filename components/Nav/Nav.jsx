@@ -2,7 +2,32 @@ import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import cn from "classnames";
+import ClientOnly from "components/ClientOnly";
+import { useTheme } from "next-themes";
 import { CONTACT_LINKS } from "../../constants";
+
+const ThemeChanger = () => {
+  const { theme, setTheme } = useTheme();
+
+  return (
+    <ClientOnly>
+      <div className="col-start-2">
+        <button
+          className={theme === "light" ? "underline" : ""}
+          onClick={() => setTheme("light")}
+        >
+          Light Mode
+        </button>
+        <button
+          className={theme === "dark" ? "underline" : ""}
+          onClick={() => setTheme("dark")}
+        >
+          Dark Mode
+        </button>
+      </div>
+    </ClientOnly>
+  );
+};
 
 const NavLink = ({ href, className, children }) => {
   const router = useRouter();
@@ -25,7 +50,7 @@ const NavLink = ({ href, className, children }) => {
 const ResumeLink = () => {
   const classes = cn(
     "block w-fit ml-auto",
-    "lg:col-start-2 lg:rounded-[100%] lg:border lg:border-black lg:py-24 lg:px-32 lg:-mx-32 lg:font-mono lg:font-medium lg:text-sm lg:text-center lg:hover:bg-accent"
+    "lg:col-start-2 lg:rounded-[100%] lg:border lg:border-primary lg:py-24 lg:px-32 lg:-mx-32 lg:font-mono lg:font-medium lg:text-sm lg:text-center lg:hover:bg-accent"
   );
 
   return (
@@ -50,6 +75,7 @@ const Nav = () => {
         Andy Smith
         <div className="text-sm opacity-50">Product Designer</div>
       </NavLink>
+      <ThemeChanger />
       <ResumeLink />
       <dl className="col-span-2 hidden lg:grid grid-cols-[80px,1fr] gap-x-16 text-sm">
         {CONTACT_LINKS.map(item => (

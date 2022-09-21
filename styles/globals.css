@@ -1,13 +1,24 @@
 :root {
-  --ground: #111827;
-  --ground-accent: #d8b5fe;
-  --primary: white;
-  --accent: tomato;
+  @apply light;
 
   --nav-height: 56px;
   --nav-width: 360px;
   --page-padding: 4vmax;
   --z-nav: 100;
+}
+
+.light {
+  --ground: linen;
+  --ground-accent: thistle;
+  --primary: black;
+  --accent: tomato;
+}
+
+.dark {
+  --ground: black;
+  --ground-accent: midnightblue;
+  --primary: linen;
+  --accent: tomato;
 }
 
 @tailwind base;
