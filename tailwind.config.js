@@ -1,20 +1,26 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./pages/**/*.{js,jsx}", "./components/**/*.{js,jsx}"],
+  content: [
+    "./pages/**/*.{js,jsx}",
+    "./components/**/*.{js,jsx}",
+    "./constants.js"
+  ],
   darkMode: "class",
   theme: {
     extend: {
       colors: {
         ground: "var(--ground)",
         "ground-accent": "var(--ground-accent)",
+        "ground-accent2": "var(--ground-accent2)",
         primary: "var(--primary)",
         accent: "var(--accent)"
       },
       fontFamily: {
         base: [
+          // "Basier Circle",
+          "'Be Vietnam Pro Variable'",
           "'Maison Neue'",
           "'Gratimo Classic'",
-          "'Gratimo Grotesk'",
           "ui-sans-serif",
           "system-ui",
           "-apple-system",
@@ -34,9 +40,9 @@ module.exports = {
       xs: ["0.875rem", { lineHeight: "1.25rem" }],
       sm: ["1rem", { lineHeight: "1.5rem" }],
       base: ["1.25rem", { lineHeight: "1.75rem" }],
-      lg: ["1.5rem", { lineHeight: "2rem" }],
-      xl: ["1.875rem", { lineHeight: "2.25rem" }],
-      "2xl": ["2.25rem", { lineHeight: "2.5rem" }],
+      lg: ["1.5rem", { lineHeight: "2.25rem" }],
+      xl: ["1.875rem", { lineHeight: "2.5rem" }],
+      "2xl": ["2.25rem", { lineHeight: "2.75rem" }],
       "3xl": ["3rem", { lineHeight: "1" }],
       "4xl": ["3.75rem", { lineHeight: "1" }],
       "5xl": ["4.5rem", { lineHeight: "1" }],

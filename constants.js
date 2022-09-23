@@ -1,3 +1,62 @@
+import LogoAdobe from "./public/LogoAdobe.svg";
+import LogoCss from "./public/LogoCss.svg";
+import LogoFigma from "./public/LogoFigma.svg";
+import LogoJs from "./public/LogoJs.svg";
+import LogoNextJs from "./public/LogoNextJs.svg";
+import LogoReact from "./public/LogoReact.svg";
+import LogoSketch from "./public/LogoSketch.svg";
+
+export const SKILLZ = [
+  {
+    title: "UX Design",
+    description:
+      "Quisque bibendum urna eu finibus varius. Quisque lectus ante, mattis sit amet blandit nec, auctor at lectus. Duis eu facilisis elit. Aliquam sed erat finibus.",
+    logos: []
+  },
+  {
+    title: "UI Design",
+    description:
+      "Platforms: Web, iOS, and Android. Marketing materials. Quisque bibendum urna eu finibus varius. Quisque lectus ante, mattis sit amet blandit nec, auctor at lectus. Duis eu facilisis elit. Aliquam sed erat finibus.",
+    logos: [
+      {
+        title: "Figma",
+        svg: <LogoFigma className="w-48 h-48" />
+      },
+      {
+        title: "Sketch",
+        svg: <LogoSketch className="w-48 h-48" />
+      },
+      {
+        title: "Adobe Creative Cloud",
+        svg: <LogoAdobe className="w-48 h-48" />
+      }
+    ]
+  },
+  {
+    title: "Front-End Development",
+    description:
+      "Quisque bibendum urna eu finibus varius. Quisque lectus ante, mattis sit amet blandit nec, auctor at lectus. Duis eu facilisis elit. Aliquam sed erat finibus.",
+    logos: [
+      {
+        title: "CSS",
+        svg: <LogoCss className="w-48 h-48" />
+      },
+      {
+        title: "JavaScript",
+        svg: <LogoJs className="w-48 h-48" />
+      },
+      {
+        title: "React",
+        svg: <LogoReact className="w-48 h-48" />
+      },
+      {
+        title: "Next.js",
+        svg: <LogoNextJs className="w-48 h-48" />
+      }
+    ]
+  }
+];
+
 export const CONTACT_LINKS = [
   {
     label: "Phone",
@@ -25,35 +84,42 @@ export const PROJECTS = [
   {
     title: "Dotted Line Org Chart",
     image: "",
-    href: "/",
+    href: "/project",
     details:
       "Cras vitae mauris auctor, rhoncus mi sit amet, lobortis dui. Phasellus convallis consectetur nulla, ac dictum felis tincidunt quis. Integer facilisis ex ac quam congue, eu tempor magna ullamcorper."
   },
   {
     title: "Mobile Redesign",
     image: "",
-    href: "/",
+    href: "/project",
     details:
       "Cras vitae mauris auctor, rhoncus mi sit amet, lobortis dui. Phasellus convallis consectetur nulla, ac dictum felis tincidunt quis. Integer facilisis ex ac quam congue, eu tempor magna ullamcorper."
   },
   {
     title: "Music Player",
     image: "",
-    href: "/",
-    details:
-      "Cras vitae mauris auctor, rhoncus mi sit amet, lobortis dui. Phasellus convallis consectetur nulla, ac dictum felis tincidunt quis. Integer facilisis ex ac quam congue, eu tempor magna ullamcorper."
-  },
-  {
-    title: "Another One",
-    image: "",
-    href: "/",
+    href: "/project",
     details:
       "Cras vitae mauris auctor, rhoncus mi sit amet, lobortis dui. Phasellus convallis consectetur nulla, ac dictum felis tincidunt quis. Integer facilisis ex ac quam congue, eu tempor magna ullamcorper."
   },
   {
     title: "Navigation Revamp",
     image: "",
-    href: "/",
+    href: "/project",
+    details:
+      "Cras vitae mauris auctor, rhoncus mi sit amet, lobortis dui. Phasellus convallis consectetur nulla, ac dictum felis tincidunt quis. Integer facilisis ex ac quam congue, eu tempor magna ullamcorper."
+  },
+  {
+    title: "Amazing Slow-Downer Redesign",
+    image: "",
+    href: "/project",
+    details:
+      "Cras vitae mauris auctor, rhoncus mi sit amet, lobortis dui. Phasellus convallis consectetur nulla, ac dictum felis tincidunt quis. Integer facilisis ex ac quam congue, eu tempor magna ullamcorper."
+  },
+  {
+    title: "Microwave",
+    image: "",
+    href: "/project",
     details:
       "Cras vitae mauris auctor, rhoncus mi sit amet, lobortis dui. Phasellus convallis consectetur nulla, ac dictum felis tincidunt quis. Integer facilisis ex ac quam congue, eu tempor magna ullamcorper."
   }
@@ -62,7 +128,6 @@ export const PROJECTS = [
 export const EXPERIENCE = [
   {
     company: "Pingboard",
-    logo: "",
     duration: "7yr",
     jobs: [
       {
@@ -84,7 +149,6 @@ export const EXPERIENCE = [
     company: "ReturnPath",
     notes:
       "Started at OtherInbox, which was acquired by ReturnPath, which was subsequently acquired by Validity after I left.",
-    logo: "",
     duration: "5yr",
     jobs: [
       {
@@ -101,5 +165,33 @@ export const EXPERIENCE = [
       }
     ],
     responsibilities: []
+  }
+];
+
+export const MISC_JOBS = [
+  {
+    title: "School bus driver",
+    years: "2008",
+    notes: "A lot of good stories from this one"
+  },
+  {
+    title: "Accidentally designed ads for casinos",
+    years: "2007",
+    notes: "Worst two days of my life"
+  },
+  {
+    title: "Photo retoucher",
+    years: "2006",
+    notes: "For a weird dude in Abilene, TX"
+  },
+  {
+    title: "Chinese takeout delivery driver",
+    years: "2004–06",
+    notes: "Best job ever?"
+  },
+  {
+    title: "TBD",
+    years: "2003",
+    notes: "Pretty much just wrote short stories"
   }
 ];

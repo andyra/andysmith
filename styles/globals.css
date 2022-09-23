@@ -9,16 +9,18 @@
 
 .light {
   --ground: linen;
-  --ground-accent: thistle;
-  --primary: black;
-  --accent: tomato;
+  --ground-accent: hsl(298, 25%, 80%);
+  --ground-accent2: hsl(230, 60%, 93%);
+  --primary: hsl(30, 8%, 10%);
+  --accent: hsl(9, 100%, 64%);
 }
 
 .dark {
-  --ground: black;
-  --ground-accent: midnightblue;
+  --ground: hsl(30, 8%, 10%);
+  --ground-accent: #914f36;
+  --ground-accent2: midnightblue;
   --primary: linen;
-  --accent: tomato;
+  --accent: hsl(9, 100%, 64%);
 }
 
 @tailwind base;

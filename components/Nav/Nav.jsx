@@ -6,23 +6,19 @@ import ClientOnly from "components/ClientOnly";
 import { useTheme } from "next-themes";
 import { CONTACT_LINKS } from "../../constants";
 
-const ThemeChanger = () => {
+const ThemeSwitcher = () => {
   const { theme, setTheme } = useTheme();
 
   return (
     <ClientOnly>
       <div className="col-start-2">
         <button
-          className={theme === "light" ? "underline" : ""}
-          onClick={() => setTheme("light")}
+          className="capitalize"
+          onClick={() => {
+            setTheme(theme === "light" ? "dark" : "light");
+          }}
         >
-          Light Mode
-        </button>
-        <button
-          className={theme === "dark" ? "underline" : ""}
-          onClick={() => setTheme("dark")}
-        >
-          Dark Mode
+          {theme} Mode
         </button>
       </div>
     </ClientOnly>
@@ -50,19 +46,19 @@ const NavLink = ({ href, className, children }) => {
 const ResumeLink = () => {
   const classes = cn(
     "block w-fit ml-auto",
-    "lg:col-start-2 lg:rounded-[100%] lg:border lg:border-primary lg:py-24 lg:px-32 lg:-mx-32 lg:font-mono lg:font-medium lg:text-sm lg:text-center lg:hover:bg-accent"
+    "lg:col-start-2 lg:rounded-[100%] lg:border lg:border-primary lg:py-16 lg:px-24 lg:-mx-24 lg:font-mono lg:font-medium lg:text-sm lg:text-center lg:hover:bg-accent"
   );
 
   return (
     <NavLink href="/resume" className={classes}>
-      View Resumé
+      <span className="hidden sm:inline">View</span> Resumé
     </NavLink>
   );
 };
 
 const Nav = () => {
   const classes = cn(
-    "sticky top-0 flex gap-16 px-[var(--page-padding)]",
+    "sticky top-0 flex items-center gap-16 py-8 px-[var(--page-padding)] text-sm",
     "lg:top-auto lg:fixed lg:right-0 lg:bottom-0 lg:w-[var(--nav-width)]",
     "lg:grid lg:grid-cols-[80px,1fr]",
     "lg:pl-0 lg:pb-[calc(var(--page-padding)/1)] lg:pr-[calc(var(--page-padding)/1)]"
@@ -70,17 +66,16 @@ const Nav = () => {
 
   return (
     <nav className={classes}>
-      <span className="w-40 h-40 bg-gray-300 rounded-full lg:ml-auto mix-blend-difference" />
-      <NavLink href="/" className="font-base font-medium">
+      {/*<span className="w-40 h-40 border border-primary rounded-full lg:ml-auto" />*/}
+      <NavLink href="/" className="col-start-2 font-base font-medium">
         Andy Smith
-        <div className="text-sm opacity-50">Product Designer</div>
+        <div className="font-normal text-xs lg:text-sm">Product Designer</div>
       </NavLink>
-      <ThemeChanger />
       <ResumeLink />
       <dl className="col-span-2 hidden lg:grid grid-cols-[80px,1fr] gap-x-16 text-sm">
         {CONTACT_LINKS.map(item => (
           <React.Fragment key={item.label}>
-            <dt className="font-medium">{item.label}</dt>
+            <dt className="font-medium text-right">{item.label}</dt>
             <dd>
               <a
                 className="h-32 block font-mono underline underline-offset-4 decoration-accent"
@@ -91,6 +86,10 @@ const Nav = () => {
             </dd>
           </React.Fragment>
         ))}
+        <dt className="font-medium text-right">Theme</dt>
+        <dd>
+          <ThemeSwitcher />
+        </dd>
       </dl>
       <button className="lg:hidden" type="button">
         Contact
