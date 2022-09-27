@@ -90,9 +90,14 @@ const Projects = () => (
         {PROJECTS.map(project => (
           <li key={project.title}>
             <Link href={project.href}>
-              <a className="flex flex-col xl:flex-row items-start gap-24 py-[var(--page-padding)]">
+              <a className="flex flex-col xl:flex-row items-start gap-24 py-[var(--page-padding)] group">
                 <div className="flex-1">
-                  <h2 className="font-medium text-xl">{project.title}</h2>
+                  <h2 className="flex items-center font-medium text-xl group-hover:text-accent transition">
+                    {project.title}
+                    <span className="text-accent opacity-0 transition group-hover:opacity-100 group-hover:translate-x-8">
+                      →
+                    </span>
+                  </h2>
                   <p>{project.details}</p>
                   <div className="mt-24">
                     Showcases: <code>UX</code>, <code>UI</code>

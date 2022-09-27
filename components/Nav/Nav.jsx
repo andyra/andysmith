@@ -45,7 +45,7 @@ const NavLink = ({ href, className, children }) => {
 
 const ResumeLink = () => {
   const classes = cn(
-    "block w-fit ml-auto",
+    "block w-fit ml-auto transition",
     "lg:col-start-2 lg:rounded-[100%] lg:border lg:border-primary lg:py-16 lg:px-24 lg:-mx-24 lg:font-mono lg:font-medium lg:text-sm lg:text-center lg:hover:bg-accent"
   );
 
@@ -66,7 +66,6 @@ const Nav = () => {
 
   return (
     <nav className={classes}>
-      {/*<span className="w-40 h-40 border border-primary rounded-full lg:ml-auto" />*/}
       <NavLink href="/" className="col-start-2 font-base font-medium">
         Andy Smith
         <div className="font-normal text-xs lg:text-sm">Product Designer</div>
@@ -78,7 +77,7 @@ const Nav = () => {
             <dt className="font-medium text-right">{item.label}</dt>
             <dd>
               <a
-                className="h-32 block font-mono underline underline-offset-4 decoration-accent"
+                className="h-32 block font-mono underline underline-offset-4 hover:decoration-wavy decoration-primary hover:text-accent hover:decoration-accent hover:underline-offset-2 transition"
                 href={item.href}
               >
                 {item.value}

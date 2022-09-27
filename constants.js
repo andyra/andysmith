@@ -117,7 +117,7 @@ export const PROJECTS = [
       "Cras vitae mauris auctor, rhoncus mi sit amet, lobortis dui. Phasellus convallis consectetur nulla, ac dictum felis tincidunt quis. Integer facilisis ex ac quam congue, eu tempor magna ullamcorper."
   },
   {
-    title: "Microwave",
+    title: "Sharp Carousel Microwave",
     image: "",
     href: "/project",
     details:
@@ -132,7 +132,7 @@ export const EXPERIENCE = [
     jobs: [
       {
         title: "Senior UX Designer",
-        years: "2020–current",
+        years: "2020–now",
         notes:
           "Suspendisse bibendum sem quis nisl dictum, in vestibulum libero dignissim. Fusce dignissim sed sapien ut ultrices. Pellentesque consequat bibendum consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed erat purus, ultrices quis feugiat vel, facilisis eu ipsum. Donec ante lacus, suscipit eget lobortis non, viverra vel nisl. Sed eget vestibulum justo, at eleifend nibh."
       },

@@ -1,15 +1,13 @@
 import cn from "classnames";
 import Content from "components/Content";
+import Divider from "components/Divider";
 import { EXPERIENCE, MISC_JOBS } from "../constants";
 
-const Dot = ({ subtle, time }) => {
+const TimeStamp = ({ hideDot, subtle, time }) => {
   return (
-    <div className="absolute top-1/2 -left-16 -translate-y-1/2 -translate-x-full flex items-center justify-end gap-16 w-160">
+    <div className="absolute top-1/2 -left-16 -translate-y-1/2 -translate-x-full flex items-center justify-end gap-12 w-160">
       <time
-        className={cn(
-          "font-mono font-normal text-sm opacity-50",
-          subtle && "opacity-50"
-        )}
+        className={cn("font-mono font-normal text-sm", subtle && "opacity-50")}
       >
         {time}
       </time>
@@ -17,7 +15,7 @@ const Dot = ({ subtle, time }) => {
         aria-hidden
         className={cn(
           "h-8 w-8 rounded-full bg-primary translate-x-1/2",
-          subtle && "opacity-50"
+          hideDot && "opacity-0"
         )}
       />
     </div>
@@ -33,16 +31,19 @@ const Resume = ({}) => {
       <h1>Resume</h1>
 
       <section id="experience">
-        <h2 className="text-xl">Experience</h2>
-        <ul className="space-y-16 relative pl-160">
-          <span className="absolute top-48 bottom-12 left-[144px] w-2 bg-primary opacity-10 -translate-x-1/2" />
+        <Divider />
+        <h2 className="font-medium text-3xl py-48">Experience</h2>
+        <Divider />
+        <ul className="space-y-[var(--page-padding)] relative pl-160">
+          <span className="absolute top-56 bottom-12 left-[144px] w-2 bg-primary opacity-10 -translate-x-1/2" />
           {EXPERIENCE.map(item => (
             <li key={item.company}>
-              <h3 className="flex items-baseline gap-12 font-semibold text-lg">
+              <h3 className="flex items-baseline gap-12 font-semibold text-lg mb-8 relative">
                 {item.company}
-                <time className="font-mono font-normal text-sm opacity-50">
+                <time className="hidden font-mono font-normal text-sm opacity-50">
                   ~{item.duration}
                 </time>
+                <TimeStamp time={`~${item.duration}`} subtle hideDot />
               </h3>
               {item.jobs && (
                 <ul className="space-y-16">
@@ -50,9 +51,9 @@ const Resume = ({}) => {
                     <li className="relative" key={job.title}>
                       <h4 className="font-medium flex items-baseline gap-12 relative">
                         {job.title}
-                        <Dot time={job.years} />
+                        <TimeStamp time={job.years} />
                       </h4>
-                      <p>{job.notes}</p>
+                      <p className="text-sm opacity-50">{job.notes}</p>
                     </li>
                   ))}
                 </ul>
@@ -60,12 +61,14 @@ const Resume = ({}) => {
             </li>
           ))}
           <li className="text-sm">
-            <h2>Fun to know…</h2>
-            <ul>
+            <h3 className="flex items-baseline gap-12 text-lg mb-8 opacity-50 relative">
+              Not important, but…
+            </h3>
+            <ul className="opacity-50">
               {MISC_JOBS.map(job => (
                 <li key={job.title}>
-                  <span className="relative">
-                    <Dot time={job.years} subtle />
+                  <span className="font-medium relative">
+                    <TimeStamp time={job.years} subtle />
                     {job.title}:
                   </span>{" "}
                   <span className="opacity-50">{job.notes}</span>
@@ -76,7 +79,9 @@ const Resume = ({}) => {
         </ul>
       </section>
       <section id="education">
-        <h2 className="text-xl">Education</h2>
+        <Divider />
+        <h2 className="font-medium text-3xl py-48">Education</h2>
+        <Divider />
         <ul>
           <li>
             <h3>
