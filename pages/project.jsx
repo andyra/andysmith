@@ -4,11 +4,6 @@ import Content from "components/Content";
 const Project = () => {
   return (
     <>
-      <div className="bg-ground-accent px-[var(--page-padding)] py-24 sticky top-0 z-10">
-        <Link href="/">
-          <a>← Projects</a>
-        </Link>
-      </div>
       <header className="space-y-[2vmax] py-[8vmax] bg-ground-accent">
         <Content className="max-w-screen-2xl space-y-[2vmax]">
           <hr className="border-primary opacity-10" />
@@ -24,10 +19,10 @@ const Project = () => {
       </header>
       <Content className="max-w-screen-2xl space-y-[8vmax]">
         {[...Array(8)].map((e, i) => (
-          <section className="space-y-[2vmax]">
+          <section className="space-y-[2vmax]" key={i}>
             <hr className="border-primary opacity-10" />
             <p className="flex flex-col items-baseline gap-12 font-medium text-xl max-w-screen-md">
-              <div className="font-mono text-accent">0{i + 1}</div>
+              <span className="block font-mono text-accent">0{i + 1}</span>
               Etiam quis nunc quis leo lobortis interdum. Aenean sit amet
               convallis magna. Suspendisse potenti?
             </p>

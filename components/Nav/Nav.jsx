@@ -1,26 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import cn from "classnames";
-import ClientOnly from "components/ClientOnly";
 import { useTheme } from "next-themes";
-import { CONTACT_LINKS } from "../../constants";
+import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
+import ClientOnly from "components/ClientOnly";
+import { debounce } from "helpers/index";
+
+// Subcomponents
+// ----------------------------------------------------------------------------
 
 const ThemeSwitcher = () => {
-  const { theme, setTheme } = useTheme();
+  const { theme, resolvedTheme, setTheme } = useTheme();
 
   return (
     <ClientOnly>
-      <div className="col-start-2">
-        <button
-          className="capitalize"
-          onClick={() => {
-            setTheme(theme === "light" ? "dark" : "light");
-          }}
-        >
-          {theme} Mode
-        </button>
-      </div>
+      <button
+        className="flex items-center h-64 hover:text-accent transition"
+        onClick={() => {
+          setTheme(theme === "light" ? "dark" : "light");
+        }}
+      >
+        {resolvedTheme === "light" ? (
+          <SunIcon className="h-24 w-24" />
+        ) : (
+          <MoonIcon className="h-24 w-24" />
+        )}
+      </button>
     </ClientOnly>
   );
 };
@@ -36,63 +42,59 @@ const NavLink = ({ href, className, children }) => {
 
   return (
     <Link href={href}>
-      <a className={className} {...attrs}>
+      <a
+        className={cn(
+          "flex items-center h-64 px-8 hover:text-accent transition",
+          className
+        )}
+        {...attrs}
+      >
         {children}
       </a>
     </Link>
   );
 };
 
-const ResumeLink = () => {
-  const classes = cn(
-    "block w-fit ml-auto transition",
-    "lg:col-start-2 lg:rounded-[100%] lg:border lg:border-primary lg:py-16 lg:px-24 lg:-mx-24 lg:font-mono lg:font-medium lg:text-sm lg:text-center lg:hover:bg-accent"
-  );
-
-  return (
-    <NavLink href="/resume" className={classes}>
-      <span className="hidden sm:inline">View</span> Resumé
-    </NavLink>
-  );
-};
+// Component
+// ----------------------------------------------------------------------------
 
 const Nav = () => {
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [isVisible, setIsVisible] = useState(true);
+
+  const handleScroll = debounce(() => {
+    const currentScrollPos = window.pageYOffset;
+
+    setIsVisible(
+      (prevScrollPos > currentScrollPos &&
+        prevScrollPos - currentScrollPos > 16) ||
+        currentScrollPos < 10
+    );
+
+    setPrevScrollPos(currentScrollPos);
+  }, 50);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [prevScrollPos, isVisible, handleScroll]);
+
   const classes = cn(
-    "sticky top-0 flex items-center gap-16 py-8 px-[var(--page-padding)] text-sm",
-    "lg:top-auto lg:fixed lg:right-0 lg:bottom-0 lg:w-[var(--nav-width)]",
-    "lg:grid lg:grid-cols-[80px,1fr]",
-    "lg:pl-0 lg:pb-[calc(var(--page-padding)/1)] lg:pr-[calc(var(--page-padding)/1)]"
+    "fixed top-0 left-0 right-0 z-50",
+    "flex items-center justify-between gap-8 px-[var(--page-padding)]",
+    "bg-white dark:bg-black backdrop-blur mix-blend-darken dark:mix-blend-lighten transition duration-300",
+    !isVisible && "-translate-y-full opacity-0"
   );
 
   return (
     <nav className={classes}>
-      <NavLink href="/" className="col-start-2 font-base font-medium">
+      <NavLink href="/" className="font-medium -ml-8">
         Andy Smith
-        <div className="font-normal text-xs lg:text-sm">Product Designer</div>
       </NavLink>
-      <ResumeLink />
-      <dl className="col-span-2 hidden lg:grid grid-cols-[80px,1fr] gap-x-16 text-sm">
-        {CONTACT_LINKS.map(item => (
-          <React.Fragment key={item.label}>
-            <dt className="font-medium text-right">{item.label}</dt>
-            <dd>
-              <a
-                className="h-32 block font-mono underline underline-offset-4 hover:decoration-wavy decoration-primary hover:text-accent hover:decoration-accent hover:underline-offset-2 transition"
-                href={item.href}
-              >
-                {item.value}
-              </a>
-            </dd>
-          </React.Fragment>
-        ))}
-        <dt className="font-medium text-right">Theme</dt>
-        <dd>
-          <ThemeSwitcher />
-        </dd>
-      </dl>
-      <button className="lg:hidden" type="button">
-        Contact
-      </button>
+      <div className="flex items-center gap-12">
+        <NavLink href="/info">Information</NavLink>
+        <ThemeSwitcher />
+      </div>
     </nav>
   );
 };

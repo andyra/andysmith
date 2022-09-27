@@ -6,12 +6,7 @@ const Content = ({
   py = "py-[var(--page-padding)]",
   maxWidth = "max-w-screen-2xl"
 }) => {
-  const classes = cn(
-    "px-[var(--page-padding)] lg:mr-[var(--nav-width)]",
-    py,
-    maxWidth,
-    className
-  );
+  const classes = cn("px-[var(--page-padding)]", py, maxWidth, className);
 
   return <div className={classes}>{children}</div>;
 };

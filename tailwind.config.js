@@ -8,6 +8,9 @@ module.exports = {
   darkMode: "class",
   theme: {
     extend: {
+      animation: {
+        float: "float 3s ease-in-out infinite"
+      },
       colors: {
         ground: "var(--ground)",
         "ground-accent": "var(--ground-accent)",
@@ -17,7 +20,6 @@ module.exports = {
       },
       fontFamily: {
         base: [
-          // "Basier Circle",
           "'Be Vietnam Pro Variable'",
           "'Maison Neue'",
           "'Gratimo Classic'",
@@ -32,6 +34,13 @@ module.exports = {
           "'Noto Sans'",
           "sans-serif"
         ]
+      },
+      keyframes: {
+        float: {
+          "0%": { transform: "translate(0, -8px)" },
+          "50%": { transform: "translate(0, 8px)" },
+          "100%": { transform: "translate(0, -8px)" }
+        }
       }
     },
     // Overrides

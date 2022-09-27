@@ -30,11 +30,7 @@ const PageNav = ({ index = 0 }) => {
 
 const Intro = () => (
   <section className="h-screen bg-ground-accent transition-all">
-    <Content
-      className="space-y-[var(--page-padding)]"
-      py="pt-[calc(var(--page-padding)*3)]"
-      maxWidth="max-w-screen-xl"
-    >
+    <Content className="space-y-[var(--page-padding)] pt-[calc(var(--page-padding)*3)] max-w-screen-lg">
       <p className="text-lg sm:text-xl">
         Hello! I&apos;m Andy, a product designer with an affinity for front-end
         development.{" "}

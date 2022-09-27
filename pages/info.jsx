@@ -3,6 +3,9 @@ import Content from "components/Content";
 import Divider from "components/Divider";
 import { EXPERIENCE, MISC_JOBS } from "../constants";
 
+// Subcomponents
+// ----------------------------------------------------------------------------
+
 const TimeStamp = ({ hideDot, subtle, time }) => {
   return (
     <div className="absolute top-1/2 -left-16 -translate-y-1/2 -translate-x-full flex items-center justify-end gap-12 w-160">
@@ -22,14 +25,12 @@ const TimeStamp = ({ hideDot, subtle, time }) => {
   );
 };
 
-const Resume = ({}) => {
-  return (
-    <Content
-      maxWidth="max-w-screen-xl"
-      className="space-y-[var(--page-padding)]"
-    >
-      <h1>Resume</h1>
+// Component
+// ----------------------------------------------------------------------------
 
+const Info = () => {
+  return (
+    <Content className="space-y-[var(--page-padding)] max-w-screen-xl">
       <section id="experience">
         <Divider />
         <h2 className="font-medium text-3xl py-48">Experience</h2>
@@ -98,4 +99,12 @@ const Resume = ({}) => {
   );
 };
 
-export default Resume;
+export default Info;
+
+export async function getStaticProps(context) {
+  return {
+    props: {
+      metaTitle: "Info"
+    }
+  };
+}
