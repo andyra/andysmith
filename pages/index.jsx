@@ -5,32 +5,44 @@ import cn from "classnames";
 import Content from "components/Content";
 import Divider from "components/Divider";
 import Tooltip from "components/Tooltip";
-import { PROJECTS, SKILLZ } from "../constants";
+import { PROJECTS, HOW_I_CAN_HELP } from "../constants";
 
-const PageNav = ({ index = 0 }) => {
-  return (
-    <>
-      <Divider />
-      <div className="flex flex-col xs:flex-row xs:items-center gap-24 text-lg sm:text-xl">
-        {index === 0 && (
-          <a
-            href="#how-i-can-help"
-            className="hover:text-accent transition group"
-          >
-            <span className="text-accent">↓</span> How I can help
-          </a>
-        )}
-        <a href="#projects" className="hover:text-accent transition group">
-          <span className="text-accent">↓</span> Projects
-        </a>
-      </div>
-    </>
-  );
-};
+// Subcomonents
+// ----------------------------------------------------------------------------
+
+const PageNavLink = ({ emphasize, href, text }) => (
+  <a
+    href={href}
+    className="flex items-center gap-8 text-accent transition group"
+  >
+    <span
+      className={cn(
+        "group-hover:translate-y-4 transition duration-300",
+        emphasize && "animate-float"
+      )}
+    >
+      ↓
+    </span>{" "}
+    {text}
+  </a>
+);
+
+const PageNav = ({ index }) => (
+  <div className="flex flex-col xs:flex-row xs:items-center gap-24 text-lg sm:text-xl">
+    {index === 0 && (
+      <PageNavLink
+        href="#how-i-can-help"
+        text="How I Can Help"
+        emphasize={index === 0}
+      />
+    )}
+    <PageNavLink href="#projects" text="Projects" emphasize={index === 1} />
+  </div>
+);
 
 const Intro = () => (
-  <section className="h-screen bg-ground-accent transition-all">
-    <Content className="space-y-[var(--page-padding)] pt-[calc(var(--page-padding)*3)] max-w-screen-lg">
+  <section className="flex items-center h-screen bg-ground-accent transition-all">
+    <Content className="space-y-[var(--page-padding)] max-w-screen-lg">
       <p className="text-lg sm:text-xl">
         Hello! I&apos;m Andy, a product designer with an affinity for front-end
         development.{" "}
@@ -40,28 +52,39 @@ const Intro = () => (
           products. I live in Austin with my dog, Ernie.
         </span>
       </p>
-      <PageNav />
+      <PageNav index={0} />
     </Content>
   </section>
 );
 
-const Skillz = () => (
+const HowICanHelp = () => (
   <section
     id="how-i-can-help"
-    className="flex items-center h-screen bg-ground-accent2"
+    className="flex items-center min-h-screen bg-ground-accent2"
   >
-    <Content className="space-y-[2vmax]">
-      <h2 className="font-medium text-3xl sm:text-5xl py-24">How I can help</h2>
+    <Content className="space-y-[2vmax] max-w-screen-2xl">
+      <h2 className="font-semibold text-3xl sm:text-5xl py-24">
+        How I can help
+      </h2>
       <Divider />
-      <ul className="grid grid-cols-1 md:grid-cols-3 gap-24">
-        {SKILLZ.map(skill => (
+      <p className="text-lg">
+        <span className="underline">Product Design</span> is a somewhat
+        amorphous term, but the gist is that it covers the entirety of the
+        design process, from conception to development. My specific "experience
+        cocktail" looks something like this:
+      </p>
+      <ul className="grid grid-cols-1 md:grid-cols-3 gap-32 md:gap-24">
+        {HOW_I_CAN_HELP.map(skill => (
           <li key={skill.title}>
-            <h3 className="font-semibold text-lg">{skill.title}</h3>
-            <p className="my-12">{skill.description}</p>
+            <h3 className="font-medium text-lg md:mb-12">{skill.title}</h3>
+            <p className="opacity-75 mb-16 md:mb-24">{skill.description}</p>
             {skill.logos.length > 0 && (
               <ul className="flex gap-12">
                 {skill.logos.map(logo => (
-                  <li key={logo.title}>
+                  <li
+                    className="hover:-translate-y-4 transition duration-300"
+                    key={logo.title}
+                  >
                     <Tooltip content={logo.title} delayDuration={300}>
                       {logo.svg}
                     </Tooltip>
@@ -116,7 +139,7 @@ const Home = () => {
   return (
     <>
       <Intro />
-      <Skillz />
+      <HowICanHelp />
       <Projects />
     </>
   );

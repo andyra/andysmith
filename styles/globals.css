@@ -8,19 +8,21 @@
 }
 
 .light {
-  --ground: linen;
-  --ground-accent: hsl(298, 25%, 80%);
-  --ground-accent2: hsl(230, 60%, 93%);
+  --ground: hsl(48, 29%, 97%);
+  --ground-accent: hsl(340, 25%, 80%);
+  --ground-accent2: hsl(340, 10%, 88%);
   --primary: hsl(30, 8%, 10%);
-  --accent: hsl(9, 100%, 64%);
+  --secondary: hsl(262, 55%, 22%);
+  --accent: hsl(14, 80%, 48%);
 }
 
 .dark {
-  --ground: hsl(30, 8%, 10%);
-  --ground-accent: #914f36;
-  --ground-accent2: midnightblue;
-  --primary: linen;
-  --accent: hsl(9, 100%, 64%);
+  --ground: hsl(262, 8%, 10%);
+  --ground-accent: hsl(262, 55%, 22%);
+  --ground-accent2: hsl(262, 8%, 14%);
+  --primary: hsl(31, 45%, 85%);
+  --secondary: hsl(31, 85%, 85%);
+  --accent: hsl(20, 100%, 64%);
 }
 
 @tailwind base;

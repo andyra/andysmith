@@ -44,7 +44,7 @@ const NavLink = ({ href, className, children }) => {
     <Link href={href}>
       <a
         className={cn(
-          "flex items-center h-64 px-8 hover:text-accent transition",
+          "flex items-center h-64 px-8 hover:text-accent font-medium transition",
           className
         )}
         {...attrs}
@@ -65,11 +65,7 @@ const Nav = () => {
   const handleScroll = debounce(() => {
     const currentScrollPos = window.pageYOffset;
 
-    setIsVisible(
-      (prevScrollPos > currentScrollPos &&
-        prevScrollPos - currentScrollPos > 16) ||
-        currentScrollPos < 10
-    );
+    // setIsVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
 
     setPrevScrollPos(currentScrollPos);
   }, 50);
@@ -80,7 +76,7 @@ const Nav = () => {
   }, [prevScrollPos, isVisible, handleScroll]);
 
   const classes = cn(
-    "fixed top-0 left-0 right-0 z-50",
+    "fixed top-0 left-0 right-0 z-50 border-b",
     "flex items-center justify-between gap-8 px-[var(--page-padding)]",
     "bg-white dark:bg-black backdrop-blur mix-blend-darken dark:mix-blend-lighten transition duration-300",
     !isVisible && "-translate-y-full opacity-0"
@@ -88,7 +84,7 @@ const Nav = () => {
 
   return (
     <nav className={classes}>
-      <NavLink href="/" className="font-medium -ml-8">
+      <NavLink href="/" className="-ml-8">
         Andy Smith
       </NavLink>
       <div className="flex items-center gap-12">

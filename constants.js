@@ -6,17 +6,17 @@ import LogoNextJs from "./public/LogoNextJs.svg";
 import LogoReact from "./public/LogoReact.svg";
 import LogoSketch from "./public/LogoSketch.svg";
 
-export const SKILLZ = [
+export const HOW_I_CAN_HELP = [
   {
-    title: "UX Design",
+    title: "Feature Design",
     description:
-      "Quisque bibendum urna eu finibus varius. Quisque lectus ante, mattis sit amet blandit nec, auctor at lectus. Duis eu facilisis elit. Aliquam sed erat finibus.",
+      "Thinking through what features to build and how to develop the product. Talking to customers, discovering pain points. User testing, writing up specs. Data. Looking for weak spots, writing UI copy. I guess this is more like product design?",
     logos: []
   },
   {
-    title: "UI Design",
+    title: "UX/UI Design",
     description:
-      "Platforms: Web, iOS, and Android. Marketing materials. Quisque bibendum urna eu finibus varius. Quisque lectus ante, mattis sit amet blandit nec, auctor at lectus. Duis eu facilisis elit. Aliquam sed erat finibus.",
+      "Platforms: Web, iOS, and Android. Marketing. Emails. Both internal and customer-facing. Attention to detail, opinionated. My approach is to rely on concentions unless those conventions don't work. Organized, detailed design systems. Clear typography, balance, and harmony.",
     logos: [
       {
         title: "Figma",
@@ -35,7 +35,7 @@ export const SKILLZ = [
   {
     title: "Front-End Development",
     description:
-      "Quisque bibendum urna eu finibus varius. Quisque lectus ante, mattis sit amet blandit nec, auctor at lectus. Duis eu facilisis elit. Aliquam sed erat finibus.",
+      "I can help tighten the gap between designs and a working application. I work alongside engineers to translate pixel-perfect designs to pixel-perfect code. Creating reusable components, documentation, and using best practices for a11y.",
     logos: [
       {
         title: "CSS",
@@ -193,5 +193,25 @@ export const MISC_JOBS = [
     title: "TBD",
     years: "2003",
     notes: "Pretty much just wrote short stories"
+  }
+];
+
+export const TOOLS = [
+  {
+    title: "Design",
+    notes: "Figma, Sketch, Framer, Adobe CC (AI, PS, ID, XD), InVision, Marvel"
+  },
+  {
+    title: "Code",
+    notes:
+      "React, React Native, Next.js, JavaScript, Modern CSS, CSS-in-JS, Tailwind, SASS, GIT, Ruby, Rails, PHP"
+  },
+  {
+    title: "Motion Graphics",
+    notes: "Not an expert, but can do some damage in After Effects"
+  },
+  {
+    title: "Misc",
+    notes: "FullStory, HubSpot"
   }
 ];

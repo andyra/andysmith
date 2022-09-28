@@ -20,8 +20,9 @@ module.exports = {
       },
       fontFamily: {
         base: [
-          "'Be Vietnam Pro Variable'",
-          "'Maison Neue'",
+          // "'Be Vietnam Pro Variable'",
+          // "'Maison Neue'",
+          // "'Gratimo Grotesk'",
           "'Gratimo Classic'",
           "ui-sans-serif",
           "system-ui",
@@ -37,9 +38,9 @@ module.exports = {
       },
       keyframes: {
         float: {
-          "0%": { transform: "translate(0, -8px)" },
-          "50%": { transform: "translate(0, 8px)" },
-          "100%": { transform: "translate(0, -8px)" }
+          "0%": { transform: "translate(0, -4px)" },
+          "50%": { transform: "translate(0, 4px)" },
+          "100%": { transform: "translate(0, -4px)" }
         }
       }
     },
