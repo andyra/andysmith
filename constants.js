@@ -11,7 +11,7 @@ export const HOW_I_CAN_HELP = [
     title: "Feature Design",
     description:
       "Thinking through what features to build and how to develop the product. Talking to customers, discovering pain points. User testing, writing up specs. Data. Looking for weak spots, writing UI copy. I guess this is more like product design?",
-    logos: []
+    logos: [],
   },
   {
     title: "UX/UI Design",
@@ -20,109 +20,102 @@ export const HOW_I_CAN_HELP = [
     logos: [
       {
         title: "Figma",
-        svg: <LogoFigma className="w-48 h-48" />
+        svg: <LogoFigma className="w-48 h-48" />,
       },
       {
         title: "Sketch",
-        svg: <LogoSketch className="w-48 h-48" />
+        svg: <LogoSketch className="w-48 h-48" />,
       },
       {
         title: "Adobe Creative Cloud",
-        svg: <LogoAdobe className="w-48 h-48" />
-      }
-    ]
+        svg: <LogoAdobe className="w-48 h-48" />,
+      },
+    ],
   },
   {
     title: "Front-End Development",
     description:
-      "I can help tighten the gap between designs and a working application. I work alongside engineers to translate pixel-perfect designs to pixel-perfect code. Creating reusable components, documentation, and using best practices for a11y.",
+      "I can help tighten the gap between designs and a working application. I work alongside engineers to translate pixel-perfect designs to pixel-perfect interfaces. Creating reusable components, documentation, and using best practices for a11y.",
     logos: [
       {
         title: "CSS",
-        svg: <LogoCss className="w-48 h-48" />
+        svg: <LogoCss className="w-48 h-48" />,
       },
       {
         title: "JavaScript",
-        svg: <LogoJs className="w-48 h-48" />
+        svg: <LogoJs className="w-48 h-48" />,
       },
       {
         title: "React",
-        svg: <LogoReact className="w-48 h-48" />
+        svg: <LogoReact className="w-48 h-48" />,
       },
       {
         title: "Next.js",
-        svg: <LogoNextJs className="w-48 h-48" />
-      }
-    ]
-  }
+        svg: <LogoNextJs className="w-48 h-48" />,
+      },
+    ],
+  },
 ];
 
-export const CONTACT_LINKS = [
+export const CONTACT_INFO = [
   {
     label: "Phone",
     value: "(512) 731–6063",
-    href: "phone:5127316063"
+    href: "phone:5127316063",
   },
   {
     label: "Email",
     value: "asmith.esq@gmail.com",
-    href: "mailto:asmith.esq@gmail.com"
+    href: "mailto:asmith.esq@gmail.com",
   },
   {
     label: "GitHub",
     value: "@andyra",
-    href: "/"
+    href: "/",
   },
   {
     label: "Spotify",
     value: "Wonderful Land",
-    href: "/"
-  }
+    href: "/",
+  },
 ];
 
 export const PROJECTS = [
+  {
+    title: "Pingboard Nav Redesign",
+    image: "",
+    href: "/navigation",
+    details:
+      "A forward-looking update of the navigation and overall look & feel of the web app",
+  },
   {
     title: "Dotted Line Org Chart",
     image: "",
     href: "/project",
     details:
-      "Cras vitae mauris auctor, rhoncus mi sit amet, lobortis dui. Phasellus convallis consectetur nulla, ac dictum felis tincidunt quis. Integer facilisis ex ac quam congue, eu tempor magna ullamcorper."
+      "Cras vitae mauris auctor, rhoncus mi sit amet, lobortis dui. Phasellus convallis consectetur nulla, ac dictum felis tincidunt quis.",
   },
   {
     title: "Mobile Redesign",
     image: "",
     href: "/project",
     details:
-      "Cras vitae mauris auctor, rhoncus mi sit amet, lobortis dui. Phasellus convallis consectetur nulla, ac dictum felis tincidunt quis. Integer facilisis ex ac quam congue, eu tempor magna ullamcorper."
+      "Integer facilisis ex ac quam congue, eu tempor magna ullamcorper.",
   },
   {
     title: "Music Player",
     image: "",
     href: "/project",
     details:
-      "Cras vitae mauris auctor, rhoncus mi sit amet, lobortis dui. Phasellus convallis consectetur nulla, ac dictum felis tincidunt quis. Integer facilisis ex ac quam congue, eu tempor magna ullamcorper."
-  },
-  {
-    title: "Navigation Revamp",
-    image: "",
-    href: "/project",
-    details:
-      "Cras vitae mauris auctor, rhoncus mi sit amet, lobortis dui. Phasellus convallis consectetur nulla, ac dictum felis tincidunt quis. Integer facilisis ex ac quam congue, eu tempor magna ullamcorper."
-  },
-  {
-    title: "Amazing Slow-Downer Redesign",
-    image: "",
-    href: "/project",
-    details:
-      "Cras vitae mauris auctor, rhoncus mi sit amet, lobortis dui. Phasellus convallis consectetur nulla, ac dictum felis tincidunt quis. Integer facilisis ex ac quam congue, eu tempor magna ullamcorper."
+      "Phasellus convallis consectetur nulla, ac dictum felis tincidunt quis. Integer facilisis ex ac quam congue.",
   },
   {
     title: "Sharp Carousel Microwave",
     image: "",
-    href: "/project",
+    href: "/project/microwave",
     details:
-      "Cras vitae mauris auctor, rhoncus mi sit amet, lobortis dui. Phasellus convallis consectetur nulla, ac dictum felis tincidunt quis. Integer facilisis ex ac quam congue, eu tempor magna ullamcorper."
-  }
+      "Can we do anything to make microwaves less weird? Not exactly a rigorous project, but fun to think through all the same.",
+  },
 ];
 
 export const EXPERIENCE = [
@@ -134,16 +127,16 @@ export const EXPERIENCE = [
         title: "Senior UX Designer",
         years: "2020–now",
         notes:
-          "Suspendisse bibendum sem quis nisl dictum, in vestibulum libero dignissim. Fusce dignissim sed sapien ut ultrices. Pellentesque consequat bibendum consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed erat purus, ultrices quis feugiat vel, facilisis eu ipsum. Donec ante lacus, suscipit eget lobortis non, viverra vel nisl. Sed eget vestibulum justo, at eleifend nibh."
+          "Suspendisse bibendum sem quis nisl dictum, in vestibulum libero dignissim. Fusce dignissim sed sapien ut ultrices. Pellentesque consequat bibendum consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed erat purus, ultrices quis feugiat vel, facilisis eu ipsum. Donec ante lacus, suscipit eget lobortis non, viverra vel nisl. Sed eget vestibulum justo, at eleifend nibh.",
       },
       {
         title: "UX Designer",
         years: "2015–2020",
         notes:
-          "Suspendisse bibendum sem quis nisl dictum, in vestibulum libero dignissim. Fusce dignissim sed sapien ut ultrices. Pellentesque consequat bibendum consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed erat purus, ultrices quis feugiat vel, facilisis eu ipsum. Donec ante lacus, suscipit eget lobortis non, viverra vel nisl. Sed eget vestibulum justo, at eleifend nibh."
-      }
+          "Suspendisse bibendum sem quis nisl dictum, in vestibulum libero dignissim. Fusce dignissim sed sapien ut ultrices. Pellentesque consequat bibendum consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed erat purus, ultrices quis feugiat vel, facilisis eu ipsum. Donec ante lacus, suscipit eget lobortis non, viverra vel nisl. Sed eget vestibulum justo, at eleifend nibh.",
+      },
     ],
-    responsibilities: []
+    responsibilities: [],
   },
   {
     company: "ReturnPath",
@@ -155,63 +148,63 @@ export const EXPERIENCE = [
         title: "UI Designer",
         years: "2011–2015",
         notes:
-          "Suspendisse bibendum sem quis nisl dictum, in vestibulum libero dignissim. Fusce dignissim sed sapien ut ultrices. Pellentesque consequat bibendum consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed erat purus, ultrices quis feugiat vel, facilisis eu ipsum. Donec ante lacus, suscipit eget lobortis non, viverra vel nisl. Sed eget vestibulum justo, at eleifend nibh."
+          "Suspendisse bibendum sem quis nisl dictum, in vestibulum libero dignissim. Fusce dignissim sed sapien ut ultrices. Pellentesque consequat bibendum consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed erat purus, ultrices quis feugiat vel, facilisis eu ipsum. Donec ante lacus, suscipit eget lobortis non, viverra vel nisl. Sed eget vestibulum justo, at eleifend nibh.",
       },
       {
         title: "Design Intern",
         years: "2010–2011",
         notes:
-          "Suspendisse bibendum sem quis nisl dictum, in vestibulum libero dignissim. Fusce dignissim sed sapien ut ultrices. Pellentesque consequat bibendum consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed erat purus, ultrices quis feugiat vel, facilisis eu ipsum. Donec ante lacus, suscipit eget lobortis non, viverra vel nisl. Sed eget vestibulum justo, at eleifend nibh."
-      }
+          "Suspendisse bibendum sem quis nisl dictum, in vestibulum libero dignissim. Fusce dignissim sed sapien ut ultrices. Pellentesque consequat bibendum consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed erat purus, ultrices quis feugiat vel, facilisis eu ipsum. Donec ante lacus, suscipit eget lobortis non, viverra vel nisl. Sed eget vestibulum justo, at eleifend nibh.",
+      },
     ],
-    responsibilities: []
-  }
+    responsibilities: [],
+  },
 ];
 
 export const MISC_JOBS = [
   {
     title: "School bus driver",
     years: "2008",
-    notes: "A lot of good stories from this one"
+    notes: "A lot of good stories from this one",
   },
   {
     title: "Accidentally designed ads for casinos",
     years: "2007",
-    notes: "Worst two days of my life"
+    notes: "Worst two days of my life",
   },
   {
     title: "Photo retoucher",
     years: "2006",
-    notes: "For a weird dude in Abilene, TX"
+    notes: "For a weird dude in Abilene, TX",
   },
   {
     title: "Chinese takeout delivery driver",
     years: "2004–06",
-    notes: "Best job ever?"
+    notes: "Best job ever?",
   },
   {
     title: "TBD",
     years: "2003",
-    notes: "Pretty much just wrote short stories"
-  }
+    notes: "Pretty much just wrote short stories",
+  },
 ];
 
 export const TOOLS = [
   {
     title: "Design",
-    notes: "Figma, Sketch, Framer, Adobe CC (AI, PS, ID, XD), InVision, Marvel"
+    notes: "Figma, Sketch, Framer, Adobe CC (AI, PS, ID, XD), InVision, Marvel",
   },
   {
     title: "Code",
     notes:
-      "React, React Native, Next.js, JavaScript, Modern CSS, CSS-in-JS, Tailwind, SASS, GIT, Ruby, Rails, PHP"
+      "React, React Native, Next.js, JavaScript, Modern CSS, CSS-in-JS, Tailwind, SASS, GIT, Ruby, Rails, PHP",
   },
   {
     title: "Motion Graphics",
-    notes: "Not an expert, but can do some damage in After Effects"
+    notes: "Not an expert, but can do some damage in After Effects",
   },
   {
     title: "Misc",
-    notes: "FullStory, HubSpot"
-  }
+    notes: "FullStory, HubSpot",
+  },
 ];

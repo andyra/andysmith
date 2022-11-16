@@ -3,27 +3,52 @@ module.exports = {
   content: [
     "./pages/**/*.{js,jsx}",
     "./components/**/*.{js,jsx}",
-    "./constants.js"
+    "./constants.js",
   ],
   darkMode: "class",
   theme: {
     extend: {
       animation: {
-        float: "float 3s ease-in-out infinite"
+        float: "float 3s ease-in-out infinite",
+      },
+      borderColor: {
+        DEFAULT: "var(--primary-10)",
+      },
+      borderRadius: {
+        DEFAULT: "8px",
       },
       colors: {
         ground: "var(--ground)",
-        "ground-accent": "var(--ground-accent)",
-        "ground-accent2": "var(--ground-accent2)",
+        "ground-75": "var(--ground-75)",
+        "ground-50": "var(--ground-50)",
+        "ground-25": "var(--ground-25)",
+        "ground-10": "var(--ground-10)",
+        "ground-05": "var(--ground-05)",
         primary: "var(--primary)",
-        accent: "var(--accent)"
+        "primary-75": "var(--primary-75)",
+        "primary-50": "var(--primary-50)",
+        "primary-25": "var(--primary-25)",
+        "primary-10": "var(--primary-10)",
+        "primary-05": "var(--primary-05)",
+        secondary: "var(--secondary)",
+        "secondary-75": "var(--secondary-75)",
+        "secondary-50": "var(--secondary-50)",
+        "secondary-25": "var(--secondary-25)",
+        "secondary-10": "var(--secondary-10)",
+        "secondary-05": "var(--secondary-05)",
+        tertiary: "var(--tertiary)",
+        "tertiary-75": "var(--tertiary-75)",
+        "tertiary-50": "var(--tertiary-50)",
+        "tertiary-25": "var(--tertiary-25)",
+        "tertiary-10": "var(--tertiary-10)",
+        "tertiary-05": "var(--tertiary-05)",
       },
       fontFamily: {
         base: [
-          // "'Be Vietnam Pro Variable'",
+          "'Be Vietnam Pro Variable'",
           // "'Maison Neue'",
           // "'Gratimo Grotesk'",
-          "'Gratimo Classic'",
+          // "'Gratimo Classic'",
           "ui-sans-serif",
           "system-ui",
           "-apple-system",
@@ -33,16 +58,16 @@ module.exports = {
           "'Helvetica Neue'",
           "Arial",
           "'Noto Sans'",
-          "sans-serif"
-        ]
+          "sans-serif",
+        ],
       },
       keyframes: {
         float: {
           "0%": { transform: "translate(0, -4px)" },
           "50%": { transform: "translate(0, 4px)" },
-          "100%": { transform: "translate(0, -4px)" }
-        }
-      }
+          "100%": { transform: "translate(0, -4px)" },
+        },
+      },
     },
     // Overrides
     fontSize: {
@@ -57,7 +82,7 @@ module.exports = {
       "4xl": ["3.75rem", { lineHeight: "1" }],
       "5xl": ["4.5rem", { lineHeight: "1" }],
       "6xl": ["6rem", { lineHeight: "1" }],
-      "7xl": ["8rem", { lineHeight: "1" }]
+      "7xl": ["8rem", { lineHeight: "1" }],
     },
     screens: {
       xs: "480px",
@@ -66,7 +91,7 @@ module.exports = {
       lg: "960px",
       xl: "1280px",
       "2xl": "1536px",
-      "3xl": "1920px"
+      "3xl": "1920px",
     },
     spacing: {
       0: "0",
@@ -105,8 +130,9 @@ module.exports = {
       em: "1em",
       "3/4em": "0.75em",
       "1/2em": "0.5em",
-      "1/4em": "0.25em"
-    }
+      "1/4em": "0.25em",
+      vbig: "4vmax",
+    },
   },
-  plugins: []
+  plugins: [],
 };

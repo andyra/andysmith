@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import cn from "classnames";
 import { useTheme } from "next-themes";
+import cn from "classnames";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
 import ClientOnly from "components/ClientOnly";
 import { debounce } from "helpers/index";
@@ -16,7 +16,7 @@ const ThemeSwitcher = () => {
   return (
     <ClientOnly>
       <button
-        className="flex items-center h-64 hover:text-accent transition"
+        className="flex items-center h-64 hover:text-tertiary transition"
         onClick={() => {
           setTheme(theme === "light" ? "dark" : "light");
         }}
@@ -34,7 +34,6 @@ const ThemeSwitcher = () => {
 const NavLink = ({ href, className, children }) => {
   const router = useRouter();
   const isCurrent = href === router.asPath;
-
   const attrs = {};
   if (isCurrent) {
     attrs["aria-current"] = "page";
@@ -44,7 +43,7 @@ const NavLink = ({ href, className, children }) => {
     <Link href={href}>
       <a
         className={cn(
-          "flex items-center h-64 px-8 hover:text-accent font-medium transition",
+          "flex items-center h-64 px-8 hover:text-tertiary font-medium transition",
           className
         )}
         {...attrs}
@@ -59,27 +58,11 @@ const NavLink = ({ href, className, children }) => {
 // ----------------------------------------------------------------------------
 
 const Nav = () => {
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const [isVisible, setIsVisible] = useState(true);
-
-  const handleScroll = debounce(() => {
-    const currentScrollPos = window.pageYOffset;
-
-    // setIsVisible(prevScrollPos > currentScrollPos || currentScrollPos < 10);
-
-    setPrevScrollPos(currentScrollPos);
-  }, 50);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [prevScrollPos, isVisible, handleScroll]);
-
   const classes = cn(
-    "fixed top-0 left-0 right-0 z-50 border-b",
-    "flex items-center justify-between gap-8 px-[var(--page-padding)]",
-    "bg-white dark:bg-black backdrop-blur mix-blend-darken dark:mix-blend-lighten transition duration-300",
-    !isVisible && "-translate-y-full opacity-0"
+    "fixed top-0 left-0 right-0 z-50",
+    "flex items-center justify-between gap-8 px-vbig",
+    // the mix-blend mode and BG color allows the nav to absorb colors behind it
+    "bg-white mix-blend-darken dark:bg-black dark:mix-blend-lighten backdrop-blur transition duration-300"
   );
 
   return (
@@ -91,6 +74,8 @@ const Nav = () => {
         <NavLink href="/info">Information</NavLink>
         <ThemeSwitcher />
       </div>
+      {/* Phony border offset so the mix-blend-mode doesn't goof with it */}
+      <div className="absolute -bottom-1 left-0 h-1 w-full bg-primary-10" />
     </nav>
   );
 };
