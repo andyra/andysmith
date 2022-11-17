@@ -101,7 +101,7 @@ const HowICanHelp = () => (
 );
 
 const Projects = () => (
-  <section id="projects" className="bg-primary-05">
+  <section id="projects" className="bg-tertiary-05">
     <Content className="space-y-vbig max-w-screen-xl">
       <h2 className="font-extrabold text-3xl sm:text-5xl py-24">Projects</h2>
       <Divider />

@@ -8,12 +8,12 @@ import { CONTACT_INFO, EXPERIENCE, MISC_JOBS, TOOLS } from "../constants";
 // ----------------------------------------------------------------------------
 
 const Header = () => (
-  <header className="bg-secondary-25">
-    <Content className="flex items-center gap-48 max-w-screen-xl">
+  <Content as="header" className="max-w-screen-xl">
+    <div className="bg-primary-05 flex items-center gap-48 rounded">
       <figure className="rounded-full h-128 w-128 border-2 border-primary" />
       <div>
         <dl className="self-end grid grid-cols-[64px,1fr] gap-x-16 text-sm w-full xs:w-auto">
-          {CONTACT_INFO.map(item => (
+          {CONTACT_INFO.map((item) => (
             <React.Fragment key={item.label}>
               <dt className="font-medium">{item.label}</dt>
               <dd>
@@ -28,8 +28,8 @@ const Header = () => (
           ))}
         </dl>
       </div>
-    </Content>
-  </header>
+    </div>
+  </Content>
 );
 
 const TimeStamp = ({ hideDot, subtle, time }) => {
@@ -73,7 +73,7 @@ const Info = () => {
           <Divider />
           <ul className="flex flex-col gap-[2vw] relative sm:pl-96">
             <span className="absolute top-56 bottom-12 -left-16 sm:left-80 w-2 bg-primary opacity-10 -translate-x-1/2" />
-            {EXPERIENCE.map(item => (
+            {EXPERIENCE.map((item) => (
               <li key={item.company}>
                 <h3 className="flex items-baseline gap-12 font-bold text-lg mb-8 relative">
                   {item.company}
@@ -84,7 +84,7 @@ const Info = () => {
                 </h3>
                 {item.jobs && (
                   <ul className="space-y-16">
-                    {item.jobs.map(job => (
+                    {item.jobs.map((job) => (
                       <li className="relative" key={job.title}>
                         <h4 className="font-medium flex gap-12 items-baseline relative">
                           <Dot />
@@ -103,7 +103,7 @@ const Info = () => {
                 Not important, but…
               </h3>
               <ul className="opacity-50">
-                {MISC_JOBS.map(job => (
+                {MISC_JOBS.map((job) => (
                   <li key={job.title}>
                     <span className="font-medium relative">
                       <Dot color="default" />
@@ -155,7 +155,7 @@ export default Info;
 export async function getStaticProps(context) {
   return {
     props: {
-      metaTitle: "Info"
-    }
+      metaTitle: "Info",
+    },
   };
 }

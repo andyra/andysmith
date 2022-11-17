@@ -29,16 +29,16 @@
   --secondary-10: hsla(235, 100%, 60%, 0.1);
   --secondary-05: hsla(235, 100%, 60%, 0.05);
 
-  --tertiary: hsla(22, 100%, 60%, 1);
-  --tertiary-75: hsla(22, 100%, 60%, 0.75);
-  --tertiary-50: hsla(22, 100%, 60%, 0.5);
-  --tertiary-25: hsla(22, 100%, 60%, 0.25);
-  --tertiary-10: hsla(22, 100%, 60%, 0.1);
-  --tertiary-05: hsla(22, 100%, 60%, 0.05);
+  --tertiary: hsla(184, 100%, 24%, 1);
+  --tertiary-75: hsla(184, 100%, 24%, 0.75);
+  --tertiary-50: hsla(184, 100%, 24%, 0.5);
+  --tertiary-25: hsla(184, 100%, 24%, 0.25);
+  --tertiary-10: hsla(184, 100%, 24%, 0.1);
+  --tertiary-05: hsla(184, 100%, 24%, 0.05);
 }
 
 .dark {
-  --ground: hsla(262, 8%, 10%, 1);
+  --ground: hsla(262, 8%, 8%, 1);
   --ground-75: hsla(262, 8%, 10%, 0.75);
   --ground-50: hsla(262, 8%, 10%, 0.5);
   --ground-25: hsla(262, 8%, 10%, 0.25);
@@ -59,12 +59,12 @@
   --secondary-10: hsla(235, 100%, 70%, 0.1);
   --secondary-05: hsla(235, 100%, 70%, 0.05);
 
-  --tertiary: hsla(36, 100%, 60%, 1);
-  --tertiary-75: hsla(36, 100%, 60%, 0.75);
-  --tertiary-50: hsla(36, 100%, 60%, 0.5);
-  --tertiary-25: hsla(36, 100%, 60%, 0.25);
-  --tertiary-10: hsla(36, 100%, 60%, 0.1);
-  --tertiary-05: hsla(36, 100%, 60%, 0.05);
+  --tertiary: hsla(184, 48%, 48%, 1);
+  --tertiary-75: hsla(184, 48%, 48%, 0.75);
+  --tertiary-50: hsla(184, 48%, 48%, 0.5);
+  --tertiary-25: hsla(184, 48%, 48%, 0.25);
+  --tertiary-10: hsla(184, 48%, 48%, 0.1);
+  --tertiary-05: hsla(184, 48%, 48%, 0.05);
 }
 
 @tailwind base;

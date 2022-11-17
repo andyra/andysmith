@@ -1,9 +1,12 @@
 import cn from "classnames";
+import styled from "styled-components";
 
-const Content = ({ children, className, py = "py-vbig" }) => {
-  const classes = cn("px-vbig mx-auto", py, className);
+const StyledContent = styled.div``;
 
-  return <div className={classes}>{children}</div>;
-};
+const Content = ({ as, children, className, py = "py-vbig" }) => (
+  <StyledContent as={as} className={cn("px-vbig mx-auto", py, className)}>
+    {children}
+  </StyledContent>
+);
 
 export default Content;

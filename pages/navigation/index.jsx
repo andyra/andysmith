@@ -6,9 +6,9 @@ import Divider from "components/Divider";
 const Navigation = () => {
   return (
     <>
-      <header className="space-y-[2vmax] py-[8vmax] bg-secondary-05">
+      <header className="space-y-[2vmax] py-[8vmax] bg-tertiary-10 text-tertiary-75">
         <Content className="max-w-screen-xl space-y-[2vmax]">
-          <h1 className="font-extrabold text-3xl md:text-5xl">
+          <h1 className="font-extrabold text-3xl md:text-5xl text-tertiary">
             Pingboard Nav Redesign
           </h1>
           <Divider />
@@ -18,9 +18,7 @@ const Navigation = () => {
             the navigation was due for a rethink. If we were building this from
             scratch today, how would we do it differently?
           </p>
-          <p className="text-lg opacity-50">
-            Sketch • Figma • Bla • Stakeholders
-          </p>
+          <p className="text-lg">Sketch • Figma • Bla • Stakeholders</p>
         </Content>
       </header>
       <Content className="max-w-screen-2xl space-y-vbig">
