@@ -6,7 +6,7 @@ import { PROJECTS } from "../constants";
 
 const FooterLink = ({ project, direction }) => {
   const linkClasses = cn(
-    "flex flex-col xs:flex-row gap-8 p-16 sm:p-24 rounded-lg bg-tertiary-10 hover:text-tertiary transition group",
+    "flex flex-col xs:flex-row gap-8 p-16 sm:p-24 rounded-lg border-2 border-tertiary-10 hover:text-tertiary hover:border-tertiary-50 transition group",
     direction === "next" && "justify-end text-right"
   );
 
@@ -39,7 +39,7 @@ const ProjectFooter = () => {
   const next = PROJECTS[index === PROJECTS.length - 1 ? 0 : index + 1];
 
   return (
-    <footer className="px-page py-page-lg">
+    <footer className="p-page bg-tertiary-05">
       <nav className="max-w-screen-xl mx-auto grid grid-cols-2 gap-16 sm:gap-24">
         <FooterLink project={prev} direction="prev" />
         <FooterLink project={next} direction="next" />

@@ -40,7 +40,7 @@ const PageNav = ({ className, index }) => (
 );
 
 const Intro = () => (
-  <header className="px-page py-page-lg flex items-center sm:h-screen bg-secondary-10">
+  <header className="px-page pb-page pt-page-lg flex items-center sm:h-screen bg-secondary-10">
     <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center gap-page">
       <div className="lg:order-last w-192 sm:w-320 dark:invert">
         <Image
@@ -122,17 +122,18 @@ const HowICanHelp = () => (
 );
 
 const Projects = () => (
-  <section id="projects" className="px-page py-page-lg bg-tertiary-05">
+  <section id="projects" className="p-page bg-tertiary-05">
     <Container width="xl">
       <h2 className="font-extrabold text-3xl sm:text-5xl py-24">Projects</h2>
       <Divider />
       <p class="text-lg max-w-prose">
-        <span class="underline">Product Design</span> is a somewhat amorphous
-        term, but the gist is that it covers the entirety of the design process,
-        from conception to release. My specific “experience cocktail” looks
-        something like this:
+        A smattering of projects—both professional and personal—to showcase a
+        few of my skills and interests.
       </p>
-      <ul className="grid grid-cols-1 md:grid-cols-4 gap-24" role="list">
+      <ul
+        className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-24"
+        role="list"
+      >
         {PROJECTS.map((project) => (
           <li className="h-full" key={project.title}>
             <Link href={project.href}>

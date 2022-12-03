@@ -7,7 +7,7 @@ import { CONTACT_INFO, EXPERIENCE, MISC_JOBS, TOOLS } from "../constants";
 // ----------------------------------------------------------------------------
 
 const Header = () => (
-  <header className="px-page py-page-lg max-w-screen-xl">
+  <header className="px-page pb-page pt-page-lg max-w-screen-xl">
     <div className="bg-primary-05 flex items-center gap-48 rounded">
       <figure className="rounded-full h-128 w-128 border-2 border-primary" />
       <div>

@@ -28,31 +28,29 @@ const ResumeLink = () => {
 // Component
 // ----------------------------------------------------------------------------
 
-const Footer = ({}) => {
-  return (
-    <footer className="flex flex-wrap bg-primary-05 gap-16 p-page">
-      <div className="w-full md:flex-1 flex-shrink-0">
-        Andy Smith
-        <div className="whitespace-nowrap">Product Designer</div>
-      </div>
-      <ResumeLink />
-      <dl className="self-end grid grid-cols-[64px,1fr] gap-x-16 text-sm w-full xs:w-auto">
-        {CONTACT_INFO.map(item => (
-          <React.Fragment key={item.label}>
-            <dt className="font-medium xs:text-right">{item.label}</dt>
-            <dd>
-              <a
-                className="h-32 block font-mono underline underline-offset-4 hover:decoration-wavy decoration-primary hover:text-tertiary hover:decoration-accent hover:underline-offset-2 transition"
-                href={item.href}
-              >
-                {item.value}
-              </a>
-            </dd>
-          </React.Fragment>
-        ))}
-      </dl>
-    </footer>
-  );
-};
+const Footer = () => (
+  <footer className="flex flex-wrap bg-primary-05 gap-16 p-page">
+    <div className="w-full md:flex-1 flex-shrink-0">
+      Andy Smith
+      <div className="whitespace-nowrap">Product Designer</div>
+    </div>
+    <ResumeLink />
+    <dl className="self-end grid grid-cols-[64px,1fr] gap-x-16 text-sm w-full xs:w-auto">
+      {CONTACT_INFO.map((item) => (
+        <React.Fragment key={item.label}>
+          <dt className="font-medium xs:text-right">{item.label}</dt>
+          <dd>
+            <a
+              className="h-32 block font-mono underline underline-offset-4 hover:decoration-wavy decoration-primary hover:text-tertiary hover:decoration-accent hover:underline-offset-2 transition"
+              href={item.href}
+            >
+              {item.value}
+            </a>
+          </dd>
+        </React.Fragment>
+      ))}
+    </dl>
+  </footer>
+);
 
 export default Footer;
