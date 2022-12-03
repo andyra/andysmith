@@ -1,7 +1,5 @@
 import React from "react";
 import Head from "next/head";
-import cn from "classnames";
-import Content from "components/Content";
 import Nav from "components/Nav";
 import SkipLink from "components/SkipLink";
 
@@ -18,9 +16,9 @@ const Layout = ({ children, ...props }) => {
       <SkipLink />
       <Nav />
       <main id="main">{children}</main>
-      <Content as="footer" className="text-center text-xs" py="py-24">
+      <footer className="px-page py-24 text-center text-xs">
         Built with React and Next.js • View it on GitHub
-      </Content>
+      </footer>
     </>
   );
 };

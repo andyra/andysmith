@@ -1,6 +1,5 @@
 import React from "react";
 import cn from "classnames";
-import Content from "components/Content";
 import Divider from "components/Divider";
 import { CONTACT_INFO, EXPERIENCE, MISC_JOBS, TOOLS } from "../constants";
 
@@ -8,7 +7,7 @@ import { CONTACT_INFO, EXPERIENCE, MISC_JOBS, TOOLS } from "../constants";
 // ----------------------------------------------------------------------------
 
 const Header = () => (
-  <Content as="header" className="max-w-screen-xl">
+  <header className="px-page py-page-lg max-w-screen-xl">
     <div className="bg-primary-05 flex items-center gap-48 rounded">
       <figure className="rounded-full h-128 w-128 border-2 border-primary" />
       <div>
@@ -29,7 +28,7 @@ const Header = () => (
         </dl>
       </div>
     </div>
-  </Content>
+  </header>
 );
 
 const TimeStamp = ({ hideDot, subtle, time }) => {
@@ -67,7 +66,7 @@ const Info = () => {
   return (
     <>
       <Header />
-      <Content className="space-y-vbig max-w-screen-xl">
+      <div className="space-y-page max-w-screen-xl">
         <section id="experience" className="space-y-32">
           <h2 className="font-medium text-3xl">Experience</h2>
           <Divider />
@@ -120,10 +119,13 @@ const Info = () => {
         <section id="education" className="space-y-32">
           <h2 className="font-medium text-3xl">Skillz, etc.</h2>
           <Divider />
-          <h3>Tools I'm familiar With</h3>
+          <h3>Tools I&apos;m familiar With</h3>
           <ul className="grid grid-cols-1 md:grid-cols-2 gap-24">
             {TOOLS.map((tool, i) => (
-              <li className="md:rounded-lg md:p-24 md:border-2">
+              <li
+                className="md:rounded-lg md:p-24 md:border-2"
+                key={tool.title}
+              >
                 <h3 className="font-medium">{tool.title}</h3>
                 <p className="opacity-50">{tool.notes}</p>
               </li>
@@ -145,7 +147,7 @@ const Info = () => {
             </li>
           </ul>
         </section>
-      </Content>
+      </div>
     </>
   );
 };

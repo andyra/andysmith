@@ -8,15 +8,16 @@ import LogoSketch from "./public/LogoSketch.svg";
 
 export const HOW_I_CAN_HELP = [
   {
-    title: "Feature Design",
-    description:
-      "Thinking through what features to build and how to develop the product. Talking to customers, discovering pain points. User testing, writing up specs. Data. Looking for weak spots, writing UI copy. I guess this is more like product design?",
+    title: "Product/UX Design",
+    description: `The high-level "what should we build and why?" phase that balances product strategy and customer needs.`,
+    notes: `I help with interviews, panel discussions, and market research get a handle on customer problems. With that in mind, I sketch out different approaches to solving those problems, work with PMs and Engineers to decide what the first version looks like, and write up feature pitches.
+     `,
     logos: [],
   },
   {
-    title: "UX/UI Design",
-    description:
-      "Platforms: Web, iOS, and Android. Marketing. Emails. Both internal and customer-facing. Attention to detail, opinionated. My approach is to rely on concentions unless those conventions don't work. Organized, detailed design systems. Clear typography, balance, and harmony.",
+    title: "UI Design",
+    description: `The phase where loose requirements are turned into detailed, thoughtful user interfaces.`,
+    notes: `I have an opinionated, detail-oriented approach to design across both web and mobile platforms. In addition to design specs, I write thoughtful UI copy, develop design systems, and build interactive prototypes to validate the effectiveness of my work.`,
     logos: [
       {
         title: "Figma",
@@ -34,8 +35,8 @@ export const HOW_I_CAN_HELP = [
   },
   {
     title: "Front-End Development",
-    description:
-      "I can help tighten the gap between designs and a working application. I work alongside engineers to translate pixel-perfect designs to pixel-perfect interfaces. Creating reusable components, documentation, and using best practices for a11y.",
+    description: `Connect the dots between static designs and fully functioning applications`,
+    notes: `Building it right from the beginning reduces back-and-forth iteration between design and development. I can help define, build, and document design systems using a variety of CSS-in-JS frameworks. I also help to champion accessibilty best practices and speed up development. OH AND RESPONSIVE DESIGN`,
     logos: [
       {
         title: "CSS",
@@ -84,38 +85,42 @@ export const PROJECTS = [
   {
     title: "Pingboard Nav Redesign",
     image: "",
-    href: "/navigation",
+    href: "/projects/navigation",
     details:
       "A forward-looking update of the navigation and overall look & feel of the web app",
   },
   {
-    title: "Dotted Line Org Chart",
+    title: "1:1 Meetings",
     image: "",
-    href: "/project",
-    details:
-      "Cras vitae mauris auctor, rhoncus mi sit amet, lobortis dui. Phasellus convallis consectetur nulla, ac dictum felis tincidunt quis.",
+    href: "/projects/meetings",
+    details: "1:1s • Surveys • Applause • Mobile App",
   },
   {
-    title: "Mobile Redesign",
+    title: "Pingboard Mobile",
     image: "",
-    href: "/project",
-    details:
-      "Integer facilisis ex ac quam congue, eu tempor magna ullamcorper.",
+    href: "/projects/pingboard-mobile",
+    details: "A cross-platform mobile app for Pingboard customers",
   },
   {
-    title: "Music Player",
+    title: "TES.fm",
     image: "",
-    href: "/project",
-    details:
-      "Phasellus convallis consectetur nulla, ac dictum felis tincidunt quis. Integer facilisis ex ac quam congue.",
+    href: "/projects/tes",
+    details: "Personal music player project built with React",
   },
-  {
-    title: "Sharp Carousel Microwave",
-    image: "",
-    href: "/project/microwave",
-    details:
-      "Can we do anything to make microwaves less weird? Not exactly a rigorous project, but fun to think through all the same.",
-  },
+  // {
+  //   title: "Dotted Line Org Charts",
+  //   image: "",
+  //   href: "/project",
+  //   details:
+  //     "Cras vitae mauris auctor, rhoncus mi sit amet, lobortis dui. Phasellus convallis consectetur nulla, ac dictum felis tincidunt quis.",
+  // },
+  // {
+  //   title: "Sharp Carousel Microwave",
+  //   image: "",
+  //   href: "/projects/microwave",
+  //   details:
+  //     "Can we do anything to make microwaves less weird? Not exactly a rigorous project, but fun to think through all the same."
+  // }
 ];
 
 export const EXPERIENCE = [
@@ -197,7 +202,7 @@ export const TOOLS = [
   {
     title: "Code",
     notes:
-      "React, React Native, Next.js, JavaScript, Modern CSS, CSS-in-JS, Tailwind, SASS, GIT, Ruby, Rails, PHP",
+      "React, React Native, Next.js, JavaScript, Modern CSS, CSS-in-JS, Tailwind, Storybook, SASS, GIT, Ruby, Rails, PHP",
   },
   {
     title: "Motion Graphics",

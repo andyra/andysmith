@@ -30,14 +30,14 @@ const ResumeLink = () => {
 
 const Footer = ({}) => {
   return (
-    <footer className="flex flex-wrap bg-primary-05 gap-16 p-vbig">
+    <footer className="flex flex-wrap bg-primary-05 gap-16 p-page">
       <div className="w-full md:flex-1 flex-shrink-0">
         Andy Smith
         <div className="whitespace-nowrap">Product Designer</div>
       </div>
       <ResumeLink />
       <dl className="self-end grid grid-cols-[64px,1fr] gap-x-16 text-sm w-full xs:w-auto">
-        {CONTACT_INFO.map((item) => (
+        {CONTACT_INFO.map(item => (
           <React.Fragment key={item.label}>
             <dt className="font-medium xs:text-right">{item.label}</dt>
             <dd>

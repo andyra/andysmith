@@ -1,5 +1,4 @@
 import cn from "classnames";
-import Content from "components/Content";
 
 // Subcomponents
 // ----------------------------------------------------------------------------
@@ -17,14 +16,14 @@ const SensorCooking = ({}) => {
     "Fish/ seafood",
     "Frozen entrees",
     "Frozen snacks",
-    "Frozen vegetables"
+    "Frozen vegetables",
   ];
 
   return (
     <section className="bg-gray-300">
       <h3 className="text-lg italic py-16 text-green-800">Sensor Cooking</h3>
       <ul className="grid grid-cols-3 leading-none">
-        {BUTTONS.map(label => (
+        {BUTTONS.map((label) => (
           <li
             className="flex items-center justify-center py-12 px-24 relative"
             key={label}
@@ -53,7 +52,7 @@ const MoreFromYourMicrowave = ({}) => {
     "One Dish Dinners",
     "Super Defrost",
     "Compu Defrost",
-    "Beverage Center"
+    "Beverage Center",
   ];
 
   return (
@@ -102,11 +101,13 @@ const NumberPad = ({}) => {
         ))}
       </ul>
       <ul className="grid grid-cols-3">
-        {["Kitchen Timer", "Clock", "Minute Plus", "Power Level"].map(label => (
-          <li className={buttonClasses} key={label}>
-            {label}
-          </li>
-        ))}
+        {["Kitchen Timer", "Clock", "Minute Plus", "Power Level"].map(
+          (label) => (
+            <li className={buttonClasses} key={label}>
+              {label}
+            </li>
+          )
+        )}
         <li className={buttonClasses}>
           Stop
           <br />
@@ -128,13 +129,13 @@ const NumberPad = ({}) => {
 
 const Microwave = ({}) => {
   return (
-    <Content>
+    <>
       <div className="w-480 font-serif text-center">
         <SensorCooking />
         <MoreFromYourMicrowave />
         <NumberPad />
       </div>
-    </Content>
+    </>
   );
 };
 
