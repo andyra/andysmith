@@ -5,12 +5,12 @@ import Divider from "components/Divider";
 import ExternalLink from "components/ExternalLink";
 import ProjectFooter from "components/ProjectFooter";
 import ProjectHeader from "components/ProjectHeader";
-import Section from "components/Section";
+import { Section } from "components/Content";
 
-const PingboardMobile = () => {
+const Meetings = () => {
   return (
     <>
-      <ProjectHeader title="Pingboard Mobile App" description="Placeholder" />
+      <ProjectHeader title="TES.fm" description="Placeholder" />
 
       <Section heading="What's the Problem?" i="01" columns={1}></Section>
       <ProjectFooter />
@@ -18,12 +18,12 @@ const PingboardMobile = () => {
   );
 };
 
-export default PingboardMobile;
+export default Meetings;
 
 export async function getStaticProps(context) {
   return {
     props: {
-      metaTitle: "Pingboard Mobile App",
+      metaTitle: "TES.fm",
     },
   };
 }

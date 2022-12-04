@@ -9,7 +9,7 @@ export const Section = ({
   contentClassName,
   title,
 }) => {
-  const classes = cn("px-page py-page-lg", border && "border-b-2", className);
+  const classes = cn("p-page", border && "border-b-2", className);
   const contentClasses = cn(contentClassName || "space-y-24");
 
   const containerClasses = cn(

@@ -42,9 +42,10 @@ const PageNav = ({ className, index }) => (
 const Intro = () => (
   <header className="px-page pb-page pt-page-lg flex items-center sm:h-screen bg-secondary-10">
     <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center gap-page">
-      <div className="lg:order-last w-192 sm:w-320 dark:invert">
+      <div className="lg:order-last w-192 sm:w-320">
         <Image
           alt="Picture of the author"
+          className="dark:invert"
           placeholder="blur"
           sizes="(min-width: 640px) 320w, 192px"
           src={drawing}
