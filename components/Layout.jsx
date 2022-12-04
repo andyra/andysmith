@@ -16,7 +16,7 @@ const Layout = ({ children, ...props }) => {
       <SkipLink />
       <Nav />
       <main id="main">{children}</main>
-      <footer className="px-page py-24 bg-tertiary-05 text-center text-xs">
+      <footer className="px-page py-24 bg-tertiary-05 text-center text-xs print:hidden">
         Built with React and Next.js • View it on GitHub
       </footer>
     </>

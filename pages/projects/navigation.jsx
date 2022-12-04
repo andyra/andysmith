@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Callout from "components/Callout";
-import Container from "components/Container";
 import Divider from "components/Divider";
 import ExternalLink from "components/ExternalLink";
 import ProjectFooter from "components/ProjectFooter";
@@ -165,8 +164,9 @@ const Navigation = () => {
           <p>
             We assumed people would be confused by what info was public vs.
             private, but in testing we discovered that this model didn&apos;t
-            provide a helpful "information scent"—people didn&apos;t always know
-            where to find certain pages based on those two broad cateogries.
+            provide a helpful &ldquo;information scent&rdquo;—people didn&apos;t
+            always know where to find certain pages based on those two broad
+            cateogries.
           </p>
           <p>
             Instead, we decided to flatten the options and separate them

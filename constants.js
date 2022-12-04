@@ -107,38 +107,36 @@ export const PROJECTS = [
     href: "/projects/tes",
     details: "Personal music player project built with React",
   },
-  // {
-  //   title: "Dotted Line Org Charts",
-  //   image: "",
-  //   href: "/project",
-  //   details:
-  //     "Cras vitae mauris auctor, rhoncus mi sit amet, lobortis dui. Phasellus convallis consectetur nulla, ac dictum felis tincidunt quis.",
-  // },
-  // {
-  //   title: "Sharp Carousel Microwave",
-  //   image: "",
-  //   href: "/projects/microwave",
-  //   details:
-  //     "Can we do anything to make microwaves less weird? Not exactly a rigorous project, but fun to think through all the same."
-  // }
 ];
 
 export const EXPERIENCE = [
   {
     company: "Pingboard",
-    duration: "7yr",
+    notes: "B2B employee engagement software",
+    duration: "8 years",
     jobs: [
       {
         title: "Senior UX Designer",
-        years: "2020–now",
-        notes:
-          "Suspendisse bibendum sem quis nisl dictum, in vestibulum libero dignissim. Fusce dignissim sed sapien ut ultrices. Pellentesque consequat bibendum consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed erat purus, ultrices quis feugiat vel, facilisis eu ipsum. Donec ante lacus, suscipit eget lobortis non, viverra vel nisl. Sed eget vestibulum justo, at eleifend nibh.",
+        years: "2020–2023",
+        notes: `
+          Worked closely with VP of Product and PMs to pivot to employee engagement software.
+          Helped validate product decisions by conducting exploratory interviews, running user-testing sessions, and building interactive prototypes.
+          Created complete specs for new features, wrote in-app copy, and helped define project priorities.
+          Helped rebuild the mobile app using React Native.
+          Built, maintained, and documented component libraries in React and Figma.
+          Helped train new designer and ran educational "lunch-n-learn" classes on various front-end styling topics.
+        `,
       },
       {
         title: "UX Designer",
         years: "2015–2020",
-        notes:
-          "Suspendisse bibendum sem quis nisl dictum, in vestibulum libero dignissim. Fusce dignissim sed sapien ut ultrices. Pellentesque consequat bibendum consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed erat purus, ultrices quis feugiat vel, facilisis eu ipsum. Donec ante lacus, suscipit eget lobortis non, viverra vel nisl. Sed eget vestibulum justo, at eleifend nibh.",
+        notes: `
+          Worked closely with the head of product on a B2B company directory tool.
+          Designed interfaces for all our products across web, iOS, and Android platforms.
+          Developed and maintained a CSS component system, and regularly contributed to front-end development in the Rails app.
+          Designed an internal support app to help the effeciency of the support team.
+          Designed and maintained the marketing site and blog, along with other marketing materials.
+        `,
       },
     ],
     responsibilities: [],
@@ -146,20 +144,32 @@ export const EXPERIENCE = [
   {
     company: "ReturnPath",
     notes:
-      "Started at OtherInbox, which was acquired by ReturnPath, which was subsequently acquired by Validity after I left.",
-    duration: "5yr",
+      "B2B email analytics and devliverability tools; acquired by Validity",
+    duration: "3 years",
     jobs: [
       {
-        title: "UI Designer",
-        years: "2011–2015",
-        notes:
-          "Suspendisse bibendum sem quis nisl dictum, in vestibulum libero dignissim. Fusce dignissim sed sapien ut ultrices. Pellentesque consequat bibendum consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed erat purus, ultrices quis feugiat vel, facilisis eu ipsum. Donec ante lacus, suscipit eget lobortis non, viverra vel nisl. Sed eget vestibulum justo, at eleifend nibh.",
+        title: "UX Designer",
+        years: "2012–2015",
+        notes: `
+          Worked with a small UX team to design ReturnPath's large suite of enterprise email analytics tools.
+          Maintained OtherInbox B2C products, including developing new apps for bnoth web and mobile.
+          Improved UX by running user-testing sessions.
+        `,
       },
+    ],
+    responsibilities: [],
+  },
+  {
+    company: "OtherInbox",
+    notes: "B2C email tools; acquired by ReturnPath",
+    duration: "2 years",
+    jobs: [
       {
-        title: "Design Intern",
-        years: "2010–2011",
-        notes:
-          "Suspendisse bibendum sem quis nisl dictum, in vestibulum libero dignissim. Fusce dignissim sed sapien ut ultrices. Pellentesque consequat bibendum consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed erat purus, ultrices quis feugiat vel, facilisis eu ipsum. Donec ante lacus, suscipit eget lobortis non, viverra vel nisl. Sed eget vestibulum justo, at eleifend nibh.",
+        title: "Designer",
+        years: "2010-2012",
+        notes: `
+          Started as an intern and promoted to full-time position within six months. Responsible for all design work, including web app, browser extension, emails, Wordpress site, and marketing materials.
+        `,
       },
     ],
     responsibilities: [],
@@ -168,27 +178,32 @@ export const EXPERIENCE = [
 
 export const MISC_JOBS = [
   {
-    title: "School bus driver",
+    title: "School Bus Driver",
     years: "2008",
     notes: "A lot of good stories from this one",
   },
   {
-    title: "Accidentally designed ads for casinos",
+    title: "Accidentally Designed Ads for Casinos",
     years: "2007",
     notes: "Worst two days of my life",
   },
   {
-    title: "Photo retoucher",
+    title: "Freelance Web Designer",
     years: "2006",
-    notes: "For a weird dude in Abilene, TX",
+    notes: "Gotta start somewhere, even if you don't know what you're doing",
   },
   {
-    title: "Chinese takeout delivery driver",
-    years: "2004–06",
+    title: "Photo Retoucher",
+    years: "2005",
+    notes: "My boss looked and sounded like Sam Elliot",
+  },
+  {
+    title: "Chinese Takeout Delivery Driver",
+    years: "2004",
     notes: "Best job ever?",
   },
   {
-    title: "TBD",
+    title: "Administrative Assistant",
     years: "2003",
     notes: "Pretty much just wrote short stories",
   },
@@ -197,19 +212,39 @@ export const MISC_JOBS = [
 export const TOOLS = [
   {
     title: "Design",
-    notes: "Figma, Sketch, Framer, Adobe CC (AI, PS, ID, XD), InVision, Marvel",
+    notes: [
+      "Figma",
+      "Sketch",
+      "Adobe CC (AI, PS, ID, XD)",
+      "Framer",
+      "Motion Graphics",
+    ],
+  },
+  {
+    title: "UX",
+    notes: [
+      "User Research",
+      "UX Writing",
+      "Usability Testing",
+      "Prototyping",
+      "InVision",
+      "Marvel",
+      "FullStory",
+    ],
   },
   {
     title: "Code",
-    notes:
-      "React, React Native, Next.js, JavaScript, Modern CSS, CSS-in-JS, Tailwind, Storybook, SASS, GIT, Ruby, Rails, PHP",
-  },
-  {
-    title: "Motion Graphics",
-    notes: "Not an expert, but can do some damage in After Effects",
-  },
-  {
-    title: "Misc",
-    notes: "FullStory, HubSpot",
+    notes: [
+      "React",
+      "React Native",
+      "Next.js",
+      "JavaScript",
+      "CSS",
+      "Tailwind",
+      "Storybook",
+      "SASS",
+      "Ruby",
+      "PHP",
+    ],
   },
 ];

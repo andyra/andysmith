@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Callout from "components/Callout";
-import Container from "components/Container";
 import Divider from "components/Divider";
 import ExternalLink from "components/ExternalLink";
 import ProjectFooter from "components/ProjectFooter";

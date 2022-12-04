@@ -1,7 +1,7 @@
 import { Html, Head, Main, NextScript } from "next/document";
 
 const Document = () => (
-  <Html lang="en">
+  <Html className="scroll-smooth" lang="en">
     <Head />
     <body className="bg-ground font-base text-base text-primary dark:antialiased">
       <Main />

@@ -3,7 +3,6 @@ import Image from "next/future/image";
 import { useTheme } from "next-themes";
 
 import Callout from "components/Callout";
-import Container from "components/Container";
 import Divider from "components/Divider";
 import ExternalLink from "components/ExternalLink";
 import ProjectFooter from "components/ProjectFooter";

@@ -31,33 +31,28 @@ const Header = () => (
   </header>
 );
 
-const TimeStamp = ({ hideDot, subtle, time }) => {
-  return (
-    <time
-      className={cn(
-        "sm:absolute sm:top-1/2 sm:-left-32 sm:-translate-y-1/2 sm:-translate-x-full sm:w-96 sm:text-right",
-        "font-mono font-normal text-sm",
-        subtle && "opacity-50"
-        // "-ml-16"
-      )}
-    >
-      {time}
-    </time>
-  );
-};
+const TimeStamp = ({ hideDot, subtle, time }) => (
+  <time
+    className={cn(
+      "sm:absolute sm:top-1/2 sm:-left-32 sm:-translate-y-1/2 sm:-translate-x-full sm:w-96 sm:text-right",
+      "font-mono font-normal text-sm",
+      subtle && "opacity-50"
+    )}
+  >
+    {time}
+  </time>
+);
 
-const Dot = ({ color }) => {
-  return (
-    <span
-      aria-hidden
-      className={cn(
-        "absolute top-1/2 -left-16 -translate-x-1/2 -translate-y-1/2",
-        "h-8 w-8 rounded-full",
-        color === "default" ? "bg-primary" : "bg-tertiary"
-      )}
-    />
-  );
-};
+const Dot = ({ color }) => (
+  <span
+    aria-hidden
+    className={cn(
+      "absolute top-1/2 -left-16 -translate-x-1/2 -translate-y-1/2",
+      "h-8 w-8 rounded-full",
+      color === "default" ? "bg-primary" : "bg-tertiary"
+    )}
+  />
+);
 
 // Component
 // ----------------------------------------------------------------------------

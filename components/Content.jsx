@@ -1,30 +1,50 @@
 import cn from "classnames";
+import slugify from "slugify";
+import Divider from "components/divider";
 
 // Note: Switches to stacked layout at `screen-lg`
 
 export const Section = ({
-  border,
   children,
   className,
+  columns,
   contentClassName,
+  noTopPadding,
   title,
+  titleActions,
 }) => {
-  const classes = cn("p-page", border && "border-b-2", className);
-  const contentClasses = cn(contentClassName || "space-y-24");
+  const id = title ? slugify(title, { lower: true }) : null;
+
+  const classes = cn(
+    "px-page",
+    noTopPadding ? "pb-page-lg" : "py-page-lg",
+    className
+  );
+
+  const contentClasses = cn(contentClassName || "space-y-48");
 
   const containerClasses = cn(
-    "max-w-screen-xl mx-auto flex flex-col lg:flex-row gap-24",
-    !title && contentClasses
+    "flex flex-col gap-48",
+    "max-w-screen-xl mx-auto",
+    columns && "lg:flex-row",
+    !columns && contentClassName
+  );
+
+  const headingClasses = cn(
+    columns && "font-medium text-xl md:text-2xl lg:w-1/3",
+    !columns && "font-semibold text-3xl sm:text-5xl"
   );
 
   return (
-    <section className={classes}>
+    <section className={classes} id={id}>
       <div className={containerClasses}>
         {title ? (
           <>
-            <h2 className="font-medium text-lg md:text-2xl lg:w-1/3">
+            <h2 className={headingClasses}>
               {title}
+              {titleActions}
             </h2>
+            {!columns && <Divider />}
             <div className={cn("flex-1", contentClasses)}>{children}</div>
           </>
         ) : (

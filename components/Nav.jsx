@@ -62,7 +62,8 @@ const Nav = () => {
     "fixed top-0 left-0 right-0 z-50",
     "flex items-center justify-between gap-8 px-page",
     // the mix-blend mode and BG color allows the nav to absorb colors behind it
-    "bg-white mix-blend-darken dark:bg-black dark:mix-blend-lighten backdrop-blur transition duration-300"
+    "bg-white mix-blend-darken dark:bg-black dark:mix-blend-lighten backdrop-blur transition duration-300",
+    "print:hidden"
   );
 
   return (

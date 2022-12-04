@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
 import cn from "classnames";
-import Container from "components/Container";
 import { PROJECTS } from "../constants";
 
 const FooterLink = ({ project, direction }) => {
