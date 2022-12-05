@@ -6,6 +6,24 @@ import LogoNextJs from "./public/LogoNextJs.svg";
 import LogoReact from "./public/LogoReact.svg";
 import LogoSketch from "./public/LogoSketch.svg";
 
+export const CONTACT_INFO = [
+  {
+    label: "Portfolio",
+    value: "andysmith.io",
+    href: "https://andysmith.io",
+  },
+  {
+    label: "Email",
+    value: "asmith.esq@gmail.com",
+    href: "mailto:asmith.esq@gmail.com",
+  },
+  {
+    label: "Phone",
+    value: "(512) 731–6063",
+    href: "phone:5127316063",
+  },
+];
+
 export const HOW_I_CAN_HELP = [
   {
     title: "Product/UX Design",
@@ -55,34 +73,6 @@ export const HOW_I_CAN_HELP = [
         svg: <LogoNextJs className="w-48 h-48" />,
       },
     ],
-  },
-];
-
-export const CONTACT_INFO = [
-  {
-    label: "Portfolio",
-    value: "andysmith.io",
-    href: "https://andysmith.io",
-  },
-  {
-    label: "Email",
-    value: "asmith.esq@gmail.com",
-    href: "mailto:asmith.esq@gmail.com",
-  },
-  {
-    label: "Phone",
-    value: "(512) 731–6063",
-    href: "phone:5127316063",
-  },
-  {
-    label: "GitHub",
-    value: "@andyra",
-    href: "/",
-  },
-  {
-    label: "Spotify",
-    value: "Wonderful Land",
-    href: "/",
   },
 ];
 

@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/future/image";
 import Link from "next/link";
 import cn from "classnames";
 import slugify from "slugify";
 import { Divider, Dot, Section, TimeStamp } from "components/Content";
+import Button from "components/Button";
 import Tooltip from "components/Tooltip";
 
 // TODO: Button/link component
@@ -19,32 +19,19 @@ import {
   PROJECTS,
   TOOLS,
 } from "../constants";
-import dareToWin from "public/drawings/dareToWin.webp";
-import shovel from "public/drawings/shovel.webp";
 import walkingGuy from "public/drawings/walkingGuy.webp";
 
-const SectionLink = ({ text }) => (
-  <a
-    className="flex items-center gap-8 text-lg text-secondary hover:text-primary transition duration-300 group"
+const SectionLink = ({ color = "secondary", text }) => (
+  <Button
+    className="group"
     href={`#${slugify(text, { lower: true })}`}
+    color={color}
   >
     <span className="animate-float">↓</span> {text}
-  </a>
+  </Button>
 );
 
 const Home = () => {
-  const printResume = () => {
-    const iframe = document.frames
-      ? document.frames["resume"]
-      : document.getElementById("resume");
-    const iframeWindow = iframe.contentWindow || iframe;
-
-    iframe.focus();
-    iframeWindow.print();
-
-    return false;
-  };
-
   return (
     <>
       <header className="px-page pb-page pt-page-lg flex items-center sm:h-screen bg-secondary-10">
@@ -118,7 +105,7 @@ const Home = () => {
             </li>
           ))}
         </ul>
-        <SectionLink text="Projects" />
+        <SectionLink text="Projects" color="tertiary" />
       </Section>
 
       <Section
@@ -152,114 +139,10 @@ const Home = () => {
             </li>
           ))}
         </ul>
-        <SectionLink text="Experience" />
+        <Button color="tertiary" href="/resume">
+          Resumé
+        </Button>
       </Section>
-
-      <Section
-        title="Experience"
-        titleActions={
-          <button
-            className="flex items-center gap-8 px-16 h-48 rounded-full border-2 border-secondary-50 hover:border-secondary bg-secondary-10 font-normal text-base text-secondary mt-16 transition sticky top-88"
-            onClick={() => printResume()}
-          >
-            Print Resumé
-          </button>
-        }
-        columns
-      >
-        <ul className="flex flex-col gap-page relative">
-          <span className="absolute top-12 bottom-32 -left-16 w-2 bg-primary-10 -translate-x-1/2" />
-          {EXPERIENCE.map((item) => (
-            <li key={item.company}>
-              <hgroup className="mb-16">
-                <h3 className="flex items-center gap-12 font-bold text-lg relative">
-                  <Dot />
-                  {item.company}
-                </h3>
-                <p className="text-sm">{item.notes}</p>
-              </hgroup>
-              {item.jobs && (
-                <ul className="space-y-16">
-                  {item.jobs.map((job) => (
-                    <li className="relative" key={job.title}>
-                      <h4 className="font-medium flex gap-12 items-baseline relative">
-                        <Dot border />
-                        {job.title}
-                        <TimeStamp time={job.years} />
-                      </h4>
-                      <p className="text-sm text-primary-75">{job.notes}</p>
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </li>
-          ))}
-          <li className="text-sm">
-            <h3 className="flex items-baseline gap-12 font-bold text-lg mb-8 text-primary-75 relative">
-              <Dot subtle />
-              Not important, but…
-            </h3>
-            <ul className="space-y-8">
-              {MISC_JOBS.map((job) => (
-                <li key={job.title}>
-                  <div className="text-primary-75 font-medium relative">
-                    <Dot subtle border />
-                    {job.title} <TimeStamp time={job.years} />
-                  </div>{" "}
-                  <div className="text-primary-50">{job.notes}</div>
-                </li>
-              ))}
-            </ul>
-          </li>
-        </ul>
-      </Section>
-
-      <Section
-        title="Education"
-        columns
-        contentClassName="grid sm:grid-cols-2 gap-24"
-        noTopPadding
-      >
-        <ul className="flex flex-col gap-page relative">
-          <li>
-            <h3 className="flex items-baseline gap-12 font-bold text-lg mb-8 relative">
-              <abbr title="Abilene Christian University">ACU</abbr>
-            </h3>
-            <ul className="space-y-16">
-              <li className="relative">
-                <h4 className="font-medium flex gap-12 items-baseline relative">
-                  <Dot />
-                  BFA Painting
-                  <TimeStamp time="2002–2007" />
-                </h4>
-              </li>
-            </ul>
-          </li>
-        </ul>
-        <figure className="p-32 rounded-sm bg-gray-200 dark:bg-gray-300">
-          <Image
-            alt="Painting of a scene from The Rockford Files"
-            placeholder="blur"
-            sizes="(min-width: 640px) 50vw, (min-width: 960px) 30vw, (min-width: 1400px) 400px, 100vw"
-            src={dareToWin}
-          />
-        </figure>
-      </Section>
-
-      <Section title="Skills & Tools" columns noTopPadding>
-        <ul className="grid grid-cols-1 gap-24">
-          {TOOLS.map((tool, i) => (
-            <li className="md:rounded-lg md:p-16 md:border-2" key={tool.title}>
-              <h3 className="font-medium md:mb-8">{tool.title}</h3>
-              <p className="text-sm text-primary-75">
-                {tool.notes.join(" • ")}
-              </p>
-            </li>
-          ))}
-        </ul>
-      </Section>
-
-      <iframe id="resume" src="/resume" className="hidden" title="Resumé" />
     </>
   );
 };

@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Footer from "components/Footer";
 import Nav from "components/Nav";
 import SkipLink from "components/SkipLink";
 import { A } from "components/Content";
@@ -17,7 +18,8 @@ const Layout = ({ children, ...props }) => {
       <SkipLink />
       <Nav />
       <main id="main">{children}</main>
-      <footer className="px-page py-24 bg-tertiary-05 text-center text-xs print:hidden">
+      <Footer />
+      <footer className="px-page py-24 bg-tertiary-05 text-center text-2xs print:hidden hidden">
         Built with React and Next.js •{" "}
         <A href="https://github.com/andyra/andysmith" newTab>
           View it on GitHub

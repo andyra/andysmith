@@ -1,55 +1,54 @@
 import React from "react";
 import Link from "next/link";
 import cn from "classnames";
-
+import { A } from "components/Content";
 import { CONTACT_INFO } from "../constants";
-
-// Subcomponents
-// ----------------------------------------------------------------------------
-
-const ResumeLink = () => {
-  const classes = cn(
-    "flex items-center justify-center gap-8 w-128 h-128 sm:w-160 sm:h-160 rounded-full transition flex-shrink-0",
-    "border border-primary text-sm text-center hover:bg-tertiary",
-    "animate-float"
-  );
-
-  return (
-    <Link href="/info">
-      <a className={classes}>
-        View
-        <br />
-        Resumé
-      </a>
-    </Link>
-  );
-};
 
 // Component
 // ----------------------------------------------------------------------------
 
 const Footer = () => (
-  <footer className="flex flex-wrap bg-primary-05 gap-16 p-page">
-    <div className="w-full md:flex-1 flex-shrink-0">
-      Andy Smith
-      <div className="whitespace-nowrap">Product Designer</div>
+  <footer className="p-page bg-secondary-25 print:hidden">
+    <div className="max-w-screen-xl mx-auto flex gap-16">
+      <div className="flex-1">
+        <strong className="font-semibold">Andy Smith</strong>
+        <div className="text-sm whitespace-nowrap">Product Designer</div>
+        <div className="flex flex-col items-start gap-12 md:flex-row md:items-center my-page text-sm text-left lg:text-base">
+          {CONTACT_INFO.map((item, i) => (
+            <>
+              <a
+                className="underline underline-offset-2 decoration-primary-25 hover:decoration-primary transition"
+                href={item.href}
+                key={item.label}
+              >
+                {item.value}
+              </a>
+              {i < 2 && <span className="hidden md:block">•</span>}
+            </>
+          ))}
+        </div>
+        <p className="text-2xs text-primary-50">
+          Built with React and Next.js •{" "}
+          <A href="https://github.com/andyra/andysmith" newTab>
+            View it on GitHub
+          </A>
+        </p>
+      </div>
+      <Link href="/about">
+        <a
+          className={cn(
+            "flex items-center justify-center gap-8 w-128 h-128 sm:w-160 sm:h-160 rounded-full transition flex-shrink-0",
+            "border-2 border-secondary text-sm text-secondary font-medium text-center",
+            "hover:bg-secondary hover:text-ground",
+            "animate-float"
+          )}
+        >
+          View
+          <br />
+          Resumé
+        </a>
+      </Link>
     </div>
-    <ResumeLink />
-    <dl className="self-end grid grid-cols-[64px,1fr] gap-x-16 text-sm w-full xs:w-auto">
-      {CONTACT_INFO.map((item) => (
-        <React.Fragment key={item.label}>
-          <dt className="font-medium xs:text-right">{item.label}</dt>
-          <dd>
-            <a
-              className="h-32 block font-mono underline underline-offset-4 hover:decoration-wavy decoration-primary hover:text-tertiary hover:decoration-accent hover:underline-offset-2 transition"
-              href={item.href}
-            >
-              {item.value}
-            </a>
-          </dd>
-        </React.Fragment>
-      ))}
-    </dl>
   </footer>
 );
 

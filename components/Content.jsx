@@ -33,7 +33,7 @@ export const Section = ({
   );
 
   const headingClasses = cn(
-    columns && "font-medium text-xl md:text-2xl lg:w-1/3",
+    columns && "font-medium text-2xl lg:w-1/3 mb-page lg:mb-0",
     !columns && "font-semibold text-3xl sm:text-5xl"
   );
 

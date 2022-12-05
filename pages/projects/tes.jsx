@@ -30,7 +30,7 @@ const Tes = () => {
     <>
       <ProjectHeader
         title="TES.fm"
-        description="A PWA built with React to showcase various music projects some friends and I have put together over the years. Includes fancy stuff like an audio player, queueing, full screen mode, search, and even a &ldquo;Setlist Computor&rdquo; to create randomized setlists using Brian Eno's oblique strategies."
+        description="A site I designed and built to showcase various music projects some friends and I have put together over the years. Includes fancy stuff like an audio player, queueing, full screen mode, search, and PWA support."
         link={{ href: "https://tes.fm", title: "View the Project" }}
       />
 
@@ -124,10 +124,17 @@ const Tes = () => {
         </figure>
       </Section>
 
-      <Section title="Other fun stuff" columns noTopPadding>
+      <Section title="Keep it interesting" columns noTopPadding>
         <p>
-          A full-screen visualizer, phony dot-matrix simulations, and a setlist
-          computer. Why not, I ask you.
+          We frequently create randomized setlists for practice, but wanted to
+          find a way to insert an element of chance beyond the order of the
+          songs chosen. To that end, I added the ability to insert{" "}
+          <A href="https://en.wikipedia.org/wiki/Oblique_Strategies" newTab>
+            Oblique Stratgegies
+          </A>{" "}
+          into the songs so we could perform them differently each time. I also
+          added the ability to insert &ldquobleeds&rdquo; between songs, which
+          is a cue to blend two songs together
         </p>
         <figure className="pt-page px-page lg:px-0">
           <div className="rotate-1">

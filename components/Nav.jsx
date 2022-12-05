@@ -73,7 +73,7 @@ const Nav = () => {
       </NavLink>
       <div className="flex items-center">
         <NavLink href="/#projects">Projects</NavLink>
-        <NavLink href="/#experience">Info</NavLink>
+        <NavLink href="/about">About</NavLink>
         <ThemeSwitcher />
       </div>
       {/* Phony border offset so the mix-blend-mode doesn't goof with it */}
