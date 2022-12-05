@@ -1,9 +1,11 @@
 import cn from "classnames";
 import slugify from "slugify";
-import Divider from "components/divider";
+
+export const Divider = ({ className }) => (
+  <hr className={cn("border-t-2 border-primary opacity-10", className)} />
+);
 
 // Note: Switches to stacked layout at `screen-lg`
-
 export const Section = ({
   children,
   className,
@@ -65,6 +67,7 @@ export const A = ({ children, newTab, href }) => {
   return (
     <a
       className="underline underline-offset-2 decoration-primary-50 hover:decoration-secondary hover:text-secondary cursor-pointer transition"
+      href={href}
       {...attrs}
     >
       {children}

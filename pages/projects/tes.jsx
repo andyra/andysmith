@@ -3,10 +3,9 @@ import Image from "next/future/image";
 import { useTheme } from "next-themes";
 
 import Callout from "components/Callout";
-import Divider from "components/Divider";
 import ProjectFooter from "components/ProjectFooter";
 import ProjectHeader from "components/ProjectHeader";
-import { A, Section } from "components/Content";
+import { A, Divider, Section } from "components/Content";
 
 import MobileBezel from "public/mobile.svg";
 import homeLight from "public/projects/tes/homeLight.webp";
@@ -35,7 +34,7 @@ const Tes = () => {
         link={{ href: "https://tes.fm", title: "View the Project" }}
       />
 
-      <Section title="Yes, but Why?">
+      <Section title="Yes, but Why?" columns>
         <p>
           This project started off as a tool to help my band build randomized
           setlists from the hundreds of songs we&apos;ve written over the years.
@@ -73,7 +72,7 @@ const Tes = () => {
         </figure>
       </Section>
 
-      <Section title="Technical Notes">
+      <Section title="Technical Notes" columns noTopPadding>
         <p>
           I built this using{" "}
           <A href="https://nextjs.org/" newTab>
@@ -125,7 +124,7 @@ const Tes = () => {
         </figure>
       </Section>
 
-      <Section title="Other fun stuff">
+      <Section title="Other fun stuff" columns noTopPadding>
         <p>
           A full-screen visualizer, phony dot-matrix simulations, and a setlist
           computer. Why not, I ask you.

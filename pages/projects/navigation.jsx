@@ -1,9 +1,8 @@
 import Link from "next/link";
 import Callout from "components/Callout";
-import Divider from "components/Divider";
 import ProjectFooter from "components/ProjectFooter";
 import ProjectHeader from "components/ProjectHeader";
-import { Section } from "components/Content";
+import { A, Divider, Section } from "components/Content";
 
 const Navigation = () => {
   return (
@@ -140,10 +139,9 @@ const Navigation = () => {
           <ul className="list list-disc space-y-16 pl-16">
             <li>
               I built a{" "}
-              <ExternalLink
-                href="https://pingboard.github.io/pb-nav/"
-                text="React Prototype"
-              />{" "}
+              <A href="https://pingboard.github.io/pb-nav/" newTab>
+                React Prototype
+              </A>
               to run task-based user testing.
             </li>
             <li>Internal testing with 5 people from various departments.</li>

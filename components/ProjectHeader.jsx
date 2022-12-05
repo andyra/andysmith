@@ -1,8 +1,8 @@
-import Divider from "components/Divider";
+import { Divider } from "components/Content";
 
 const ProjectHeader = ({ title, description, link }) => (
   <header className="px-page pb-page pt-page-lg bg-tertiary-10 text-tertiary-75">
-    <div className="max-w-screen-lg mx-auto">
+    <div className="max-w-screen-lg mx-auto space-y-24 md:space-y-48">
       <h1 className="font-semibold text-2xl sm:text-3xl lg:text-5xl text-tertiary">
         {title}
       </h1>

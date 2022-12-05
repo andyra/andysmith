@@ -8,7 +8,7 @@ import { CONTACT_INFO, EXPERIENCE, MISC_JOBS, TOOLS } from "../constants";
 import walkingGuy from "public/drawings/walkingGuy.webp";
 
 const ResumeSection = ({ children, className, contentClassName, h1, h2 }) => (
-  <section className={cn("flex max-w-screen-lg mx-auto", className)}>
+  <section className={cn("flex", className)}>
     <hgroup className="w-1/4">
       {h1 ? h1 : <h2 className="font-medium">{h2}</h2>}
     </hgroup>
@@ -20,8 +20,8 @@ const ResumeSection = ({ children, className, contentClassName, h1, h2 }) => (
 // ----------------------------------------------------------------------------
 
 const Resume = () => (
-  <div className="px-[1in] pt-[1in] pb-[0.5in] text-print-base space-y-[20pt]">
-    <header className="flex justify-between max-w-screen-lg mx-auto">
+  <div className="px-[1in] pt-[1in] pb-[0.5in] text-black text-print-base space-y-[20pt]">
+    <header className="flex justify-between">
       <figure className="w-1/4">
         <Image
           alt="Picture of the author"
@@ -31,6 +31,10 @@ const Resume = () => (
         />
       </figure>
       <div className="flex-1">
+        <div className="bg-secondary-05 border border-secondary-50 rounded p-24 mb-16 print:hidden">
+          This page is meant to be printed, so it may look a tad funky on a
+          computer screen.
+        </div>
         <p className="flex-1 text-print-lg">
           <strong>Hi! I&apos;m Andy Smith, a Product Designer</strong> with an
           affinity for front-end development. I have 10+ years experience,
@@ -69,11 +73,11 @@ const Resume = () => (
               <ul className="space-y-[4pt]">
                 {item.jobs.map((job) => (
                   <li key={job.title}>
-                    <h4 className="font-medium">
-                      {job.title} •{" "}
-                      <TimeStamp time={job.years} className="text-print-base" />
+                    <h4 className="font-medium space-x-[8pt]">
+                      <span>{job.title}</span>
+                      <TimeStamp time={job.years} className="text-print-sm" />
                     </h4>
-                    <p className="text-print-sm text-primary-75">{job.notes}</p>
+                    <p className="text-print-sm opacity-60">{job.notes}</p>
                   </li>
                 ))}
               </ul>
@@ -89,9 +93,9 @@ const Resume = () => (
           <h3 className="font-semibold">ACU</h3>
           <ul className="space-y-[4pt]">
             <li className="relative">
-              <h4 className="font-medium">
-                BFA Painting •{" "}
-                <TimeStamp time="2002–2007" className="text-print-base" />
+              <h4 className="font-medium space-x-[8pt]">
+                <span>BFA Painting</span>
+                <TimeStamp time="2002–2007" className="text-print-sm" />
               </h4>
             </li>
           </ul>
@@ -102,9 +106,11 @@ const Resume = () => (
     <ResumeSection h2="Skills & Tools">
       <ul className="list-disc space-y-[4pt]">
         {TOOLS.map((tool, i) => (
-          <li className="" key={tool.title}>
-            <span className="font-semibold">{tool.title}:</span>{" "}
-            <span className="text-primary-75">{tool.notes.join(", ")}</span>
+          <li className="flexXXX" key={tool.title}>
+            <div className="w-[1in] font-semibold">{tool.title}</div>
+            <span className="text-print-sm opacity-60">
+              {tool.notes.join(", ")}
+            </span>
           </li>
         ))}
       </ul>

@@ -1,9 +1,8 @@
 import Link from "next/link";
 import Callout from "components/Callout";
-import Divider from "components/Divider";
 import ProjectFooter from "components/ProjectFooter";
 import ProjectHeader from "components/ProjectHeader";
-import { Section } from "components/Content";
+import { Divider, Section } from "components/Content";
 
 const Meetings = () => {
   return (

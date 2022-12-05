@@ -4,8 +4,12 @@ import Image from "next/future/image";
 import Link from "next/link";
 import cn from "classnames";
 import slugify from "slugify";
-import { Dot, Section, TimeStamp } from "components/Content";
+import { Divider, Dot, Section, TimeStamp } from "components/Content";
 import Tooltip from "components/Tooltip";
+
+// TODO: Button/link component
+// TODO: Slightly less page padding on mobile screens
+// TODO: Mobile images should include bezel
 
 import {
   CONTACT_INFO,
@@ -155,7 +159,7 @@ const Home = () => {
         title="Experience"
         titleActions={
           <button
-            className="flex items-center gap-8 px-16 h-48 rounded-full border-2 border-tertiary-50 hover:border-tertiary bg-tertiary-10 font-normal text-base text-tertiary mt-16 transition"
+            className="flex items-center gap-8 px-16 h-48 rounded-full border-2 border-secondary-50 hover:border-secondary bg-secondary-10 font-normal text-base text-secondary mt-16 transition sticky top-88"
             onClick={() => printResume()}
           >
             Print Resumé
