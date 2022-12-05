@@ -24,7 +24,7 @@ export const Section = ({
   const contentClasses = cn(contentClassName || "space-y-48");
 
   const containerClasses = cn(
-    "flex flex-col gap-48",
+    "flex flex-col",
     "max-w-screen-xl mx-auto",
     columns && "lg:flex-row",
     !columns && contentClassName
@@ -44,7 +44,7 @@ export const Section = ({
               {title}
               {titleActions}
             </h2>
-            {!columns && <Divider />}
+            {!columns && <Divider className="my-48" />}
             <div className={cn("flex-1", contentClasses)}>{children}</div>
           </>
         ) : (
@@ -71,3 +71,30 @@ export const A = ({ children, newTab, href }) => {
     </a>
   );
 };
+
+export const TimeStamp = ({ className, hideDot, subtle, time }) => (
+  <time
+    className={cn(
+      "font-normal",
+      subtle && "text-primary-50",
+      className || "text-sm"
+    )}
+  >
+    {time}
+  </time>
+);
+
+export const Dot = ({ subtle, border }) => (
+  <span
+    aria-hidden
+    className={cn(
+      "absolute top-1/2 -left-16 -translate-x-1/2 -translate-y-1/2 z-10",
+      "h-12 w-12 rounded-full",
+      border && "bg-ground border-2",
+      !subtle && !border && "bg-secondary",
+      !subtle && border && "border-secondary-50",
+      subtle && !border && "bg-primary-75",
+      subtle && border && "border-primary-25"
+    )}
+  />
+);

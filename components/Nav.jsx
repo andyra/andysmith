@@ -21,7 +21,7 @@ const NavLink = ({ href, className, children }) => {
     <Link href={href}>
       <a
         className={cn(
-          "text-sm xs:text-base flex items-center h-64 px-12 xs:px-24 hover:text-tertiary font-medium transition",
+          "text-sm xs:text-base flex items-center h-64 px-12 xs:px-24 hover:text-secondary font-medium transition",
           isCurrent && "text-secondary",
           className
         )}
@@ -39,7 +39,7 @@ const ThemeSwitcher = () => {
   return (
     <ClientOnly>
       <button
-        className="flex items-center justify-center h-64 px-12 -mr-12 xs:px-24 xs:-mr-24 hover:text-tertiary transition"
+        className="flex items-center justify-center h-64 px-12 -mr-12 xs:px-24 xs:-mr-24 hover:text-secondary transition"
         onClick={() => {
           setTheme(theme === "light" ? "dark" : "light");
         }}
@@ -73,7 +73,7 @@ const Nav = () => {
       </NavLink>
       <div className="flex items-center">
         <NavLink href="/#projects">Projects</NavLink>
-        <NavLink href="/info">Info</NavLink>
+        <NavLink href="/#experience">Info</NavLink>
         <ThemeSwitcher />
       </div>
       {/* Phony border offset so the mix-blend-mode doesn't goof with it */}

@@ -60,14 +60,19 @@ export const HOW_I_CAN_HELP = [
 
 export const CONTACT_INFO = [
   {
-    label: "Phone",
-    value: "(512) 731–6063",
-    href: "phone:5127316063",
+    label: "Portfolio",
+    value: "andysmith.io",
+    href: "https://andysmith.io",
   },
   {
     label: "Email",
     value: "asmith.esq@gmail.com",
     href: "mailto:asmith.esq@gmail.com",
+  },
+  {
+    label: "Phone",
+    value: "(512) 731–6063",
+    href: "phone:5127316063",
   },
   {
     label: "GitHub",

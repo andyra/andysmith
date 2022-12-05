@@ -83,6 +83,10 @@ module.exports = {
       "5xl": ["4.5rem", { lineHeight: "1" }],
       "6xl": ["6rem", { lineHeight: "1" }],
       "7xl": ["8rem", { lineHeight: "1" }],
+      "print-sm": ["8pt", { lineHeight: "12pt" }],
+      "print-base": ["10pt", { lineHeight: "14pt" }],
+      "print-lg": ["12pt", { lineHeight: "16pt" }],
+      "print-xl": ["14pt", { lineHeight: "16pt" }],
     },
     screens: {
       xs: "480px",
