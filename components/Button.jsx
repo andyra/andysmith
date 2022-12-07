@@ -5,8 +5,15 @@ const Button = ({
   className,
   color = "secondary",
   href,
+  newTab,
   ...props
 }) => {
+  const attrs = {};
+  if (newTab) {
+    attrs["target"] = "_blank";
+    attrs["rel"] = "noopener noreferrer";
+  }
+
   const classes = cn(
     "flex items-center gap-8 px-16 w-fit h-48 rounded-full border-2 font-normal text-base transition",
     color === "secondary" &&
@@ -17,11 +24,11 @@ const Button = ({
   );
 
   return href ? (
-    <a className={classes} href={href} {...props}>
+    <a className={classes} href={href} {...attrs} {...props}>
       {children}
     </a>
   ) : (
-    <button className={classes} type="button" {...props}>
+    <button className={classes} type="button" {...attrs} {...props}>
       {children}
     </button>
   );

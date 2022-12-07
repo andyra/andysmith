@@ -8,7 +8,6 @@ import Button from "components/Button";
 import Tooltip from "components/Tooltip";
 
 // TODO: Button/link component
-// TODO: Slightly less page padding on mobile screens
 // TODO: Mobile images should include bezel
 
 import {

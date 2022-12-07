@@ -7,7 +7,6 @@ import ProjectFooter from "components/ProjectFooter";
 import ProjectHeader from "components/ProjectHeader";
 import { A, Divider, Section } from "components/Content";
 
-import MobileBezel from "public/mobile.svg";
 import homeLight from "public/projects/tes/homeLight.webp";
 import homeDark from "public/projects/tes/homeDark.webp";
 import albumsLight from "public/projects/tes/albumsLight.webp";
@@ -107,7 +106,6 @@ const Tes = () => {
               sizes="(min-width: 960px) 960w, 100vw"
               src={mobileCoolModeLight}
             />
-            <MobileBezel className="absolute top-0 left-0 w-full" />
           </div>
           <div className="w-320 px-[10px] py-[2px] rotate-3 -ml-64 mt-48 relative">
             <Image
@@ -119,7 +117,6 @@ const Tes = () => {
                 resolvedTheme === "dark" ? mobileAlbumLight : mobileAlbumDark
               }
             />
-            <MobileBezel className="absolute top-0 left-0 w-full" />
           </div>
         </figure>
       </Section>

@@ -42,6 +42,12 @@ module.exports = {
         "tertiary-25": "var(--tertiary-25)",
         "tertiary-10": "var(--tertiary-10)",
         "tertiary-05": "var(--tertiary-05)",
+        warning: "var(--warning)",
+        "warning-75": "var(--warning-75)",
+        "warning-50": "var(--warning-50)",
+        "warning-25": "var(--warning-25)",
+        "warning-10": "var(--warning-10)",
+        "warning-05": "var(--warning-05)",
       },
       fontFamily: {
         base: [

@@ -26,7 +26,7 @@ export const Section = ({
   const contentClasses = cn(contentClassName || "space-y-48");
 
   const containerClasses = cn(
-    "flex flex-col",
+    "flex flex-col gap-page",
     "max-w-screen-xl mx-auto",
     columns && "lg:flex-row",
     !columns && contentClassName
@@ -50,7 +50,7 @@ export const Section = ({
             <div className={cn("flex-1", contentClasses)}>{children}</div>
           </>
         ) : (
-          { children }
+          children
         )}
       </div>
     </section>
@@ -100,4 +100,17 @@ export const Dot = ({ subtle, border }) => (
       subtle && border && "border-primary-25"
     )}
   />
+);
+
+const CALLOUT_COLORS = {
+  default: "bg-primary-10 border-primary-25",
+  info: "bg-secondary-05 border-info-10",
+  positive: "bg-positive-10 border-positive-25",
+  warning: "bg-warning-10 border-warning-25",
+};
+
+export const Callout = ({ children, className, color = "default" }) => (
+  <div className={cn("p-24 border rounded", CALLOUT_COLORS[color], className)}>
+    {children}
+  </div>
 );

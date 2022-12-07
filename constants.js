@@ -78,20 +78,13 @@ export const HOW_I_CAN_HELP = [
 
 export const PROJECTS = [
   {
-    title: "Pingboard Nav Redesign",
+    title: "Org Chart Redesign",
     image: "",
-    href: "/projects/navigation",
-    details:
-      "A forward-looking update of the navigation and overall look & feel of the web app",
+    href: "/projects/org-chart-redesign",
+    details: "",
   },
   {
-    title: "1:1 Meetings",
-    image: "",
-    href: "/projects/meetings",
-    details: "1:1s • Surveys • Applause • Mobile App",
-  },
-  {
-    title: "Pingboard Mobile",
+    title: "Pingboard Mobile App",
     image: "",
     href: "/projects/pingboard-mobile",
     details: "A cross-platform mobile app for Pingboard customers",
@@ -101,6 +94,12 @@ export const PROJECTS = [
     image: "",
     href: "/projects/tes",
     details: "Personal music player project built with React",
+  },
+  {
+    title: "1:1 Meetings",
+    image: "",
+    href: "/projects/meetings",
+    details: "1:1s • Surveys • Applause • Mobile App",
   },
 ];
 
