@@ -85,6 +85,10 @@
 @tailwind components;
 @tailwind utilities;
 
+strong {
+  @apply font-semibold;
+}
+
 /* Hide the file name and time stamp when printing */
 @page {
   margin: 0mm;

@@ -22,6 +22,7 @@ import oldNav from "public/projects/org-chart/old-nav.webp";
 import oldPrivate from "public/projects/org-chart/old-private.webp";
 import oldFilterSearch from "public/projects/org-chart/old-filter-search.webp";
 import newFinal from "public/projects/org-chart/new-final.webp";
+import wireframes from "public/projects/org-chart/wireframes.webp";
 
 const TableRow = ({ title, percent }) => (
   <li className="xs:flex xs:items-center xs:gap-16">
@@ -48,13 +49,6 @@ const OrgChart = ({ metaTitle }) => {
         title={metaTitle}
         description="After months of design and research, we had landed on a set of global design changes to update the look &amp; feel of Pingboard. While most pages wouldn't need to be updated, there were a handful that would need significant changes in order to work with the new layout, chief among them the Org Chart."
       />
-
-      <Section title="Why?" columns>
-        <p>
-          Something here about business goals, customer success, bottom line,
-          etc.
-        </p>
-      </Section>
 
       <Section title="Challenges" columns>
         <SubSection title="Conflicting panels">
@@ -125,65 +119,63 @@ const OrgChart = ({ metaTitle }) => {
         </SubSection>
       </Section>
 
-      <Section title="Let's get crackin'" columns>
-        <p>
-          I already knew some of the general UI conflicts we were trying to
-          solve, so I started by mocking up ideas in Sketch. This was a useful
-          excercise to try out a few different approaches without getting lost
-          in the details.
-        </p>
-        <figure className="p-16 rounded bg-primary-10">
-          - Where to move the Build panel? Can it remain on the left? - Nav
-          collapsible or not? - Weird to have two panels on the right? - How to
-          get to Private org charts? - Is there enough room for search, filter,
-          zoom, plus everything else?
-        </figure>
-        <p>
-          I like to brainstorm excessively, without judgement, then prune out
-          the ideas that are clumsy, require out-of-scope changes, or are simply
-          too weird. Once I had narrowed down to a small set of reasonable
-          options, I worked with the VP of Product to pick a couple to flesh out
-          in more detail.
-        </p>
-      </Section>
-
-      <Section title="Yes, but is it any good?" columns>
-        <p>
-          At this point, we had narrowed it down to a couple sensible options,
-          but we weren&apos;t sure which one would &ldquo;feel right.&rdquo;
-          Something might look great sitting quietly on a Figma frame, but feel
-          awkward when interacting in the browser.
-        </p>
-        <p>
-          To get a better sense of how it might work, I built a React prototype
-          on Next.js and published it to GitHub Pages. As a bonus, I wired up
-          GitHub Actions to deploy automatically whenever I pushed changes to
-          master. This ended up being a convenient way to quickly iterate and
-          publish changes.
-        </p>
-        <Button href="https://pingboard.github.io/pb-nav/org-chart" newTab>
-          View the Prototype
-        </Button>
-        <Callout>
-          It&apos;s certainly possible make prototypes with design tools
-          (Sketch, Figma, et. al.), but I&apos;ve found that building something
-          in the browser gives testers a much better sense for what the app will
-          _actually_ feel like. In addition, building with code gives you so
-          much more power to build bespoke prototypes and teaches useful
-          programming skills. It can also speed up development since many of the
-          styles and interactions can be copied over to production code. I place
-          my seal upon it!
-        </Callout>
+      <Section title="Figuring it out" columns>
+        <SubSection title="Start without (too much) judgement">
+          <p>
+            I like to brainstorm excessively to start with, in case any novel
+            approaches jump out. Tools like Sketch and Figma are great at
+            allowing you to quickly dump ideas on a screen without getting lost
+            in the details.
+          </p>
+          <Figure caption="One of several pages of Sketch iterations">
+            <Image
+              className="rounded-sm"
+              src={wireframes}
+              alt="Legacy org chart build panel"
+              sizes="(min-width: 1360px) 755px, (min-width: 960px) 55vw, 90vw"
+            />
+          </Figure>
+        </SubSection>
+        <SubSection title="Narrow down on the good bits">
+          <p>
+            After working for a few days, I pruned out the ideas that were
+            clumsy, required out-of-scope changes, or were simply too weird. I
+            then worked with the VP of Product to flesh out in more detail.
+          </p>
+          <p>
+            After narrowing in on a couple of solid options, we wanted to get a
+            better sense for how each might work in real life&mdash; something
+            might look great sitting quietly on a Figma frame, but feel awkward
+            when interacting in the browser.
+          </p>
+          <p>
+            To this end, I built a React prototype on Next.js and published it
+            to GitHub Pages. As a bonus, I wired up GitHub Actions to deploy
+            automatically whenever I pushed changes to master. This ended up
+            being a convenient way to quickly iterate and publish changes.
+          </p>
+          <Callout color="info" className="text-sm">
+            <p>Why prototype with code?</p>
+            <p className="text-secondary-75 mix-blend-multiply">
+              I&apos;ve found that building prototypes in the browser gives
+              people a much better sense for what the app will actually feel
+              like, in addition to teaching useful programming skills.
+            </p>
+          </Callout>
+          <Button href="https://pingboard.github.io/pb-nav/org-chart" newTab>
+            View Prototype →
+          </Button>
+        </SubSection>
       </Section>
 
       <Section title="Validation" columns>
         <SubSection title="User Testing">
           <p>
-            We scheduled UI testing-sessions with a couple cohorts: existing
-            customers who had developed musicle memory with our tools and
-            potential customers who had never heard of Pingboard. In addition,
-            we started off with a round of internal testing so we could work out
-            any obvious kinks before talking to other people.
+            We scheduled <strong>UI testing-sessions</strong> with a couple
+            cohorts: existing customers who had developed musicle memory with
+            our tools and potential customers who had never heard of Pingboard.
+            In addition, we started off with a round of internal testing so we
+            could work out any obvious kinks before talking to other people.
           </p>
           <figure className="border rounded p-16 space-y-16">
             <ul className="flex items-center gap-8 text-center text-sm">
@@ -241,7 +233,6 @@ const OrgChart = ({ metaTitle }) => {
             </li>
           </ul>
         </SubSection>
-        <OrderedList></OrderedList>
         <p>
           After each cohort, we aggregated the results and found problem areas.
           If there were obvious solutions for them, I would make changes to the
@@ -250,59 +241,95 @@ const OrgChart = ({ metaTitle }) => {
         </p>
       </Section>
 
-      <Section title="Where we landed" columns>
-        <Figure>
+      <Section
+        columns
+        title="Where We Landed"
+        contentClassName="lg:col-span-2 lg:grid lg:grid-cols-[1fr,2fr] gap-page items-start"
+      >
+        <div className="relative hidden lg:block lg:col-span-2">
+          <div className="z-10 absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div className="flex items-center px-16 h-40 rounded-full bg-tertiary text-ground">
+              Try me!
+            </div>
+          </div>
+          <iframe
+            src="https://pingboard.github.io/pb-nav/org-chart"
+            className="w-full h-[75vh] border-4 border-tertiary-50 rounded"
+          />
+        </div>
+        <Figure className="lg:hidden">
           <Image
             src={newFinal}
             alt="Legacy org chart build panel"
             sizes="(min-width: 1360px) 755px, (min-width: 960px) 55vw, 90vw"
           />
         </Figure>
-        <ul className="list-disc ml-16 space-y-16">
-          <li>
-            <strong className="font-semibold">Better Panel Arrangement</strong>
-            <p className="text-primary-75">
-              Make the primary nav collapsible to save space when editing the
-              org chart. The Build and Edit panels both use the same space on
-              the right.
-            </p>
-          </li>
-          <li>
-            <strong className="font-semibold">Unify Toolbar</strong>
-            <p className="text-primary-75">
-              By putting all the controls in the top bar, we can remove the
-              special private org chart version.
-            </p>
-          </li>
-          <li>
-            <strong className="font-semibold">
-              Consolidate Title and Secondary Nav
-            </strong>
-            <p className="text-primary-75">This</p>
-          </li>
-          <li>
-            <strong className="font-semibold">
-              Search & Filter improvements
-            </strong>
-            <p className="text-primary-75">
-              Clumping these controls together saves space and helps organize
-              the toolbar. Additionally, we added breadcrumbs when filtering to
-              highlight your location.
-            </p>
-          </li>
-        </ul>
-        <Button
-          color="tertiary"
-          href="https://pingboard.github.io/pb-nav/org-chart"
-          newTab
-        >
-          Play with the Prototype →
-        </Button>
+        <div className="lg:col-start-2">
+          <ul className="list-disc ml-16 space-y-16 mb-16">
+            <li>
+              <strong className="font-semibold">
+                Collapsible Nav &amp; Panels
+              </strong>
+              <p className="text-primary-75">
+                Tuck the primary nav away to save space when editing the org
+                chart. The Build and Edit panels both use the same slot on the
+                right, which creates more real-estate.
+              </p>
+            </li>
+            <li>
+              <strong className="font-semibold">Unified Toolbar</strong>
+              <p className="text-primary-75">
+                By putting all the controls in the top bar, we can reduce the
+                number of topbars as well as removing the special private org
+                chart toolbar.
+              </p>
+            </li>
+            <li>
+              <strong className="font-semibold">
+                Consolidated Title and Secondary Nav
+              </strong>
+              <p className="text-primary-75">
+                A more intuitive—and compact—way to navigate between different
+                charts.
+              </p>
+            </li>
+            <li>
+              <strong className="font-semibold">
+                Search & Filter Improvements
+              </strong>
+              <p className="text-primary-75">
+                Shunking these controls together saves space and helps organize
+                the toolbar. Additionally, we added breadcrumbs when filtering
+                to highlight your location.
+              </p>
+            </li>
+            <li>
+              <strong className="font-semibold">Move secondary controls</strong>
+              <p className="text-primary-75">
+                The zoom and Expand controls moved to the bottom of the screen.
+                These have hotkeys associated with them, plus it&apos;s a fairly
+                common place for other popular map-related apps to place view
+                controls (Google Maps, Apple Maps, etc.).
+              </p>
+            </li>
+          </ul>
+          <Button
+            color="tertiary"
+            href="https://pingboard.github.io/pb-nav/org-chart"
+            newTab
+          >
+            <span className="hidden lg:flex">Open in New Tab</span>
+            <span className="lg:hidden">Play With Prototype</span>→
+          </Button>
+        </div>
       </Section>
 
-      <Section title="Into the wild" columns>
-        - User onboarding updates - Heads up to existing users - What we didn’t
-        get to/Comprimises: Tools in modals instead of sidebar
+      <Section title="Postmortem" columns>
+        <p>
+          In order to ship on time, we decided to cut out updates to the
+          individual settings panels. That felt like a good compromise since
+          they weren&apos;t essential to the navigation updates.
+        </p>
       </Section>
 
       <ProjectFooter />
