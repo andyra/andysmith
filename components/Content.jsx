@@ -57,6 +57,13 @@ export const Section = ({
   );
 };
 
+export const SubSection = ({ children, title }) => (
+  <div className="space-y-16">
+    <h3 className="font-semibold">{title}</h3>
+    {children}
+  </div>
+);
+
 export const A = ({ children, newTab, href }) => {
   const attrs = {};
   if (newTab) {
@@ -113,4 +120,28 @@ export const Callout = ({ children, className, color = "default" }) => (
   <div className={cn("p-24 border rounded", CALLOUT_COLORS[color], className)}>
     {children}
   </div>
+);
+
+export const OrderedList = ({ children, className }) => (
+  <ol className={cn("list-decimal space-y-2em", className)}>{children}</ol>
+);
+
+export const ListItem = ({ children, className, title }) => (
+  <li className={cn("space-y-1/2em", className)}>
+    <h3 className="font-semibold">{title}</h3>
+    <div className="space-y-em">{children}</div>
+  </li>
+);
+
+export const Figure = ({ caption, children }) => (
+  <figure className="space-y-16">
+    <div className="rounded-md border relative overflow-hidden">{children}</div>
+    <figcaption className="text-sm text-warning">{caption}</figcaption>
+  </figure>
+);
+
+export const Highlight = ({ className }) => (
+  <div
+    className={cn("border-2 border-warning rounded-md absolute ", className)}
+  />
 );

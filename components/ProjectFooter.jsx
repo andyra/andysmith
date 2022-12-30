@@ -38,8 +38,8 @@ const ProjectFooter = () => {
   const next = PROJECTS[index === PROJECTS.length - 1 ? 0 : index + 1];
 
   return (
-    <footer className="p-page bg-tertiary-05">
-      <nav className="max-w-screen-xl mx-auto grid grid-cols-2 gap-16 sm:gap-24">
+    <footer className="px-page">
+      <nav className="max-w-screen-xl mx-auto py-page grid grid-cols-2 gap-16 sm:gap-24  border-t-2">
         <FooterLink project={prev} direction="prev" />
         <FooterLink project={next} direction="next" />
       </nav>
