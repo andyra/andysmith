@@ -24,11 +24,11 @@ const About = () => {
   return (
     <>
       <header className="px-page py-page-lg bg-primary-05">
-        <div className="max-w-screen-xl mx-auto flex justify-between">
-          <figure className="hidden xs:block w-1/3 order-last lg:order-first">
+        <div className="max-w-screen-xl mx-auto grid grid-cols-[1fr,2fr] gap-page justify-between">
+          <figure className="hidden xs:block order-last lg:order-first">
             <Image
               alt="Picture of the author"
-              className="w-3/4 lg:w-1/2 lg:scale-x-[-1]"
+              className="w-1/2 lg:w-1/2 lg:scale-x-[-1] ml-auto lg:ml-0"
               placeholder="blur"
               src={walkingGuy}
               priority
