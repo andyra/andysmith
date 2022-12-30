@@ -59,7 +59,7 @@ export const Section = ({
 
 export const SubSection = ({ children, title }) => (
   <div className="space-y-16">
-    <h3 className="font-semibold">{title}</h3>
+    <h3 className="font-medium text-lg">{title}</h3>
     {children}
   </div>
 );

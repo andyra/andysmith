@@ -19,6 +19,9 @@ import {
 
 import oldPanel from "public/projects/org-chart/old-panel.webp";
 import oldNav from "public/projects/org-chart/old-nav.webp";
+import oldPrivate from "public/projects/org-chart/old-private.webp";
+import oldFilterSearch from "public/projects/org-chart/old-filter-search.webp";
+import newFinal from "public/projects/org-chart/new-final.webp";
 
 const TableRow = ({ title, percent }) => (
   <li className="xs:flex xs:items-center xs:gap-16">
@@ -55,12 +58,7 @@ const OrgChart = ({ metaTitle }) => {
 
       <Section title="Challenges" columns>
         <SubSection title="Conflicting panels">
-          <p>
-            The old layout used the left side of the screen for the panel used
-            for org chart building tools, but the new layout places the primary
-            nav in that space.
-          </p>
-          <Figure caption="🤔 We're gonna need this space for the new nav, but there's already an Edit panel on the right.">
+          <Figure>
             <Image
               src={oldPanel}
               alt="Legacy org chart build panel"
@@ -68,14 +66,15 @@ const OrgChart = ({ metaTitle }) => {
             />
             <Highlight className="top-[11%] left-0 right-[80.5%] bottom-0" />
           </Figure>
+          <p>
+            The new nav designs use the left side of the screen for global
+            navigation, but the org chart used that space for its own Build
+            panel. To make matters worse, there was already a right panel in
+            use!
+          </p>
         </SubSection>
         <SubSection title="Accessing private org charts">
-          <p>
-            Since the new design didn&apos;t provide a secondary nav layer, we
-            would need to devise a way for customers to get to their private org
-            charts.
-          </p>
-          <Figure caption="🤔 The new nav doesn't offer secondary navigation.">
+          <Figure>
             <Image
               className="rounded-sm"
               src={oldNav}
@@ -84,23 +83,44 @@ const OrgChart = ({ metaTitle }) => {
             />
             <Highlight className="top-[10%] left-[10%] right-[70%] bottom-[45%]" />
           </Figure>
-        </SubSection>
-        <SubSection title="Scope">
           <p>
-            We wanted to avoid a complete overhaul on the org chart and instead
-            limit our changes to the toolbar and various panels. The code that
-            handled rendering was far more complex and would have involved
-            back-end changes and extensive testing, and we wanted to be able to
-            get something releasable in a single season.
+            Since the new design didn&apos;t provide a secondary nav layer, we
+            would need to devise a way for customers to get to their private org
+            charts.
           </p>
         </SubSection>
-        <SubSection title="Validation">
+        <SubSection title="Private Org Chart Toolbar">
+          <Figure>
+            <Image
+              className="rounded-sm"
+              src={oldPrivate}
+              alt="Legacy org chart build panel"
+              sizes="(min-width: 1360px) 755px, (min-width: 960px) 55vw, 90vw"
+            />
+            <Highlight className="top-0 left-0 right-0 bottom-1/2" />
+          </Figure>
           <p>
-            Since the org chart was such a critical part of our app, we wanted
-            to be doubly sure that these changes wouldn&apos;t disrupt workflows
-            for existing customers. As such, we needed to test not only with
-            people who were new to the app, but people who were intimately
-            familiar with it.
+            Private org charts have a custom toolbar that overrides the primary
+            nav. Is there a way we can consolidate the title, collaborator list,
+            and notifications with the existing toolbar and still keep the
+            primary nav?
+          </p>
+        </SubSection>
+        <SubSection title="Filter & Search">
+          <Figure>
+            <Image
+              className="rounded-sm"
+              src={oldFilterSearch}
+              alt="Legacy org chart build panel"
+              sizes="(min-width: 1360px) 755px, (min-width: 960px) 55vw, 90vw"
+            />
+            <Highlight className="top-[33%] left-0 right-[38%] bottom-[29%]" />
+            <Highlight className="top-0 left-[72.7%] right-0 bottom-[66%]" />
+          </Figure>
+          <p>
+            A couple problems here! Filtering is a bit too subtle and it
+            obfuscates the org chart title. Additionally, it&apos;s easy to get
+            org chart search and global search confused.
           </p>
         </SubSection>
       </Section>
@@ -231,19 +251,53 @@ const OrgChart = ({ metaTitle }) => {
       </Section>
 
       <Section title="Where we landed" columns>
-        <figure className="h-256 rounded bg-primary-10" />
-        <p>[Interactive image thing? Show annotations]</p>
-        <ul className="list-disc ml-16">
-          <li>Less cramped</li>
-          <li>Collapsible Nav</li>
-          <li>Unified Toolbar (Unified Live and Private layouts)</li>
-          <li>Org Chart selector</li>
-          <li>Filter search unification</li>
-          <li>Filter breadcrumbs</li>
-          <li>Tool panels (icons and tooltips)</li>
-          <li>Build panel</li>
-          <li>Zoom/Expand</li>
+        <Figure>
+          <Image
+            src={newFinal}
+            alt="Legacy org chart build panel"
+            sizes="(min-width: 1360px) 755px, (min-width: 960px) 55vw, 90vw"
+          />
+        </Figure>
+        <ul className="list-disc ml-16 space-y-16">
+          <li>
+            <strong className="font-semibold">Better Panel Arrangement</strong>
+            <p className="text-primary-75">
+              Make the primary nav collapsible to save space when editing the
+              org chart. The Build and Edit panels both use the same space on
+              the right.
+            </p>
+          </li>
+          <li>
+            <strong className="font-semibold">Unify Toolbar</strong>
+            <p className="text-primary-75">
+              By putting all the controls in the top bar, we can remove the
+              special private org chart version.
+            </p>
+          </li>
+          <li>
+            <strong className="font-semibold">
+              Consolidate Title and Secondary Nav
+            </strong>
+            <p className="text-primary-75">This</p>
+          </li>
+          <li>
+            <strong className="font-semibold">
+              Search & Filter improvements
+            </strong>
+            <p className="text-primary-75">
+              Clumping these controls together saves space and helps organize
+              the toolbar. Additionally, we added breadcrumbs when filtering to
+              highlight your location.
+            </p>
+          </li>
         </ul>
+        <Button
+          color="tertiary"
+          href="https://pingboard.github.io/pb-nav/org-chart"
+          newTab
+        >
+          Play with the Prototype →
+        </Button>
       </Section>
 
       <Section title="Into the wild" columns>
