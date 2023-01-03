@@ -44,7 +44,7 @@ const Navigation = () => {
             feedback.
           </Callout>
         </div>
-        <figure className="bg-secondary-25 p-24 rounded-lg pointer-events-none">
+        <figure className="bg-indigo-25 p-24 rounded-lg pointer-events-none">
           <div className="bg-white rounded-lg h-256">
             <div className="flex items-center gap-16 p-8">
               <span className="bg-primary h-16 w-64 rounded-sm" />
@@ -98,21 +98,21 @@ const Navigation = () => {
             </li>
           </ul>
         </div>
-        <figure className="bg-secondary-25 p-24 rounded-lg pointer-events-none" />
+        <figure className="bg-indigo-25 p-24 rounded-lg pointer-events-none" />
       </Section>
 
       <Section title="Challenges">
         <div className="space-y-16">
           <p>
-            Although there's nothing particularly novel about navigation on the
-            left side of the page, this projects shows how even a simple change
-            can have broad ramifications.
+            Although there&apos;s nothing particularly novel about navigation on
+            the left side of the page, this projects shows how even a simple
+            change can have broad ramifications.
           </p>
           <ul className="list list-disc space-y-16 pl-16">
             <li>
-              <strong>Modifying complex pages</strong>: Most page layouts won't
-              need to change, but a handful will need adjustments to work with
-              the new layout.
+              <strong>Modifying complex pages</strong>: Most page layouts
+              won&apos;t need to change, but a handful will need adjustments to
+              work with the new layout.
             </li>
             <li>
               <strong>Scope</strong>: Every page will need to be touched. How
@@ -125,7 +125,7 @@ const Navigation = () => {
             </li>
           </ul>
         </div>
-        <figure className="bg-secondary-25 p-24 rounded-lg pointer-events-none" />
+        <figure className="bg-indigo-25 p-24 rounded-lg pointer-events-none" />
       </Section>
 
       <Section title="Research &amp; Validation">
@@ -133,8 +133,8 @@ const Navigation = () => {
           <p>
             That majority of the IA of the site remained the same, but we
             planned on a few key changes and wanted to make sure that existing
-            customers would feel at home with the new layout. Here's what we
-            did:
+            customers would feel at home with the new layout. Here&apos;s what
+            we did:
           </p>
           <ul className="list list-disc space-y-16 pl-16">
             <li>
@@ -175,7 +175,7 @@ const Navigation = () => {
             navigate.
           </p>
         </div>
-        <figure className="bg-secondary-25 p-24 rounded-lg pointer-events-none" />
+        <figure className="bg-indigo-25 p-24 rounded-lg pointer-events-none" />
       </Section>
       <ProjectFooter />
     </>

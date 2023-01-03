@@ -17,7 +17,7 @@ const ProjectNavLink = ({ path, project }) => {
         <a
           className={cn(
             "flex items-center gap-8 h-32 text-sm",
-            isCurrent && "text-secondary"
+            isCurrent && "text-indigo"
           )}
           {...attrs}
         >
@@ -36,7 +36,7 @@ const ProjectNav = () => {
     <nav className="fixed top-page-lg left-page">
       <ul>
         {PROJECTS.map((project) => (
-          <ProjectNavLink path={path} project={project} />
+          <ProjectNavLink path={path} project={project} key={project.href} />
         ))}
       </ul>
     </nav>

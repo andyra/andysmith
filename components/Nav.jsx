@@ -21,8 +21,8 @@ const NavLink = ({ href, className, children }) => {
     <Link href={href}>
       <a
         className={cn(
-          "text-sm xs:text-base flex items-center h-64 px-12 xs:px-24 hover:text-secondary font-medium transition",
-          isCurrent && "text-secondary",
+          "text-sm xs:text-base flex items-center h-64 px-12 xs:px-24 hover:text-indigo font-medium transition",
+          isCurrent && "text-indigo",
           className
         )}
         {...attrs}
@@ -39,7 +39,7 @@ const ThemeSwitcher = () => {
   return (
     <ClientOnly>
       <button
-        className="flex items-center justify-center h-64 px-12 -mr-12 xs:px-24 xs:-mr-24 hover:text-secondary transition"
+        className="flex items-center justify-center h-64 px-12 -mr-12 xs:px-24 xs:-mr-24 hover:text-indigo transition"
         onClick={() => {
           setTheme(theme === "light" ? "dark" : "light");
         }}
@@ -60,7 +60,7 @@ const ThemeSwitcher = () => {
 const Nav = () => {
   const classes = cn(
     "fixed top-0 left-0 right-0 z-50",
-    "flex items-center justify-between gap-8 px-page",
+    "px-page",
     // the mix-blend mode and BG color allows the nav to absorb colors behind it
     "bg-white mix-blend-darken dark:bg-black dark:mix-blend-lighten backdrop-blur transition duration-300",
     "print:hidden"
@@ -68,13 +68,15 @@ const Nav = () => {
 
   return (
     <nav className={classes}>
-      <NavLink href="/" className="-ml-12 xs:-ml-24">
-        Andy Smith
-      </NavLink>
-      <div className="flex items-center">
-        <NavLink href="/#projects">Projects</NavLink>
-        <NavLink href="/about">About</NavLink>
-        <ThemeSwitcher />
+      <div className="flex items-center justify-between gap-8 max-w-screen-xl mx-auto">
+        <NavLink href="/" className="-ml-12 xs:-ml-24">
+          Andy Smith
+        </NavLink>
+        <div className="flex items-center">
+          <NavLink href="/#projects">Projects</NavLink>
+          <NavLink href="/about">About</NavLink>
+          <ThemeSwitcher />
+        </div>
       </div>
       {/* Phony border offset so the mix-blend-mode doesn't goof with it */}
       <div className="absolute -bottom-1 left-0 h-1 w-full bg-primary-10" />

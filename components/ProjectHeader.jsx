@@ -1,26 +1,39 @@
 import { Divider } from "components/Content";
 
-const ProjectHeader = ({ title, description, link }) => (
-  <header className="px-page pb-page pt-page-lg bg-tertiary-10 text-tertiary-75">
+const COLORS = {
+  green: {
+    container: "bg-green-10 text-green-75",
+    text: "text-green",
+  },
+  indigo: {
+    container: "bg-indigo-10 text-indigo-75",
+    text: "text-indigo",
+  },
+  orange: {
+    container: "bg-orange-10 text-orange-75",
+    text: "text-orange",
+  },
+};
+
+const ProjectHeader = ({
+  children,
+  color = "green",
+  description,
+  link,
+  title,
+}) => (
+  <header className={`px-page pb-page pt-page-lg ${COLORS[color].container}`}>
     <div className="max-w-screen-xl mx-auto space-y-24 md:space-y-48">
-      <h1 className="font-semibold text-2xl sm:text-3xl lg:text-5xl text-tertiary">
+      <h1
+        className={`font-semibold text-2xl sm:text-3xl lg:text-5xl ${COLORS[color].text}`}
+      >
         {title}
       </h1>
       <Divider />
       <p className="text-base sm:text-lg md:text-xl max-w-prose">
         {description}
       </p>
-      {link && (
-        <a
-          className="flex items-center gap-8 w-fit h-48 px-16 rounded-full border-2 border-tertiary text-tertiary hover:bg-tertiary-05 transition group"
-          href={link.href}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          {link.title}
-          <span className="group-hover:translate-x-4 transition-all">→</span>
-        </a>
-      )}
+      {children}
     </div>
   </header>
 );

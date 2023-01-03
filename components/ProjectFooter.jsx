@@ -5,7 +5,7 @@ import { PROJECTS } from "../constants";
 
 const FooterLink = ({ project, direction }) => {
   const linkClasses = cn(
-    "flex flex-col xs:flex-row gap-8 p-16 sm:p-24 rounded-lg border-2 border-tertiary-50 text-tertiary hover:bg-tertiary-05 transition group",
+    "flex flex-col xs:flex-row gap-8 p-16 sm:p-24 rounded-lg border-2 border-green-50 text-green hover:bg-green-05 transition group",
     direction === "next" && "justify-end text-right"
   );
 

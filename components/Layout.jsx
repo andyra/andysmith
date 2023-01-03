@@ -19,7 +19,7 @@ const Layout = ({ children, ...props }) => {
       <Nav />
       <main id="main">{children}</main>
       <Footer />
-      <footer className="px-page py-24 bg-tertiary-05 text-center text-2xs print:hidden hidden">
+      <footer className="px-page py-24 bg-green-05 text-center text-2xs print:hidden hidden">
         Built with React and Next.js •{" "}
         <A href="https://github.com/andyra/andysmith" newTab>
           View it on GitHub

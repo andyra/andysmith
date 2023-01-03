@@ -2,9 +2,9 @@ import cn from "classnames";
 
 const CALLOUT_COLORS = {
   default: "bg-primary-05 border-primary-25",
-  info: "bg-secondary-05 border-info-10",
-  positive: "bg-positive-05 border-positive-25",
-  warning: "bg-warning-05 border-warning-25",
+  info: "bg-indigo-05 border-info-10",
+  positive: "bg-green-05 border-green-25",
+  warning: "bg-orange-05 border-orange-25",
 };
 
 const Callout = ({ children, className, color = "default" }) => (

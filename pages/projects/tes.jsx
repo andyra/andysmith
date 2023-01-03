@@ -2,7 +2,8 @@ import Link from "next/link";
 import Image from "next/future/image";
 import { useTheme } from "next-themes";
 
-import Callout from "components/Callout";
+import Button from "components/Button";
+import { Callout } from "components/Content";
 import ProjectFooter from "components/ProjectFooter";
 import ProjectHeader from "components/ProjectHeader";
 import { A, Divider, Section } from "components/Content";
@@ -30,8 +31,18 @@ const Tes = () => {
       <ProjectHeader
         title="TES.fm"
         description="A site I designed and built to showcase various music projects some friends and I have put together over the years. Includes fancy stuff like an audio player, queueing, full screen mode, search, and PWA support."
-        link={{ href: "https://tes.fm", title: "View the Project" }}
-      />
+        color="orange"
+      >
+        <Button
+          color="orange"
+          href="https://tes.fm"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Check it out!
+          <span className="group-hover:translate-x-4 transition-all">→</span>
+        </Button>
+      </ProjectHeader>
 
       <Section title="Yes, but Why?" columns>
         <p>
