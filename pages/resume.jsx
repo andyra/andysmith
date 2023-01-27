@@ -126,7 +126,7 @@ export default Resume;
 export async function getStaticProps(context) {
   return {
     props: {
-      metaTitle: "Resume (Printable)",
+      metaTitle: "Resume",
     },
   };
 }

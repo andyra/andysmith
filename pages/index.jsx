@@ -52,7 +52,7 @@ const Home = () => {
               Hiya! I&apos;m Andy, a product designer with an affinity for
               front-end development.{" "}
               <span className="opacity-60">
-                I have 10+ years experience, aspire for clarity in my work, and
+                I have 12+ years experience, aspire for clarity in my work, and
                 believe that thoughtful design is essential to successful
                 digital products. I live in Austin with my dog, Ernie.
               </span>
@@ -116,7 +116,7 @@ const Home = () => {
           few of my skills and interests.
         </p>
         <ul
-          className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-24"
+          className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-24"
           role="list"
         >
           {PROJECTS.map((project) => (
@@ -128,6 +128,13 @@ const Home = () => {
                   }`}
                 >
                   <div className="flex-1">
+                    <div className="flex items-center gap-8 -ml-8">
+                      {project.category && (
+                        <span className="rounded-full px-8 bg-primary-10 text-sm">
+                          {project.category}
+                        </span>
+                      )}
+                    </div>
                     <h2 className="flex items-baseline justify-between font-medium text-lg leading-tight mb-4 group-hover:text-green transition">
                       {project.title}
                       <span className="text-green opacity-0 -translate-x-8 transition group-hover:opacity-100 group-hover:translate-x-0">
@@ -135,16 +142,6 @@ const Home = () => {
                       </span>
                     </h2>
                     <p className="text-sm text-primary-75">{project.details}</p>
-                    <p className="flex items-center gap-8 text-sm text-primary-75">
-                      {project.tags?.map((tag) => (
-                        <span
-                          className="rounded-full px-8 bg-primary-05"
-                          key={tag}
-                        >
-                          {tag}
-                        </span>
-                      ))}
-                    </p>
                   </div>
                   <figure className="w-full h-128 bg-primary-10 rounded-lg" />
                 </a>

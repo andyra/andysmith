@@ -74,13 +74,17 @@ module.exports = {
           "100%": { transform: "translate(0, -4px)" },
         },
       },
+      maxWidth: (theme, { breakpoints }) => ({
+        ...breakpoints(theme("screens")),
+        ...theme("spacing"),
+      }),
     },
     // Overrides
     fontSize: {
       "2xs": ["0.75rem", { lineHeight: "1rem" }],
       xs: ["0.875rem", { lineHeight: "1.25rem" }],
       sm: ["1rem", { lineHeight: "1.5rem" }],
-      base: ["1.25rem", { lineHeight: "1.75rem" }],
+      base: ["1.25rem", { lineHeight: "1.875rem" }],
       lg: ["1.5rem", { lineHeight: "2.25rem" }],
       xl: ["1.875rem", { lineHeight: "2.5rem" }],
       "2xl": ["2.25rem", { lineHeight: "2.75rem", letterSpacing: "-0.02em" }],
@@ -131,7 +135,6 @@ module.exports = {
       288: "288px",
       320: "320px",
       352: "352px",
-      384: "384px",
       384: "384px",
       416: "416px",
       448: "448px",

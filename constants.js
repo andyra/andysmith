@@ -82,7 +82,7 @@ export const PROJECTS = [
     image: "",
     href: "/projects/org-chart-redesign",
     details: "",
-    tags: ["UI", "Legacy Updates"],
+    category: "UI Redesign",
     color: "indigo",
   },
   {
@@ -90,7 +90,7 @@ export const PROJECTS = [
     image: "",
     href: "/projects/tes",
     details: "Personal music player project built with React",
-    tags: ["Development", "Personal"],
+    category: "Front-End Build",
     color: "orange",
   },
   {
@@ -98,7 +98,7 @@ export const PROJECTS = [
     image: "",
     href: "/projects/onboarding",
     details: "Help new hires get up-to-speed faster",
-    tags: ["New Feature", "UX Research"],
+    category: "UX Research",
     color: "green",
   },
   {
@@ -106,7 +106,7 @@ export const PROJECTS = [
     image: "",
     href: "/projects/pingboard-mobile",
     details: "A cross-platform mobile app for Pingboard customers",
-    tags: ["Mobile"],
+    category: "Mobile UI",
     disabled: true,
   },
   {
@@ -114,7 +114,7 @@ export const PROJECTS = [
     image: "",
     href: "/projects/meetings",
     details: "1:1s • Surveys • Applause • Mobile App",
-    tags: [],
+    category: "UI Design",
     disabled: true,
   },
 ];
@@ -162,7 +162,7 @@ export const EXPERIENCE = [
         years: "2012–2015",
         notes: `
           Worked with a small UX team to design ReturnPath's large suite of enterprise email analytics tools.
-          Maintained OtherInbox B2C products, including developing new apps for bnoth web and mobile.
+          Maintained OtherInbox B2C products, including developing new apps for both web and mobile.
           Improved UX by running user-testing sessions.
         `,
       },

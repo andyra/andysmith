@@ -15,16 +15,15 @@ const Footer = () => (
         <div className="text-sm whitespace-nowrap">Product Designer</div>
         <div className="flex flex-col items-start gap-12 md:flex-row md:items-center my-page text-sm text-left lg:text-base">
           {CONTACT_INFO.map((item, i) => (
-            <>
+            <React.Fragment key={item.label}>
               <a
                 className="underline underline-offset-2 decoration-primary-25 hover:decoration-primary transition"
                 href={item.href}
-                key={item.label}
               >
                 {item.value}
               </a>
               {i < 2 && <span className="hidden md:block">•</span>}
-            </>
+            </React.Fragment>
           ))}
         </div>
         <p className="text-2xs text-primary-50">

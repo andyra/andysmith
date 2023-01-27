@@ -30,7 +30,7 @@ const Tes = () => {
     <>
       <ProjectHeader
         title="TES.fm"
-        description="A site I designed and built to showcase various music projects some friends and I have put together over the years. Includes fancy stuff like an audio player, queueing, full screen mode, search, and PWA support."
+        description="A site I designed and built to showcase various music projects some friends and I put together over the years. Includes fancy stuff like an audio player, queueing, full screen mode, search, and PWA support."
         color="orange"
       >
         <Button

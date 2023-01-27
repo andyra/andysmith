@@ -24,7 +24,7 @@ import oldFilterSearch from "public/projects/org-chart/old-filter-search.webp";
 import newFinal from "public/projects/org-chart/new-final.webp";
 import wireframes from "public/projects/org-chart/wireframes.webp";
 
-const TableRow = ({ title, percent }) => (
+const TableRow = ({ percent, title }) => (
   <li className="xs:flex xs:items-center xs:gap-16">
     <div className="xs:w-1/3">{title}</div>
     <div className="xs:flex-1 flex items-center gap-16 w-full">
@@ -216,6 +216,10 @@ const OrgChart = ({ metaTitle }) => {
             actions.
           </p>
           <ul className="border rounded-md p-16 text-sm space-y-12">
+            <li className="hidden xs:flex items-center gap-16 text-primary-75">
+              <div className="w-1/3">Task</div>
+              <div className="flex-1">Success Rate</div>
+            </li>
             <TableRow title="Add new cards and people" percent={100} />
             <TableRow title="View a private org chart" percent={87} />
             <TableRow title="Customize the org chart layout" percent={62.5} />
