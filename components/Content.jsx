@@ -1,6 +1,74 @@
 import cn from "classnames";
 import slugify from "slugify";
 
+const BREAKPOINTS = {
+  xs: {
+    width: "w-screen-xs",
+    maxWidth: "max-w-screen-xs",
+  },
+  sm: {
+    width: "w-screen-sm",
+    maxWidth: "max-w-screen-sm",
+  },
+  md: {
+    width: "w-screen-md",
+    maxWidth: "max-w-screen-md",
+  },
+  lg: {
+    width: "w-screen-lg",
+    maxWidth: "max-w-screen-lg",
+  },
+  xl: {
+    width: "w-screen-xl",
+    maxWidth: "max-w-screen-xl",
+  },
+  "2xl": {
+    width: "w-screen-2xl",
+    maxWidth: "max-w-screen-2xl",
+  },
+  "3xl": {
+    width: "w-screen-3xl",
+    maxWidth: "max-w-screen-3xl",
+  },
+};
+
+export const Section2 = ({ children, maxWidth = "md", title }) => {
+  const containerClasses = cn(
+    "py-lg border-b mx-auto",
+    BREAKPOINTS[maxWidth].maxWidth
+  );
+
+  return (
+    <section className="px-base">
+      <div className={containerClasses}>
+        <h2 className="text-xl font-bold">{title}</h2>
+        {children}
+      </div>
+    </section>
+  );
+};
+
+export const H2 = ({ children, count }) => (
+  <h2 className="font-medium font-base opacity-60 mb-24 relative">
+    {count && (
+      <span className="absolute -left-12 top-2 -translate-x-full text-sm opacity-50">
+        {count}
+      </span>
+    )}
+    {children}
+  </h2>
+);
+
+export const WideDude = ({ children, className, py = true, width = "xl" }) => {
+  const classes = cn(
+    "relative left-1/2 -translate-x-1/2 max-w-[calc(100vw-3vmax)]",
+    py && "pt-sm",
+    BREAKPOINTS[width].width
+  );
+
+  return <div className={classes}>{children}</div>;
+};
+
 export const Divider = ({ className }) => (
   <hr className={cn("border-t-2 border-primary opacity-10", className)} />
 );
@@ -28,7 +96,7 @@ export const Section = ({
 
   const containerClasses = cn(
     "grid grid-cols-1 gap-page",
-    "max-w-screen-xl mx-auto",
+    "max-w-screen-xl mx-auto py-page border-b",
     columns && "lg:grid-cols-[1fr,2fr] lg:items-start",
     !columns && contentClassName
   );

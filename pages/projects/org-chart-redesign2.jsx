@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/future/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import cn from "classnames";
@@ -15,6 +15,9 @@ import {
   OrderedList,
   Section,
   SubSection,
+  WideDude,
+  Section2,
+  H2,
 } from "components/Content";
 
 import oldPanel from "public/projects/org-chart/old-panel.webp";
@@ -45,35 +48,86 @@ const TableRow = ({ percent, title }) => (
 const OrgChart = ({ metaTitle }) => {
   return (
     <>
-      <ProjectHeader
-        title={metaTitle}
-        description="After months of design and research, we had landed on a set of global design changes to update the look &amp; feel of Pingboard. While most pages wouldn't need to be updated, there were a handful that would need significant changes in order to work with the new layout, chief among them the Org Chart."
-        color="indigo"
-      />
+      <header className="px-page">
+        <div className="max-w-screen-md mx-auto space-y-sm py-base border-b text-sec">
+          <h1 className="font-bold text-2xl">Org Chart Redesign</h1>
+          <p className="text-lg max-w-prose">
+            After months of design and research, we had landed on a set of
+            global design changes to update the look &amp; feel of Pingboard.
+            While most pages wouldn&apos;t need to be updated, there were a
+            handful that would need significant changes in order to work with
+            the new layout, chief among them the Org Chart.
+          </p>
+        </div>
+      </header>
+
+      <Section2 title="Challenges">
+        <H2 count="01">Conflicting Panels</H2>
+        <p>
+          The new nav designs use the left side of the screen for global
+          navigation, but the org chart used that space for its own Build panel.
+          To make matters worse, there was already a right panel in use!
+        </p>
+        <Image
+          src={oldPanel}
+          className="border"
+          alt="Legacy org chart build panel"
+          sizes="(min-width: 1360px) 755px, (min-width: 960px) 55vw, 90vw"
+        />
+
+        <H2 count="02">Accessing Private Org Charts</H2>
+        <p>
+          Since the new design didn&apos;t provide a secondary nav layer, we
+          would need to devise a way for customers to get to their private org
+          charts.
+        </p>
+        <Figure>
+          <Image
+            className="rounded-sm"
+            src={oldNav}
+            alt="Legacy org chart build panel"
+            sizes="(min-width: 1360px) 755px, (min-width: 960px) 55vw, 90vw"
+          />
+          <Highlight className="top-[10%] left-[10%] right-[70%] bottom-[45%]" />
+        </Figure>
+
+        <H2 count="03">Private Org Chart Toolbar</H2>
+        <p>
+          Private org charts have a custom toolbar that overrides the primary
+          nav. Is there a way we can consolidate the title, collaborator list,
+          and notifications with the existing toolbar and still keep the primary
+          nav?
+        </p>
+        <Figure>
+          <Image
+            className="rounded-sm"
+            src={oldPrivate}
+            alt="Legacy org chart build panel"
+            sizes="(min-width: 1360px) 755px, (min-width: 960px) 55vw, 90vw"
+          />
+          <Highlight className="top-0 left-0 right-0 bottom-1/2" />
+        </Figure>
+
+        <H2 count="04">Filter & Search</H2>
+        <p>
+          A couple problems here! Filtering is a bit too subtle and it
+          obfuscates the org chart title. Additionally, it&apos;s easy to get
+          org chart search and global search confused.
+        </p>
+        <Figure>
+          <Image
+            className="rounded-sm"
+            src={oldFilterSearch}
+            alt="Legacy org chart build panel"
+            sizes="(min-width: 1360px) 755px, (min-width: 960px) 55vw, 90vw"
+          />
+          <Highlight className="top-[33%] left-0 right-[38%] bottom-[29%]" />
+          <Highlight className="top-0 left-[72.7%] right-0 bottom-[66%]" />
+        </Figure>
+      </Section2>
 
       <Section title="Challenges" columns>
-        <SubSection title="Conflicting panels">
-          <Figure>
-            <Image
-              src={oldPanel}
-              alt="Legacy org chart build panel"
-              sizes="(min-width: 1360px) 755px, (min-width: 960px) 55vw, 90vw"
-            />
-            <Highlight className="top-[11%] left-0 right-[80.5%] bottom-0" />
-          </Figure>
-          <p>
-            The new nav designs use the left side of the screen for global
-            navigation, but the org chart used that space for its own Build
-            panel. To make matters worse, there was already a right panel in
-            use!
-          </p>
-        </SubSection>
         <SubSection title="Accessing private org charts">
-          <p>
-            Since the new design didn&apos;t provide a secondary nav layer, we
-            would need to devise a way for customers to get to their private org
-            charts.
-          </p>
           <Figure>
             <Image
               className="rounded-sm"
@@ -336,8 +390,6 @@ const OrgChart = ({ metaTitle }) => {
           they weren&apos;t essential to the navigation updates.
         </p>
       </Section>
-
-      <ProjectFooter />
     </>
   );
 };

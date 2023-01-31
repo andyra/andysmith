@@ -8,6 +8,10 @@
 }
 
 .light {
+  --gnd: hsl(10, 21%, 95%);
+  --prim: hsl(20, 12%, 10%);
+  --sec: hsl(224, 90%, 39%);
+
   --ground: hsla(255, 0%, 100%, 1);
   --ground-75: hsla(255, 0%, 100%, 0.75);
   --ground-50: hsla(255, 0%, 100%, 0.5);
@@ -45,6 +49,10 @@
 }
 
 .dark {
+  --gnd: hsl(20, 12%, 10%);
+  --prim: hsl(10, 21%, 95%);
+  --sec: hsl(223, 62%, 71%);
+
   --ground: hsla(262, 8%, 8%, 1);
   --ground-75: hsla(262, 8%, 10%, 0.75);
   --ground-50: hsla(262, 8%, 10%, 0.5);
@@ -84,6 +92,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+h1,
+h2,
+h3 {
+  @apply font-heading;
+}
+
+p,
+ul,
+ol {
+  @apply mb-em;
+}
+
+* + h2 {
+  @apply mt-base;
+}
 
 strong {
   @apply font-semibold;

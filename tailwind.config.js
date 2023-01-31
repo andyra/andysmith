@@ -18,6 +18,9 @@ module.exports = {
         DEFAULT: "8px",
       },
       colors: {
+        gnd: "var(--gnd)",
+        prim: "var(--prim)",
+        sec: "var(--sec)",
         ground: "var(--ground)",
         "ground-75": "var(--ground-75)",
         "ground-50": "var(--ground-50)",
@@ -51,10 +54,11 @@ module.exports = {
       },
       fontFamily: {
         base: [
+          "'ABC DiaType Semi-Mono Variable'",
+          "'Maison Neue'",
+          "'Gothic A1'",
+          "'ABC DiaType Variable'",
           "'Be Vietnam Pro Variable'",
-          // "'Maison Neue'",
-          // "'Gratimo Grotesk'",
-          // "'Gratimo Classic'",
           "ui-sans-serif",
           "system-ui",
           "-apple-system",
@@ -66,6 +70,8 @@ module.exports = {
           "'Noto Sans'",
           "sans-serif",
         ],
+        heading: ["'ABC DiaType Variable'", "Editorial New"],
+        mono: ["'ABC DiaType Semi-Mono Variable'"],
       },
       keyframes: {
         float: {
@@ -81,18 +87,14 @@ module.exports = {
     },
     // Overrides
     fontSize: {
-      "2xs": ["0.75rem", { lineHeight: "1rem" }],
-      xs: ["0.875rem", { lineHeight: "1.25rem" }],
-      sm: ["1rem", { lineHeight: "1.5rem" }],
-      base: ["1.25rem", { lineHeight: "1.875rem" }],
-      lg: ["1.5rem", { lineHeight: "2.25rem" }],
-      xl: ["1.875rem", { lineHeight: "2.5rem" }],
-      "2xl": ["2.25rem", { lineHeight: "2.75rem", letterSpacing: "-0.02em" }],
-      "3xl": ["3rem", { lineHeight: "1", letterSpacing: "-0.025em" }],
-      "4xl": ["3.75rem", { lineHeight: "1", letterSpacing: "-0.03em" }],
-      "5xl": ["4.5rem", { lineHeight: "1", letterSpacing: "-0.035em" }],
-      "6xl": ["6rem", { lineHeight: "1" }],
-      "7xl": ["8rem", { lineHeight: "1" }],
+      "2xl": ["56px", { lineHeight: "1.5" }],
+      xl: ["42px", { lineHeight: "1.5" }],
+      lg: ["26px", { lineHeight: "34px" }],
+      base: ["22px", { lineHeight: "30px" }],
+      sm: ["18px", { lineHeight: "26px" }],
+      xs: ["16px", { lineHeight: "24px" }],
+      "2xs": ["14px", { lineHeight: "20px" }],
+
       "print-sm": ["8pt", { lineHeight: "12pt" }],
       "print-base": ["10pt", { lineHeight: "14pt" }],
       "print-lg": ["12pt", { lineHeight: "16pt" }],
@@ -107,7 +109,7 @@ module.exports = {
       "2xl": "1536px",
       "3xl": "1920px",
     },
-    spacing: {
+    spacing: (theme, { breakpoints }) => ({
       0: "0",
       1: "1px",
       2: "2px",
@@ -145,9 +147,13 @@ module.exports = {
       "3/4em": "0.75em",
       "1/2em": "0.5em",
       "1/4em": "0.25em",
+      sm: "min(24px, 2vmax)",
+      base: "3vmax",
+      lg: "6vmax",
       page: "3vmax",
       "page-lg": "max(calc(64px + 3vmax), 3vmax)",
-    },
+      ...breakpoints(theme("screens")),
+    }),
   },
   plugins: [],
 };

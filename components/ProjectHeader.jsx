@@ -22,17 +22,10 @@ const ProjectHeader = ({
   link,
   title,
 }) => (
-  <header className={`px-page pb-page pt-page-lg ${COLORS[color].container}`}>
-    <div className="max-w-screen-xl mx-auto space-y-24 md:space-y-48">
-      <h1
-        className={`font-semibold text-2xl sm:text-3xl lg:text-5xl ${COLORS[color].text}`}
-      >
-        {title}
-      </h1>
-      <Divider />
-      <p className="text-base sm:text-lg md:text-xl max-w-prose">
-        {description}
-      </p>
+  <header className="px-page">
+    <div className="max-w-screen-xl mx-auto space-y-24 md:space-y-48 py-page border-b">
+      <h1 className="text-xl">{title}</h1>
+      <p className="text-lg max-w-prose">{description}</p>
       {children}
     </div>
   </header>
