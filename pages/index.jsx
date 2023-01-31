@@ -33,7 +33,51 @@ const SectionLink = ({ color = "indigo", text }) => (
 const Home = () => {
   return (
     <>
-      <header className="px-page pb-page pt-page-lg flex items-center sm:h-screen bg-indigo-10">
+      <header className="max-w-screen-xl mx-auto p-page">
+        <p className="text-lg sm:text-xl">
+          Hiya! I&apos;m Andy, a product designer with an affinity for front-end
+          development.{" "}
+          <span className="opacity-60">
+            I have 12+ years experience, aspire for clarity in my work, and
+            believe that thoughtful design is essential to successful digital
+            products. I live in Austin with my dog, Ernie.
+          </span>
+        </p>
+      </header>
+
+      <section className="max-w-screen-xl mx-auto p-page">
+        How I can Help
+      </section>
+
+      <section className="max-w-screen-lg mx-auto p-page">
+        <h2 className="text-xl font-bold">Projects</h2>
+        <ul className="divide-y border-y">
+          {PROJECTS.map((project) => (
+            <li key={project.title}>
+              <Link href={project.href}>
+                <a className="flex items-center py-16 group transition">
+                  <div className="w-192">
+                    <span className="rounded-full px-8 bg-primary-10 text-sm">
+                      {project.category}
+                    </span>
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-medium group-hover:text-green transition">
+                      {project.title}
+                    </h3>
+                    <p className="text-primary-75">{project.details}</p>
+                  </div>
+                  <span className="text-green opacity-0 -translate-x-8 transition group-hover:opacity-100 group-hover:translate-x-0">
+                    →
+                  </span>
+                </a>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <header className="hidden px-page pb-page pt-page-lg flex items-center sm:h-screen bg-indigo-10">
         <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center gap-page">
           <div className="lg:order-last w-192 sm:w-320">
             <Image
@@ -64,7 +108,7 @@ const Home = () => {
 
       <Section
         title="How I Can Help"
-        className="flex items-center min-h-screen"
+        className="hidden flex items-center min-h-screen"
       >
         <p className="text-lg max-w-prose">
           <span className="underline">Product Design</span> is a somewhat
@@ -109,7 +153,7 @@ const Home = () => {
 
       <Section
         title="Projects"
-        className="flex items-center min-h-screen bg-green-05"
+        className="hidden flex items-center min-h-screen bg-green-05"
       >
         <p class="text-lg max-w-prose">
           A smattering of projects—both professional and personal—to showcase a
