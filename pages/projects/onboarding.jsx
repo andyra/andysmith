@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import cn from "classnames";
 import Link from "next/link";
-import Image from "next/future/image";
+import Image from "next/image";
 import { useTheme } from "next-themes";
 import Carousel from "components/Carousel";
 import ProjectFooter from "components/ProjectFooter";

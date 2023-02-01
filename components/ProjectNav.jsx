@@ -20,10 +20,8 @@ const ProjectNavLink = ({ path, project }) => {
           isCurrent && "text-indigo"
         )}
         {...attrs}
-        legacyBehavior>
-
+      >
         {project.title}
-
       </Link>
     </li>
   );

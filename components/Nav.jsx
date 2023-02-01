@@ -27,11 +27,9 @@ const NavLink = ({ href, className, children }) => {
         className
       )}
       {...attrs}
-      legacyBehavior>
-
-        {children}
-
-      </Link>
+    >
+      {children}
+    </Link>
   );
 };
 

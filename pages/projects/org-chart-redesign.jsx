@@ -1,5 +1,4 @@
-import Image from "next/image";
-import Link from "next/link";
+import Image from "next/legacy/image";
 import { useRouter } from "next/router";
 import cn from "classnames";
 import Button from "components/Button";

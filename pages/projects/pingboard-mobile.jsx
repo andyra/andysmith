@@ -1,4 +1,4 @@
-import Image from "next/future/image";
+import Image from "next/image";
 import Link from "next/link";
 import Carousel from "components/Carousel";
 import ProjectFooter from "components/ProjectFooter";

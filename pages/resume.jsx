@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Image from "next/future/image";
+import Image from "next/image";
 import cn from "classnames";
 import Divider from "components/Divider";
 import { Dot, Section, TimeStamp } from "components/Content";

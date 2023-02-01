@@ -41,8 +41,10 @@ const Footer = () => (
           "hover:bg-indigo hover:text-ground",
           "animate-float"
         )}
-        legacyBehavior>
-        View<br />Resumé
+      >
+        View
+        <br />
+        Resumé
       </Link>
     </div>
   </footer>
