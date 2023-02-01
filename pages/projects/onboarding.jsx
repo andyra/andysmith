@@ -245,7 +245,7 @@ const Onboarding = () => {
           the interviews is important so the rest of the team doesn&apos;t have
           to wade through dozens of documents and notes.
         </p>
-        <figure className="flex flex-col xl:flex-row items-center gap-16 bg-indigo-05 rounded p-24 text-sm text-primary-50 relative">
+        <figure className="flex flex-col xl:flex-row items-center gap-16 bg-secondary-05 rounded p-24 text-sm text-primary-50 relative">
           <div className="h-256 w-full xl:h-auto xl:w-2/5 xl:self-stretch rounded overflow-hidden relative">
             <div className="bg-ground rounded p-24 space-y-8 absolute top-0 left-0 text-xs">
               <div className="font-medium text-sm text-primary-75">
@@ -301,7 +301,7 @@ const Onboarding = () => {
             ))}
           </ul>
           <Brackets horizontalBreakpoint="xl" />
-          <div className="flex-1 border-2 border-indigo-25 p-16 space-y-8 text-indigo-75 rounded">
+          <div className="flex-1 border-2 border-secondary-25 p-16 space-y-8 text-secondary-75 rounded">
             <div className="font-medium">😀 Takeaways</div>
             <ol className="list-decimal ml-20">
               <li>Frustrated by X</li>
@@ -324,8 +324,8 @@ const Onboarding = () => {
           during the first few weeks of being at a company, which dovetails
           nicely into our market strategy.
         </p>
-        <figure className="rounded bg-green-05 p-24 space-y-24">
-          <ul className="text-green">
+        <figure className="rounded bg-secondary-05 p-24 space-y-24">
+          <ul className="text-secondary">
             <li className="font-semibold">Useful and achievable!</li>
             {[
               "Checklists",
@@ -374,13 +374,13 @@ const Onboarding = () => {
       >
         <div className="relative hidden lg:block lg:col-span-2">
           <div className="z-10 absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <div className="flex items-center px-16 h-40 rounded-full bg-green text-ground">
+            <div className="flex items-center px-16 h-40 rounded-full bg-secondary text-ground">
               Try me!
             </div>
           </div>
           <iframe
             src="https://pingboard.github.io/pb-nav/onboarding"
-            className="w-full h-[75vh] border-4 border-green-50 rounded"
+            className="w-full h-[75vh] border-4 border-secondary-50 rounded"
           />
         </div>
       </Section>
@@ -415,13 +415,13 @@ const Onboarding = () => {
             src={navWorseProblem}
           />
           <Brackets
-            borderColor="border-orange"
+            borderColor="border-highlight"
             className="relative mt-[4%] mb-[7.5%]"
           >
-            <div className="pl-12 text-sm lg:text-base text-orange">
+            <div className="pl-12 text-sm lg:text-base text-highlight">
               Not ideal!
             </div>
-            <div className="w-24 border-t-2 border-orange absolute r-0 bottom-[11%]" />
+            <div className="w-24 border-t-2 border-highlight absolute r-0 bottom-[11%]" />
           </Brackets>
         </figure>
         <p>
@@ -439,10 +439,10 @@ const Onboarding = () => {
             src={navSolution}
           />
           <Brackets
-            borderColor="border-green"
+            borderColor="border-secondary"
             className="relative mt-[4%] mb-[7.5%]"
           >
-            <div className="pl-12 text-sm lg:text-base text-green">
+            <div className="pl-12 text-sm lg:text-base text-secondary">
               Not ideal, but better!
             </div>
           </Brackets>

@@ -17,7 +17,7 @@ const ProjectNavLink = ({ path, project }) => {
         href={project.href}
         className={cn(
           "flex items-center gap-8 h-32 text-sm",
-          isCurrent && "text-indigo"
+          isCurrent && "text-secondary"
         )}
         {...attrs}
       >

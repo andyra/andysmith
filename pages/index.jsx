@@ -64,12 +64,12 @@ const Home = () => {
                   </span>
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-medium group-hover:text-green transition">
+                  <h3 className="font-medium group-hover:text-secondary transition">
                     {project.title}
                   </h3>
                   <p className="text-primary-75">{project.details}</p>
                 </div>
-                <span className="text-green opacity-0 -translate-x-8 transition group-hover:opacity-100 group-hover:translate-x-0">
+                <span className="text-secondary opacity-0 -translate-x-8 transition group-hover:opacity-100 group-hover:translate-x-0">
                   →
                 </span>
               </Link>
@@ -78,7 +78,7 @@ const Home = () => {
         </ul>
       </section>
 
-      <header className="hidden px-page pb-page pt-page-lg flex items-center sm:h-screen bg-indigo-10">
+      <header className="hidden px-page pb-page pt-page-lg flex items-center sm:h-screen bg-secondary-10">
         <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center gap-page">
           <div className="lg:order-last w-192 sm:w-320">
             <Image
@@ -124,7 +124,7 @@ const Home = () => {
               key={skill.title}
             >
               <span
-                className="absolute top-8 -left-8 -translate-x-full font-medium text-sm text-green opacity-75 lg:hidden"
+                className="absolute top-8 -left-8 -translate-x-full font-medium text-sm text-secondary opacity-75 lg:hidden"
                 aria-hidden
               >
                 {i + 1}
@@ -149,12 +149,12 @@ const Home = () => {
             </li>
           ))}
         </ul>
-        <SectionLink text="Projects" color="green" />
+        <SectionLink text="Projects" color="secondary" />
       </Section>
 
       <Section
         title="Projects"
-        className="hidden flex items-center min-h-screen bg-green-05"
+        className="hidden flex items-center min-h-screen bg-secondary-05"
       >
         <p class="text-lg max-w-prose">
           A smattering of projects—both professional and personal—to showcase a
@@ -168,7 +168,7 @@ const Home = () => {
             <li className="h-full" key={project.title}>
               <Link
                 href={project.href}
-                className={`flex flex-col justify-between h-full border-2 hover:border-green-25 p-24 rounded-xl space-y-24 group transition ${
+                className={`flex flex-col justify-between h-full border-2 hover:border-secondary-25 p-24 rounded-xl space-y-24 group transition ${
                   project.disabled && "opacity-25"
                 }`}
               >
@@ -180,9 +180,9 @@ const Home = () => {
                       </span>
                     )}
                   </div>
-                  <h2 className="flex items-baseline justify-between font-medium text-lg leading-tight mb-4 group-hover:text-green transition">
+                  <h2 className="flex items-baseline justify-between font-medium text-lg leading-tight mb-4 group-hover:text-secondary transition">
                     {project.title}
-                    <span className="text-green opacity-0 -translate-x-8 transition group-hover:opacity-100 group-hover:translate-x-0">
+                    <span className="text-secondary opacity-0 -translate-x-8 transition group-hover:opacity-100 group-hover:translate-x-0">
                       →
                     </span>
                   </h2>
@@ -193,7 +193,7 @@ const Home = () => {
             </li>
           ))}
         </ul>
-        <Button color="green" href="/resume">
+        <Button color="secondary" href="/resume">
           Resumé
         </Button>
       </Section>

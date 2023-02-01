@@ -44,7 +44,7 @@ const Navigation = () => {
             feedback.
           </Callout>
         </div>
-        <figure className="bg-indigo-25 p-24 rounded-lg pointer-events-none">
+        <figure className="bg-secondary-25 p-24 rounded-lg pointer-events-none">
           <div className="bg-white rounded-lg h-256">
             <div className="flex items-center gap-16 p-8">
               <span className="bg-primary h-16 w-64 rounded-sm" />
@@ -98,7 +98,7 @@ const Navigation = () => {
             </li>
           </ul>
         </div>
-        <figure className="bg-indigo-25 p-24 rounded-lg pointer-events-none" />
+        <figure className="bg-secondary-25 p-24 rounded-lg pointer-events-none" />
       </Section>
 
       <Section title="Challenges">
@@ -125,7 +125,7 @@ const Navigation = () => {
             </li>
           </ul>
         </div>
-        <figure className="bg-indigo-25 p-24 rounded-lg pointer-events-none" />
+        <figure className="bg-secondary-25 p-24 rounded-lg pointer-events-none" />
       </Section>
 
       <Section title="Research &amp; Validation">
@@ -175,7 +175,7 @@ const Navigation = () => {
             navigate.
           </p>
         </div>
-        <figure className="bg-indigo-25 p-24 rounded-lg pointer-events-none" />
+        <figure className="bg-secondary-25 p-24 rounded-lg pointer-events-none" />
       </Section>
       <ProjectFooter />
     </>

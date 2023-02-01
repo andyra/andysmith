@@ -21,9 +21,9 @@ const NavLink = ({ href, className, children }) => {
     <Link
       href={href}
       className={cn(
-        "flex items-center h-64 px-12 xs:px-24 hover:text-indigo",
+        "flex items-center h-64 px-12 xs:px-24 hover:text-secondary",
         "font-bold text-sm tracking-wider uppercase",
-        isCurrent && "text-indigo",
+        isCurrent && "text-secondary",
         className
       )}
       {...attrs}
@@ -39,7 +39,7 @@ const ThemeSwitcher = () => {
   return (
     <ClientOnly>
       <button
-        className="flex items-center justify-center h-64 px-12 -mr-12 xs:px-24 xs:-mr-24 hover:text-indigo transition"
+        className="flex items-center justify-center h-64 px-12 -mr-12 xs:px-24 xs:-mr-24 hover:text-secondary transition"
         onClick={() => {
           setTheme(theme === "light" ? "dark" : "light");
         }}

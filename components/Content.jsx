@@ -141,7 +141,7 @@ export const A = ({ children, newTab, href }) => {
 
   return (
     <a
-      className="underline underline-offset-2 decoration-primary-50 hover:decoration-indigo hover:text-indigo cursor-pointer transition"
+      className="underline underline-offset-2 decoration-primary-50 hover:decoration-secondary hover:text-secondary cursor-pointer transition"
       href={href}
       {...attrs}
     >
@@ -169,8 +169,8 @@ export const Dot = ({ subtle, border }) => (
       "absolute top-1/2 -left-16 -translate-x-1/2 -translate-y-1/2 z-10",
       "h-12 w-12 rounded-full",
       border && "bg-ground border-2",
-      !subtle && !border && "bg-indigo",
-      !subtle && border && "border-indigo-50",
+      !subtle && !border && "bg-secondary",
+      !subtle && border && "border-secondary-50",
       subtle && !border && "bg-primary-75",
       subtle && border && "border-primary-25"
     )}
@@ -179,9 +179,9 @@ export const Dot = ({ subtle, border }) => (
 
 const CALLOUT_COLORS = {
   default: "text-primary border-primary-50",
-  info: "text-indigo border-indigo-50",
-  positive: "text-green border-green-50",
-  warning: "text-orange border-orange-50",
+  info: "text-secondary border-secondary-50",
+  positive: "text-secondary border-secondary-50",
+  warning: "text-highlight border-highlight-50",
 };
 
 export const Callout = ({ children, className, color = "default" }) => (
@@ -214,6 +214,6 @@ export const Figure = ({ caption, children, className }) => (
 
 export const Highlight = ({ className }) => (
   <div
-    className={cn("border-2 border-orange rounded-md absolute ", className)}
+    className={cn("border-2 border-highlight rounded-md absolute ", className)}
   />
 );

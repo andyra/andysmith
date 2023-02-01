@@ -31,7 +31,7 @@ const TableRow = ({ percent, title }) => (
         <div
           className={cn(
             "rounded-full absolute top-0 left-0 bottom-0",
-            percent < 75 ? "bg-orange-50" : "bg-green-50"
+            percent < 75 ? "bg-highlight-50" : "bg-secondary-50"
           )}
           style={{ width: `${percent}%` }}
         />
@@ -156,7 +156,7 @@ const OrgChart = ({ metaTitle }) => {
           </p>
           <Callout color="info" className="text-sm">
             <p>Why prototype with code?</p>
-            <p className="text-indigo-75 mix-blend-multiply">
+            <p className="text-secondary-75 mix-blend-multiply">
               I&apos;ve found that building prototypes in the browser gives
               people a much better sense for what the app will actually feel
               like, in addition to teaching useful programming skills.
@@ -179,17 +179,17 @@ const OrgChart = ({ metaTitle }) => {
           </p>
           <figure className="border rounded p-16 space-y-16">
             <ul className="flex items-center gap-8 text-center text-sm">
-              <li className="flex-1 p-16 rounded bg-orange-10 text-orange-75 space-y-8">
+              <li className="flex-1 p-16 rounded bg-highlight-10 text-highlight-75 space-y-8">
                 <div className="font-medium text-3xl">7</div>
                 <div>Internal Sessions</div>
               </li>
               <li className="text-lg text-primary-50">→</li>
-              <li className="flex-1 p-16 rounded bg-indigo-10 text-indigo-75 space-y-8">
+              <li className="flex-1 p-16 rounded bg-secondary-10 text-secondary-75 space-y-8">
                 <div className="font-medium text-3xl">8</div>
                 <div>Existing Customers</div>
               </li>
               <li className="text-lg text-primary-50">→</li>
-              <li className="flex-1 p-16 rounded bg-green-10 text-green-75 space-y-8">
+              <li className="flex-1 p-16 rounded bg-secondary-10 text-secondary-75 space-y-8">
                 <div className="font-medium text-3xl">6</div>
                 <div>Potential Customers</div>
               </li>
@@ -227,11 +227,11 @@ const OrgChart = ({ metaTitle }) => {
             <TableRow title="Filter the org chart" percent={87} />
             <li className="flex items-center gap-16 border-t pt-12 text-primary-75">
               <div className="flex items-center gap-8">
-                <span className="h-12 w-12 rounded-full bg-green-50" />
+                <span className="h-12 w-12 rounded-full bg-secondary-50" />
                 Pretty good!
               </div>
               <div className="flex items-center gap-8">
-                <span className="h-12 w-12 rounded-full bg-orange-50" />
+                <span className="h-12 w-12 rounded-full bg-highlight-50" />
                 Needs work
               </div>
             </li>
@@ -252,13 +252,13 @@ const OrgChart = ({ metaTitle }) => {
       >
         <div className="relative hidden lg:block lg:col-span-2">
           <div className="z-10 absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <div className="flex items-center px-16 h-40 rounded-full bg-green text-ground">
+            <div className="flex items-center px-16 h-40 rounded-full bg-secondary text-ground">
               Try me!
             </div>
           </div>
           <iframe
             src="https://pingboard.github.io/pb-nav/org-chart"
-            className="w-full h-[75vh] border-4 border-green-50 rounded"
+            className="w-full h-[75vh] border-4 border-secondary-50 rounded"
           />
         </div>
         <Figure className="lg:hidden">
@@ -318,7 +318,7 @@ const OrgChart = ({ metaTitle }) => {
             </li>
           </ul>
           <Button
-            color="green"
+            color="secondary"
             href="https://pingboard.github.io/pb-nav/org-chart"
             newTab
           >

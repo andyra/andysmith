@@ -83,7 +83,6 @@ export const PROJECTS = [
     href: "/projects/org-chart-redesign",
     details: "",
     category: "UI Redesign",
-    color: "indigo",
   },
   {
     title: "TES.fm",
@@ -91,7 +90,6 @@ export const PROJECTS = [
     href: "/projects/tes",
     details: "Personal music player project built with React",
     category: "Front-End Build",
-    color: "orange",
   },
   {
     title: "New Hire Onboarding",
@@ -99,7 +97,6 @@ export const PROJECTS = [
     href: "/projects/onboarding",
     details: "Help new hires get up-to-speed faster",
     category: "UX Research",
-    color: "green",
   },
   {
     title: "Pingboard Mobile App",

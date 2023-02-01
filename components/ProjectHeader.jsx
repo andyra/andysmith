@@ -1,23 +1,19 @@
 import { Divider } from "components/Content";
 
 const COLORS = {
-  green: {
-    container: "bg-green-10 text-green-75",
-    text: "text-green",
+  secondary: {
+    container: "bg-secondary-10 text-secondary-75",
+    text: "text-secondary",
   },
-  indigo: {
-    container: "bg-indigo-10 text-indigo-75",
-    text: "text-indigo",
-  },
-  orange: {
-    container: "bg-orange-10 text-orange-75",
-    text: "text-orange",
+  highlight: {
+    container: "bg-highlight-10 text-highlight-75",
+    text: "text-highlight",
   },
 };
 
 const ProjectHeader = ({
   children,
-  color = "green",
+  color = "secondary",
   description,
   link,
   title,

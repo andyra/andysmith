@@ -8,7 +8,7 @@ import { CONTACT_INFO } from "../constants";
 // ----------------------------------------------------------------------------
 
 const Footer = () => (
-  <footer className="p-page bg-indigo-25 print:hidden">
+  <footer className="p-page bg-secondary-25 print:hidden">
     <div className="max-w-screen-xl mx-auto flex gap-16">
       <div className="flex-1">
         <strong className="font-semibold">Andy Smith</strong>
@@ -37,8 +37,8 @@ const Footer = () => (
         href="/about"
         className={cn(
           "flex items-center justify-center gap-8 w-128 h-128 sm:w-160 sm:h-160 rounded-full transition flex-shrink-0",
-          "border-2 border-indigo text-sm text-indigo font-medium text-center",
-          "hover:bg-indigo hover:text-ground",
+          "border-2 border-secondary text-sm text-secondary font-medium text-center",
+          "hover:bg-secondary hover:text-ground",
           "animate-float"
         )}
       >

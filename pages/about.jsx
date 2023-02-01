@@ -43,7 +43,7 @@ const About = () => {
               {CONTACT_INFO.map((item, i) => (
                 <li key={item.value}>
                   <a
-                    className="underline underline-offset-2 decoration-primary-25 hover:text-indigo"
+                    className="underline underline-offset-2 decoration-primary-25 hover:text-secondary"
                     href={item.href}
                   >
                     {item.value}
