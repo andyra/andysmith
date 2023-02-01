@@ -19,7 +19,8 @@ const ProjectNavLink = ({ path, project }) => {
           "flex items-center gap-8 h-32 text-sm",
           isCurrent && "text-indigo"
         )}
-        {...attrs}>
+        {...attrs}
+        legacyBehavior>
 
         {project.title}
 

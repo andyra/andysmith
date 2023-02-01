@@ -18,7 +18,7 @@ const NavLink = ({ href, className, children }) => {
   }
 
   return (
-    (<Link
+    <Link
       href={href}
       className={cn(
         "flex items-center h-64 px-12 xs:px-24 hover:text-indigo",
@@ -26,11 +26,12 @@ const NavLink = ({ href, className, children }) => {
         isCurrent && "text-indigo",
         className
       )}
-      {...attrs}>
+      {...attrs}
+      legacyBehavior>
 
-      {children}
+        {children}
 
-    </Link>)
+      </Link>
   );
 };
 

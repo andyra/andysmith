@@ -40,7 +40,8 @@ const Footer = () => (
           "border-2 border-indigo text-sm text-indigo font-medium text-center",
           "hover:bg-indigo hover:text-ground",
           "animate-float"
-        )}>
+        )}
+        legacyBehavior>
         View<br />Resumé
       </Link>
     </div>

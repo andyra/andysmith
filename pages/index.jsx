@@ -53,7 +53,10 @@ const Home = () => {
       <ul className="divide-y border-y">
         {PROJECTS.map((project) => (
           <li key={project.title}>
-            <Link href={project.href} className="flex items-center py-16 group transition">
+            <Link
+              href={project.href}
+              className="flex items-center py-16 group transition"
+              legacyBehavior>
 
               <div className="w-192">
                 <span className="rounded-full px-8 bg-primary-10 text-sm">
@@ -168,7 +171,8 @@ const Home = () => {
               href={project.href}
               className={`flex flex-col justify-between h-full border-2 hover:border-green-25 p-24 rounded-xl space-y-24 group transition ${
                 project.disabled && "opacity-25"
-              }`}>
+              }`}
+              legacyBehavior>
 
               <div className="flex-1">
                 <div className="flex items-center gap-8 -ml-8">

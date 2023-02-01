@@ -17,17 +17,17 @@ const FooterLink = ({ project, direction }) => {
   );
 
   return (
-    (<Link href={project.href} className={linkClasses}>
+    <Link href={project.href} className={linkClasses} legacyBehavior>
 
-      <div className="flex-1">
-        <div className="text-sm sm:text-base text-primary-75 capitalize">
-          {direction} Project
+        <div className="flex-1">
+          <div className="text-sm sm:text-base text-primary-75 capitalize">
+            {direction} Project
+          </div>
+          <div className="font-medium text-sm sm:text-lg">{project.title}</div>
         </div>
-        <div className="font-medium text-sm sm:text-lg">{project.title}</div>
-      </div>
-      <span className={arrowClasses}>{direction === "prev" ? "←" : "→"}</span>
+        <span className={arrowClasses}>{direction === "prev" ? "←" : "→"}</span>
 
-    </Link>)
+      </Link>
   );
 };
 
