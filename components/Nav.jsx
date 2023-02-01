@@ -59,7 +59,7 @@ const ThemeSwitcher = () => {
 // ----------------------------------------------------------------------------
 
 const Nav = () => (
-  <nav className="flex items-center justify-between gap-8 px-page border-b print:hidden">
+  <nav className="sticky top-0 z-10 flex items-center justify-between gap-8 px-page bg-ground border-b print:hidden">
     <NavLink href="/" className="-ml-12 xs:-ml-24">
       Andy Smith
     </NavLink>
