@@ -33,19 +33,15 @@ const Footer = () => (
           </A>
         </p>
       </div>
-      <Link href="/about">
-        <a
-          className={cn(
-            "flex items-center justify-center gap-8 w-128 h-128 sm:w-160 sm:h-160 rounded-full transition flex-shrink-0",
-            "border-2 border-indigo text-sm text-indigo font-medium text-center",
-            "hover:bg-indigo hover:text-ground",
-            "animate-float"
-          )}
-        >
-          View
-          <br />
-          Resumé
-        </a>
+      <Link
+        href="/about"
+        className={cn(
+          "flex items-center justify-center gap-8 w-128 h-128 sm:w-160 sm:h-160 rounded-full transition flex-shrink-0",
+          "border-2 border-indigo text-sm text-indigo font-medium text-center",
+          "hover:bg-indigo hover:text-ground",
+          "animate-float"
+        )}>
+        View<br />Resumé
       </Link>
     </div>
   </footer>

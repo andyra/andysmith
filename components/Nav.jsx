@@ -18,19 +18,19 @@ const NavLink = ({ href, className, children }) => {
   }
 
   return (
-    <Link href={href}>
-      <a
-        className={cn(
-          "flex items-center h-64 px-12 xs:px-24 hover:text-indigo",
-          "font-bold text-sm tracking-wider uppercase",
-          isCurrent && "text-indigo",
-          className
-        )}
-        {...attrs}
-      >
-        {children}
-      </a>
-    </Link>
+    (<Link
+      href={href}
+      className={cn(
+        "flex items-center h-64 px-12 xs:px-24 hover:text-indigo",
+        "font-bold text-sm tracking-wider uppercase",
+        isCurrent && "text-indigo",
+        className
+      )}
+      {...attrs}>
+
+      {children}
+
+    </Link>)
   );
 };
 
