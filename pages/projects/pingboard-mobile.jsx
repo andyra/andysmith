@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Carousel from "components/Carousel";
-import ProjectFooter from "components/ProjectFooter";
-import ProjectHeader from "components/ProjectHeader";
+import ProjectLayout from "components/ProjectLayout";
 import {
   Callout,
   Divider,
@@ -144,14 +143,12 @@ const WHOS_WHO_IMAGES = [
 // show arrow buttons on either side of image.
 // set state to first image visible?
 
-const PingboardMobile = () => {
+const PingboardMobile = ({ metaTitle }) => {
   return (
-    <>
-      <ProjectHeader
-        title="Pingboard Mobile App"
-        description="The challenge: condense Pingboard's suite of tools to a useful, unfussy mobile app. Thanks to React Native, we could maintain a single code base across Android and Mobile."
-      />
-
+    <ProjectLayout
+      title={metaTitle}
+      description="The challenge: condense Pingboard's suite of tools to a useful, unfussy mobile app. Thanks to React Native, we could maintain a single code base across Android and Mobile."
+    >
       <Section title="Directory" columns>
         <Carousel className="max-w-320" images={DIRECTORY_IMAGES} transition />
       </Section>
@@ -171,9 +168,7 @@ const PingboardMobile = () => {
       <Section title="1:1 Meetings" columns>
         <Carousel className="max-w-320" images={MEETINGS_IMAGES} />
       </Section>
-
-      <ProjectFooter />
-    </>
+    </ProjectLayout>
   );
 };
 

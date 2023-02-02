@@ -3,7 +3,7 @@ import Link from "next/link";
 import cn from "classnames";
 import { PROJECTS } from "../constants";
 
-const FooterLink = ({ project, direction }) => {
+const ProjectLink = ({ project, direction }) => {
   const linkClasses = cn(
     "flex flex-col xs:flex-row gap-8 p-16 sm:p-24 rounded-lg border-2 border-secondary-50 text-secondary hover:bg-secondary-05 transition group",
     direction === "next" && "justify-end text-right"
@@ -29,7 +29,7 @@ const FooterLink = ({ project, direction }) => {
   );
 };
 
-const ProjectFooter = () => {
+const ProjectNav = () => {
   const router = useRouter();
   const index = PROJECTS.map((project) => project.href).indexOf(
     router.pathname
@@ -40,11 +40,24 @@ const ProjectFooter = () => {
   return (
     <footer className="px-page pb-page-lg">
       <nav className="max-w-screen-xl mx-auto py-page grid grid-cols-2 gap-16 sm:gap-24">
-        <FooterLink project={prev} direction="prev" />
-        <FooterLink project={next} direction="next" />
+        <ProjectLink project={prev} direction="prev" />
+        <ProjectLink project={next} direction="next" />
       </nav>
     </footer>
   );
 };
 
-export default ProjectFooter;
+const ProjectLayout = ({ children, description, link, title }) => (
+  <div className="xl:flex xl:items-start">
+    <header className="px-page xl:w-screen-sm xl:sticky xl:top-64">
+      <div className="max-w-screen-md mx-auto space-y-sm py-base border-b xl:border-none text-secondary">
+        <h1 className="font-bold text-xl">{title}</h1>
+        <p className="max-w-prose">{description}</p>
+        <ProjectNav />
+      </div>
+    </header>
+    <div class="flex-1 border-l">{children}</div>
+  </div>
+);
+
+export default ProjectLayout;

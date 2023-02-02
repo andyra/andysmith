@@ -4,8 +4,7 @@ import { useTheme } from "next-themes";
 
 import Button from "components/Button";
 import { Callout } from "components/Content";
-import ProjectFooter from "components/ProjectFooter";
-import ProjectHeader from "components/ProjectHeader";
+import ProjectLayout from "components/ProjectLayout";
 import { A, Divider, Section } from "components/Content";
 
 import homeLight from "public/projects/tes/homeLight.webp";
@@ -23,26 +22,23 @@ import mobileAlbumDark from "public/projects/tes/mobileAlbumDark.webp";
 import mobileCoolModeLight from "public/projects/tes/mobileCoolModeLight.webp";
 import mobileCoolModeDark from "public/projects/tes/mobileCoolModeDark.webp";
 
-const Tes = () => {
+const Tes = ({ metaTitle }) => {
   const { resolvedTheme } = useTheme();
 
   return (
-    <>
-      <ProjectHeader
-        title="TES.fm"
-        description="A site I designed and built to showcase various music projects some friends and I put together over the years. Includes fancy stuff like an audio player, queueing, full screen mode, search, and PWA support."
+    <ProjectLayout
+      title={metaTitle}
+      description="A site I designed and built to showcase various music projects some friends and I put together over the years. Includes fancy stuff like an audio player, queueing, full screen mode, search, and PWA support."
+    >
+      <Button
         color="orange"
+        href="https://tes.fm"
+        target="_blank"
+        rel="noopener noreferrer"
       >
-        <Button
-          color="orange"
-          href="https://tes.fm"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Check it out!
-          <span className="group-hover:translate-x-4 transition-all">→</span>
-        </Button>
-      </ProjectHeader>
+        Check it out!
+        <span className="group-hover:translate-x-4 transition-all">→</span>
+      </Button>
 
       <Section title="Yes, but Why?" columns>
         <p>
@@ -165,9 +161,7 @@ const Tes = () => {
           </div>
         </figure>
       </Section>
-
-      <ProjectFooter />
-    </>
+    </ProjectLayout>
   );
 };
 
