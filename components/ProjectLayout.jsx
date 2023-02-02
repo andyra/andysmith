@@ -5,12 +5,12 @@ import { PROJECTS } from "../constants";
 
 const ProjectLink = ({ project, direction }) => {
   const linkClasses = cn(
-    "flex flex-col xs:flex-row gap-8 p-16 sm:p-24 rounded-lg border-2 border-secondary-50 text-secondary hover:bg-secondary-05 transition group",
+    "flex flex-col xs:flex-row gap-8 p-16 text-secondary hover:bg-secondary-05 transition group",
     direction === "next" && "justify-end text-right"
   );
 
   const arrowClasses = cn(
-    "text-primary-75 transition-transform",
+    "transition-transform",
     direction === "prev"
       ? "group-hover:-translate-x-8 order-first"
       : "group-hover:translate-x-8 order-first xs:order-last"
@@ -19,17 +19,15 @@ const ProjectLink = ({ project, direction }) => {
   return (
     <Link href={project.href} className={linkClasses}>
       <div className="flex-1">
-        <div className="text-sm sm:text-base text-primary-75 capitalize">
-          {direction} Project
-        </div>
-        <div className="font-medium text-sm sm:text-lg">{project.title}</div>
+        <div className="text-sm capitalize">{direction}</div>
+        <div className="font-medium text-sm">{project.title}</div>
       </div>
       <span className={arrowClasses}>{direction === "prev" ? "←" : "→"}</span>
     </Link>
   );
 };
 
-const ProjectNav = () => {
+const ProjectLayout = ({ children, description, link, title }) => {
   const router = useRouter();
   const index = PROJECTS.map((project) => project.href).indexOf(
     router.pathname
@@ -38,26 +36,20 @@ const ProjectNav = () => {
   const next = PROJECTS[index === PROJECTS.length - 1 ? 0 : index + 1];
 
   return (
-    <footer className="px-page pb-page-lg">
-      <nav className="max-w-screen-xl mx-auto py-page grid grid-cols-2 gap-16 sm:gap-24">
-        <ProjectLink project={prev} direction="prev" />
-        <ProjectLink project={next} direction="next" />
-      </nav>
-    </footer>
+    <div className="lg:flex lg:items-start">
+      <aside className="lg:w-screen-sm lg:sticky lg:top-64 ">
+        <div className="px-page max-w-screen-md mx-auto space-y-sm py-base border-b lg:border-none text-secondary">
+          <h1 className="font-bold text-xl">{title}</h1>
+          <p className="max-w-prose">{description}</p>
+          <nav className="hidden lg:grid grid-cols-2 border-t">
+            <ProjectLink project={prev} direction="prev" />
+            <ProjectLink project={next} direction="next" />
+          </nav>
+        </div>
+      </aside>
+      <div class="flex-1 border-l">{children}</div>
+    </div>
   );
 };
-
-const ProjectLayout = ({ children, description, link, title }) => (
-  <div className="xl:flex xl:items-start">
-    <header className="px-page xl:w-screen-sm xl:sticky xl:top-64">
-      <div className="max-w-screen-md mx-auto space-y-sm py-base border-b xl:border-none text-secondary">
-        <h1 className="font-bold text-xl">{title}</h1>
-        <p className="max-w-prose">{description}</p>
-        <ProjectNav />
-      </div>
-    </header>
-    <div class="flex-1 border-l">{children}</div>
-  </div>
-);
 
 export default ProjectLayout;

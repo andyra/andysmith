@@ -20,21 +20,21 @@
   --primary-50: hsla(20, 12%, 10%, 0.5);
   --primary-25: hsla(20, 12%, 10%, 0.25);
   --primary-10: hsla(20, 12%, 10%, 0.1);
-  --primary-05: hsla(20, 12%, 10%, 005);
+  --primary-05: hsla(20, 12%, 10%, 0.05);
 
   --secondary: hsla(224, 90%, 39%, 1);
   --secondary-75: hsla(224, 90%, 39%, 0.75);
   --secondary-50: hsla(224, 90%, 39%, 0.5);
   --secondary-25: hsla(224, 90%, 39%, 0.25);
   --secondary-10: hsla(224, 90%, 39%, 0.1);
-  --secondary-05: hsla(224, 90%, 39%, 005);
+  --secondary-05: hsla(224, 90%, 39%, 0.05);
 
   --highlight: hsla(23, 97%, 43%, 1);
   --highlight-75: hsla(23, 97%, 43%, 0.75);
   --highlight-50: hsla(23, 97%, 43%, 0.5);
   --highlight-25: hsla(23, 97%, 43%, 0.25);
   --highlight-10: hsla(23, 97%, 43%, 0.1);
-  --highlight-05: hsla(23, 97%, 43%, 005);
+  --highlight-05: hsla(23, 97%, 43%, 0.05);
 }
 
 .dark {
