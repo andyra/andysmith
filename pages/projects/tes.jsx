@@ -56,7 +56,7 @@ const Tes = ({ metaTitle }) => {
           </strong>
           .
         </p>
-        <figure className="pt-page px-page lg:px-0">
+        <figure className="pt-base px-base lg:px-0">
           <div className="-rotate-1">
             <Image
               alt="TES albums page"
@@ -104,7 +104,7 @@ const Tes = ({ metaTitle }) => {
           before, and I encountered more advanced JavaScript/React challenges
           than I normally do in my day-to-day work at Pingboard.
         </p>
-        <figure className="flex justify-center lg:justify-start pt-page px-page lg:px-0">
+        <figure className="flex justify-center lg:justify-start pt-base px-base lg:px-0">
           <div className="w-320 px-[10px] py-[2px] -rotate-2 relative">
             <Image
               alt="TES mobile full screen visualizer"
@@ -140,7 +140,7 @@ const Tes = ({ metaTitle }) => {
           added the ability to insert &ldquobleeds&rdquo; between songs, which
           is a cue to blend two songs together
         </p>
-        <figure className="pt-page px-page lg:px-0">
+        <figure className="pt-base px-base lg:px-0">
           <div className="rotate-1">
             <Image
               alt="TES article page"

@@ -16,22 +16,18 @@ const PARAGRAPH_LONG =
 const TEXT_SIZES = [
   {
     size: "text-xl",
-    weight: "font-normal",
     content: PHRASE,
   },
   {
     size: "text-lg",
-    weight: "font-normal",
     content: PARAGRAPH,
   },
   {
     size: "text-base",
-    weight: "font-normal",
     content: PARAGRAPH_LONG,
   },
   {
     size: "text-sm",
-    weight: "font-normal",
     content: PARAGRAPH_LONG,
   },
 ];
@@ -39,13 +35,14 @@ const TEXT_SIZES = [
 const Typography = ({ metaTitle }) => {
   return (
     <>
-      <section className="px-page py-page-lg max-w-screen-xl mx-auto">
+      <section className="px-base py-lg max-w-screen-xl mx-auto">
         <ul className="divide-y">
           {TEXT_SIZES.map((item) => (
-            <li className="flex gap-16 py-page" key={item.size}>
-              <div className="font-mono w-1/5">{item.size}</div>
-              <div className="font-mono flex-1">
-                <p className={cn(item.size, item.weight)}>{item.content}</p>
+            <li className="flex gap-16 py-base" key={item.size}>
+              <div className="w-1/5">{item.size}</div>
+              <div className="flex-1">
+                <h2 className="text-2xl font-light font-heading">{PHRASE}</h2>
+                <div className={cn(item.size)}>{item.content}</div>
               </div>
             </li>
           ))}

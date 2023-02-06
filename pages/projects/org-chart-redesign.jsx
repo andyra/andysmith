@@ -12,6 +12,7 @@ import {
   SubSection,
   WideDude,
   Section2,
+  SubSection2,
   H2,
 } from "components/Content";
 
@@ -56,72 +57,78 @@ const OrgChart = ({ metaTitle }) => (
   chief among them the Org Chart."
   >
     <Section2 title="Challenges">
-      <H2 count="01">Conflicting Panels</H2>
-      <p>
-        The new nav designs use the left side of the screen for global
-        navigation, but the org chart used that space for its own Build panel.
-        To make matters worse, there was already a right panel in use!
-      </p>
-      <Figure>
-        <Image
-          src={oldPanel}
-          alt="Legacy org chart build panel"
-          sizes="(min-width: 1360px) 755px, (min-width: 960px) 55vw, 90vw"
-        />
-        <Highlight className="top-[11%] left-0 right-[80.5%] bottom-0" />
-      </Figure>
+      <SubSection2 title="Conflicting Panels" count="01">
+        <p>
+          The new nav designs use the left side of the screen for global
+          navigation, but the org chart used that space for its own Build panel.
+          To make matters worse, there was already a right panel in use!
+        </p>
+        <Figure>
+          <Image
+            src={oldPanel}
+            alt="Legacy org chart build panel"
+            sizes="(min-width: 1360px) 755px, (min-width: 960px) 55vw, 90vw"
+          />
+          <Highlight className="top-[11%] left-0 right-[80.5%] bottom-0" />
+        </Figure>
+      </SubSection2>
 
-      <H2 count="02">Accessing Private Org Charts</H2>
-      <p>
-        Since the new design didn&apos;t provide a secondary nav layer, we would
-        need to devise a way for customers to get to their private org charts.
-      </p>
-      <Figure>
-        <Image
-          className="rounded-sm"
-          src={oldNav}
-          alt="Legacy org chart build panel"
-          sizes="(min-width: 1360px) 755px, (min-width: 960px) 55vw, 90vw"
-        />
-        <Highlight className="top-[10%] left-[10%] right-[70%] bottom-[45%]" />
-      </Figure>
+      <SubSection2 title="Accessing Private Org Charts" count="02">
+        <p>
+          Since the new design didn&apos;t provide a secondary nav layer, we
+          would need to devise a way for customers to get to their private org
+          charts.
+        </p>
+        <Figure>
+          <Image
+            className="rounded-sm"
+            src={oldNav}
+            alt="Legacy org chart build panel"
+            sizes="(min-width: 1360px) 755px, (min-width: 960px) 55vw, 90vw"
+          />
+          <Highlight className="top-[10%] left-[10%] right-[70%] bottom-[45%]" />
+        </Figure>
+      </SubSection2>
 
-      <H2 count="03">Private Org Chart Toolbar</H2>
-      <p>
-        Private org charts have a custom toolbar that overrides the primary nav.
-        Is there a way we can consolidate the title, collaborator list, and
-        notifications with the existing toolbar and still keep the primary nav?
-      </p>
-      <Figure>
-        <Image
-          className="rounded-sm"
-          src={oldPrivate}
-          alt="Legacy org chart build panel"
-          sizes="(min-width: 1360px) 755px, (min-width: 960px) 55vw, 90vw"
-        />
-        <Highlight className="top-0 left-0 right-0 bottom-1/2" />
-      </Figure>
+      <SubSection2 title="Private Org Chart Toolbar" count="03">
+        <p>
+          Private org charts have a custom toolbar that overrides the primary
+          nav. Is there a way we can consolidate the title, collaborator list,
+          and notifications with the existing toolbar and still keep the primary
+          nav?
+        </p>
+        <Figure>
+          <Image
+            className="rounded-sm"
+            src={oldPrivate}
+            alt="Legacy org chart build panel"
+            sizes="(min-width: 1360px) 755px, (min-width: 960px) 55vw, 90vw"
+          />
+          <Highlight className="top-0 left-0 right-0 bottom-1/2" />
+        </Figure>
+      </SubSection2>
 
-      <H2 count="04">Filter & Search</H2>
-      <p>
-        A couple problems here! Filtering is a bit too subtle and it obfuscates
-        the org chart title. Additionally, it&apos;s easy to get org chart
-        search and global search confused.
-      </p>
-      <Figure>
-        <Image
-          className="rounded-sm"
-          src={oldFilterSearch}
-          alt="Legacy org chart build panel"
-          sizes="(min-width: 1360px) 755px, (min-width: 960px) 55vw, 90vw"
-        />
-        <Highlight className="top-[33%] left-0 right-[38%] bottom-[29%]" />
-        <Highlight className="top-0 left-[72.7%] right-0 bottom-[66%]" />
-      </Figure>
+      <SubSection2 title="Filter & Search" count="04">
+        <p>
+          A couple problems here! Filtering is a bit too subtle and it
+          obfuscates the org chart title. Additionally, it&apos;s easy to get
+          org chart search and global search confused.
+        </p>
+        <Figure>
+          <Image
+            className="rounded-sm"
+            src={oldFilterSearch}
+            alt="Legacy org chart build panel"
+            sizes="(min-width: 1360px) 755px, (min-width: 960px) 55vw, 90vw"
+          />
+          <Highlight className="top-[33%] left-0 right-[38%] bottom-[29%]" />
+          <Highlight className="top-0 left-[72.7%] right-0 bottom-[66%]" />
+        </Figure>
+      </SubSection2>
     </Section2>
 
-    <Section title="Figuring it out" columns>
-      <SubSection title="Start without (too much) judgement">
+    <Section2 title="Figuring it out">
+      <SubSection2 title="Start without (too much) judgement" count="01">
         <p>
           I like to brainstorm excessively to start with, in case any novel
           approaches jump out. Tools like Sketch and Figma are great at allowing
@@ -136,8 +143,8 @@ const OrgChart = ({ metaTitle }) => (
             sizes="(min-width: 1360px) 755px, (min-width: 960px) 55vw, 90vw"
           />
         </Figure>
-      </SubSection>
-      <SubSection title="Narrow down on the good bits">
+      </SubSection2>
+      <SubSection2 title="Narrow down on the good bits" count="02">
         <p>
           After working for a few days, I pruned out the ideas that were clumsy,
           required out-of-scope changes, or were simply too weird. I then worked
@@ -166,11 +173,11 @@ const OrgChart = ({ metaTitle }) => (
         <Button href="https://pingboard.github.io/pb-nav/org-chart" newTab>
           View Prototype →
         </Button>
-      </SubSection>
-    </Section>
+      </SubSection2>
+    </Section2>
 
-    <Section title="Validation" columns>
-      <SubSection title="User Testing">
+    <Section2 title="Validation">
+      <SubSection2 title="User Testing" count="01">
         <p>
           We scheduled <strong>UI testing-sessions</strong> with a couple
           cohorts: existing customers who had developed musicle memory with our
@@ -206,8 +213,8 @@ const OrgChart = ({ metaTitle }) => (
             </div>
           </div>
         </figure>
-      </SubSection>
-      <SubSection title="First Round of Results">
+      </SubSection2>
+      <SubSection2 title="First Round of Results" count="02">
         <p>
           We gave each person a series of tasks and asked them to say what was
           going through their heads as they completed (or attempted to
@@ -237,19 +244,18 @@ const OrgChart = ({ metaTitle }) => (
             </div>
           </li>
         </ul>
-      </SubSection>
-      <p>
-        After each cohort, we aggregated the results and found problem areas. If
-        there were obvious solutions for them, I would make changes to the
-        prototype before the next cohort to make sure they actually solved the
-        problem.
-      </p>
-    </Section>
+        <p>
+          After each cohort, we aggregated the results and found problem areas.
+          If there were obvious solutions for them, I would make changes to the
+          prototype before the next cohort to make sure they actually solved the
+          problem.
+        </p>
+      </SubSection2>
+    </Section2>
 
-    <Section
-      columns
+    <Section2
       title="Where We Landed"
-      contentClassName="lg:col-span-2 lg:grid lg:grid-cols-[1fr,2fr] gap-page items-start"
+      contentClassName="lg:col-span-2 lg:grid lg:grid-cols-[1fr,2fr] gap-base items-start"
     >
       <div className="relative hidden lg:block lg:col-span-2">
         <div className="z-10 absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
@@ -327,15 +333,15 @@ const OrgChart = ({ metaTitle }) => (
           <span className="lg:hidden">Play With Prototype</span>→
         </Button>
       </div>
-    </Section>
+    </Section2>
 
-    <Section title="Postmortem" columns>
+    <Section2 title="Postmortem">
       <p>
         In order to ship on time, we decided to cut out updates to the
         individual settings panels. That felt like a good compromise since they
         weren&apos;t essential to the navigation updates.
       </p>
-    </Section>
+    </Section2>
   </ProjectLayout>
 );
 

@@ -1,4 +1,5 @@
 import cn from "classnames";
+import styled from "styled-components";
 import slugify from "slugify";
 
 const BREAKPOINTS = {
@@ -32,21 +33,26 @@ const BREAKPOINTS = {
   },
 };
 
-export const Section2 = ({ children, maxWidth = "md", title }) => {
-  const containerClasses = cn(
-    "py-lg border-b mx-auto",
-    BREAKPOINTS[maxWidth].maxWidth
-  );
+export const Section2 = ({ children, title }) => (
+  <section className="py-lg border-b">
+    <h2 className="text-xl font-light">{title}</h2>
+    {children}
+  </section>
+);
 
-  return (
-    <section className="px-base">
-      <div className={containerClasses}>
-        <h2 className="text-xl font-bold">{title}</h2>
-        {children}
-      </div>
-    </section>
-  );
-};
+export const SubSection2 = ({ children, count, title }) => (
+  <>
+    <h2 className="font-bold font-base mb-24 relative">
+      {count && (
+        <span className="absolute -left-12 top-2 -translate-x-full text-sm opacity-50">
+          {count}
+        </span>
+      )}
+      {title}
+    </h2>
+    {children}
+  </>
+);
 
 export const H2 = ({ children, count }) => (
   <h2 className="font-medium font-base opacity-60 mb-24 relative">
@@ -59,14 +65,20 @@ export const H2 = ({ children, count }) => (
   </h2>
 );
 
-export const WideDude = ({ children, className, py = true, width = "xl" }) => {
+export const WideDude = ({ as = "div", children, className, width = "xl" }) => {
   const classes = cn(
     "relative left-1/2 -translate-x-1/2 max-w-[calc(100vw-3vmax)]",
-    py && "pt-sm",
-    BREAKPOINTS[width].width
+    BREAKPOINTS[width].width,
+    className
   );
 
-  return <div className={classes}>{children}</div>;
+  const WideDudeStyled = styled.div``;
+
+  return (
+    <WideDudeStyled as={as} className={classes}>
+      {children}
+    </WideDudeStyled>
+  );
 };
 
 export const Divider = ({ className }) => (
@@ -86,23 +98,19 @@ export const Section = ({
 }) => {
   const id = title ? slugify(title, { lower: true }) : null;
 
-  const classes = cn(
-    "px-page",
-    noTopPadding ? "pb-page-lg" : "py-page-lg",
-    className
-  );
+  const classes = cn("px-base", noTopPadding ? "pb-lg" : "py-lg", className);
 
   const contentClasses = cn(contentClassName || "space-y-48");
 
   const containerClasses = cn(
-    "grid grid-cols-1 gap-page",
-    "max-w-screen-xl mx-auto py-page border-b",
+    "grid grid-cols-1 gap-base",
+    "max-w-screen-xl mx-auto py-base border-b",
     columns && "lg:grid-cols-[1fr,2fr] lg:items-start",
     !columns && contentClassName
   );
 
   const headingClasses = cn(
-    columns && "font-semibold text-2xl mb-page lg:mb-0 lg:sticky lg:top-96",
+    columns && "font-semibold text-2xl mb-base lg:mb-0 lg:sticky lg:top-96",
     !columns && "font-semibold text-3xl sm:text-5xl",
     headingClassName
   );

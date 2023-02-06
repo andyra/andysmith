@@ -5,6 +5,7 @@ import { useTheme } from "next-themes";
 import cn from "classnames";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
 import ClientOnly from "components/ClientOnly";
+import { PROJECTS } from "../constants";
 
 // Subcomponents
 // ----------------------------------------------------------------------------
@@ -58,12 +59,12 @@ const ThemeSwitcher = () => {
 // ----------------------------------------------------------------------------
 
 const Nav = () => (
-  <nav className="sticky top-0 z-10 flex items-center justify-between gap-8 px-page bg-ground border-b print:hidden">
+  <nav className="hidden sticky top-0 z-10 flex items-center justify-between gap-8 px-base bg-ground border-b print:hidden">
     <NavLink href="/" className="-ml-12 xs:-ml-24">
       Andy Smith
     </NavLink>
     <div className="flex items-center">
-      <NavLink href="/#projects">Projects</NavLink>
+      <NavLink href={PROJECTS[0].href}>Projects</NavLink>
       <NavLink href="/about">About</NavLink>
       <ThemeSwitcher />
     </div>

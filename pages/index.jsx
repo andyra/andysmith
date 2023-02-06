@@ -33,85 +33,35 @@ const SectionLink = ({ color = "indigo", text }) => (
 const Home = () => {
   return (
     <>
-      <header className="max-w-screen-xl mx-auto p-page">
-        <p className="text-lg sm:text-xl">
-          Hiya! I&apos;m Andy, a product designer with an affinity for front-end
-          development.{" "}
-          <span className="opacity-60">
-            I have 12+ years experience, aspire for clarity in my work, and
-            believe that thoughtful design is essential to successful digital
-            products. I live in Austin with my dog, Ernie.
-          </span>
-        </p>
-      </header>
-
-      <section className="max-w-screen-xl mx-auto p-page">
-        How I can Help
-      </section>
-
-      <section className="max-w-screen-lg mx-auto p-page">
-        <h2 className="text-xl font-bold">Projects</h2>
-        <ul className="divide-y border-y">
-          {PROJECTS.map((project) => (
-            <li key={project.title}>
-              <Link
-                href={project.href}
-                className="flex items-center py-16 group transition"
-              >
-                <div className="w-192">
-                  <span className="rounded-full px-8 bg-primary-10 text-sm">
-                    {project.category}
-                  </span>
-                </div>
-                <div className="flex-1">
-                  <h3 className="font-medium group-hover:text-secondary transition">
-                    {project.title}
-                  </h3>
-                  <p className="text-primary-75">{project.details}</p>
-                </div>
-                <span className="text-secondary opacity-0 -translate-x-8 transition group-hover:opacity-100 group-hover:translate-x-0">
-                  →
-                </span>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <header className="hidden px-page pb-page pt-page-lg flex items-center sm:h-screen bg-secondary-10">
-        <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center gap-page">
-          <div className="lg:order-last w-192 sm:w-320">
-            <Image
-              alt="Picture of the author"
-              className="dark:invert"
-              placeholder="blur"
-              sizes="(min-width: 640px) 320w, 192px"
-              src={walkingGuy}
-            />
-            <div className="text-xs text-primary-50 text-center font-mono mt-8">
-              A photo of me
-            </div>
+      <header className="flex flex-col md:flex-row items-center gap-base py-lg text-secondary">
+        <div className="md:order-last w-192">
+          <Image
+            alt="Picture of the author"
+            className="dark:invert"
+            placeholder="blur"
+            sizes="(min-width: 640px) 320w, 192px"
+            src={walkingGuy}
+          />
+          <div className="text-xs text-primary-50 text-center font-mono mt-8">
+            A photo of me
           </div>
-          <div className="flex-1 space-y-page">
-            <p className="text-lg sm:text-xl">
-              Hiya! I&apos;m Andy, a product designer with an affinity for
-              front-end development.{" "}
-              <span className="opacity-60">
-                I have 12+ years experience, aspire for clarity in my work, and
-                believe that thoughtful design is essential to successful
-                digital products. I live in Austin with my dog, Ernie.
-              </span>
-            </p>
-            <SectionLink text="How I Can Help" />
-          </div>
+        </div>
+        <div className="flex-1 space-y-base">
+          <p className="text-lg">
+            Hiya! I&apos;m Andy, a product designer with an affinity for
+            front-end development.{" "}
+            <span className="opacity-60">
+              I have 12+ years experience, aspire for clarity in my work, and
+              believe that thoughtful design is essential to successful digital
+              products. I live in Austin with my dog, Ernie.
+            </span>
+          </p>
         </div>
       </header>
 
-      <Section
-        title="How I Can Help"
-        className="hidden flex items-center min-h-screen"
-      >
-        <p className="text-lg max-w-prose">
+      <section className="py-base">
+        <h2 className="text-xl font-light">How I Can Help</h2>
+        <p className="text-lg">
           <span className="underline">Product Design</span> is a somewhat
           amorphous term, but the gist is that it covers the entirety of the
           design process, from conception to release. My specific
@@ -129,7 +79,7 @@ const Home = () => {
               >
                 {i + 1}
               </span>
-              <h3 className="font-medium text-lg lg:mb-12">{skill.title}</h3>
+              <h3 className="font-base font-semibold lg:mb-8">{skill.title}</h3>
               <p className="mb-12">{skill.description}</p>
               <p className="text-sm text-primary-75">{skill.notes}</p>
               {skill.logos.length > 0 && (
@@ -149,8 +99,36 @@ const Home = () => {
             </li>
           ))}
         </ul>
-        <SectionLink text="Projects" color="secondary" />
-      </Section>
+      </section>
+
+      <section className="py-base">
+        <h2 className="text-xl font-light">Projects</h2>
+        <ul className="divide-y border-y">
+          {PROJECTS.map((project) => (
+            <li key={project.title}>
+              <Link
+                href={project.href}
+                className="flex items-center py-16 group transition"
+              >
+                <div className="w-192">
+                  <span className="rounded-full px-8 bg-primary-10 text-sm">
+                    {project.category}
+                  </span>
+                </div>
+                <div className="flex-1">
+                  <div className="font-medium group-hover:text-secondary transition">
+                    {project.title}
+                  </div>
+                  <div className="text-primary-75">{project.details}</div>
+                </div>
+                <span className="text-secondary opacity-0 -translate-x-8 transition group-hover:opacity-100 group-hover:translate-x-0">
+                  →
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
 
       <Section
         title="Projects"

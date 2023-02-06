@@ -29,25 +29,16 @@ const ProjectLink = ({ project, direction }) => {
 
 const ProjectLayout = ({ children, description, link, title }) => {
   const router = useRouter();
-  const index = PROJECTS.map((project) => project.href).indexOf(
-    router.pathname
-  );
-  const prev = PROJECTS[index === 0 ? PROJECTS.length - 1 : index - 1];
-  const next = PROJECTS[index === PROJECTS.length - 1 ? 0 : index + 1];
 
   return (
-    <div className="lg:flex lg:items-start">
-      <aside className="lg:w-screen-sm lg:sticky lg:top-64 ">
-        <div className="px-page max-w-screen-md mx-auto space-y-sm py-base border-b lg:border-none text-secondary">
-          <h1 className="font-bold text-xl">{title}</h1>
-          <p className="max-w-prose">{description}</p>
-          <nav className="hidden lg:grid grid-cols-2 border-t">
-            <ProjectLink project={prev} direction="prev" />
-            <ProjectLink project={next} direction="next" />
-          </nav>
-        </div>
-      </aside>
-      <div class="flex-1 border-l">{children}</div>
+    <div class="px-base">
+      <div className="mx-auto max-w-screen-md">
+        <header className="py-base border-b text-secondary">
+          <h1 className="font-light text-2xl">{title}</h1>
+          <p className="text-lg">{description}</p>
+        </header>
+        {children}
+      </div>
     </div>
   );
 };

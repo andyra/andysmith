@@ -367,7 +367,7 @@ const Onboarding = ({ metaTitle }) => {
       <Section
         columns
         title="Where We Landed"
-        contentClassName="lg:col-span-2 lg:grid lg:grid-cols-[1fr,2fr] gap-page items-start"
+        contentClassName="lg:col-span-2 lg:grid lg:grid-cols-[1fr,2fr] gap-base items-start"
       >
         <div className="relative hidden lg:block lg:col-span-2">
           <div className="z-10 absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">

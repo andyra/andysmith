@@ -1,24 +1,34 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Head from "next/head";
-import Footer from "components/Footer";
-import Nav from "components/Nav";
+import cn from "classnames";
+import Nav2 from "components/Nav2";
 import SkipLink from "components/SkipLink";
-import { A } from "components/Content";
+
+// NOTE: Desktop layout starts at screen-lg
 
 const Layout = ({ children, ...props }) => {
-  const metaTitle = props.metaTitle
-    ? `${props.metaTitle} • Andy Smith`
-    : "Andy Smith • Product Designer";
+  const { maxWidth = "max-w-screen-lg", metaTitle } = props;
+
+  const nextClasses = cn("lg:flex lg:items-start");
+
+  useEffect(() => {
+    document.getElementById("__next").classList.add(...nextClasses.split(" "));
+  }, [nextClasses]);
 
   return (
     <>
       <Head>
-        <title key="meta-title">{metaTitle}</title>
+        <title key="meta-title">
+          {metaTitle
+            ? `${metaTitle} • Andy Smith`
+            : "Andy Smith • Product Designer"}
+        </title>
       </Head>
-      <SkipLink />
-      <Nav />
-      <main id="main">{children}</main>
-      {/* <Footer /> */}
+      {/* <SkipLink /> */}
+      {<Nav2 />}
+      <main className="lg:flex-1 px-base">
+        <div className={cn(maxWidth, "mx-auto")}>{children}</div>
+      </main>
     </>
   );
 };

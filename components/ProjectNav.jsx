@@ -32,7 +32,7 @@ const ProjectNav = () => {
   const path = router.asPath;
 
   return (
-    <nav className="fixed top-page-lg left-page">
+    <nav className="fixed top-lg left-base">
       <ul>
         {PROJECTS.map((project) => (
           <ProjectNavLink path={path} project={project} key={project.href} />

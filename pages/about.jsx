@@ -23,8 +23,8 @@ const ResumeSection = ({ children, className, contentClassName, h1, h2 }) => (
 const About = () => {
   return (
     <>
-      <header className="px-page py-page-lg bg-primary-05">
-        <div className="max-w-screen-xl mx-auto grid grid-cols-[1fr,2fr] gap-page justify-between">
+      <header className="px-base py-lg bg-primary-05">
+        <div className="max-w-screen-xl mx-auto grid grid-cols-[1fr,2fr] gap-base justify-between">
           <figure className="hidden xs:block order-last lg:order-first">
             <Image
               alt="Picture of the author"
@@ -34,7 +34,7 @@ const About = () => {
               priority
             />
           </figure>
-          <div className="flex-1 space-y-page">
+          <div className="flex-1 space-y-base">
             <hgroup className="flex-1">
               <h1 className="font-medium text-lg">Andy Smith</h1>
               <h1>Product Designer</h1>
@@ -65,7 +65,7 @@ const About = () => {
       <hr />
 
       <Section title="Experience" columns>
-        <ul className="flex flex-col gap-page relative">
+        <ul className="flex flex-col gap-base relative">
           <span className="absolute top-12 bottom-32 -left-16 w-2 bg-primary-10 -translate-x-1/2" />
           {EXPERIENCE.map((item) => (
             <li key={item.company}>
@@ -118,7 +118,7 @@ const About = () => {
         contentClassName="grid sm:grid-cols-2 gap-24"
         noTopPadding
       >
-        <ul className="flex flex-col gap-page relative">
+        <ul className="flex flex-col gap-base relative">
           <li>
             <h3 className="flex items-baseline gap-12 font-bold text-lg mb-8 relative">
               <abbr title="Abilene Christian University">ACU</abbr>
