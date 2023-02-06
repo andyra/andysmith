@@ -171,6 +171,7 @@ export async function getStaticProps(context) {
   return {
     props: {
       metaTitle: "TES.fm",
+      maxWidth: "max-w-screen-lg prose",
     },
   };
 }

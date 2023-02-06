@@ -351,6 +351,7 @@ export async function getStaticProps(context) {
   return {
     props: {
       metaTitle: "Org Chart Redesign",
+      maxWidth: "max-w-screen-lg prose",
     },
   };
 }

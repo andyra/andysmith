@@ -79,6 +79,10 @@ module.exports = {
         ...breakpoints(theme("screens")),
         ...theme("spacing"),
       }),
+      minHeight: (theme, { breakpoints }) => ({
+        ...breakpoints(theme("screens")),
+        ...theme("spacing"),
+      }),
     },
     // Overrides
     fontSize: {

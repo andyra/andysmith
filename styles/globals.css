@@ -8,12 +8,12 @@
 }
 
 .light {
-  --ground: hsla(10, 21%, 95%, 1);
-  --ground-75: hsla(10, 21%, 95%, 0.75);
-  --ground-50: hsla(10, 21%, 95%, 0.5);
-  --ground-25: hsla(10, 21%, 95%, 0.25);
-  --ground-10: hsla(10, 21%, 95%, 0.1);
-  --ground-05: hsla(05, 21%, 95%, 0.05);
+  --ground: hsla(10, 35%, 93%, 1);
+  --ground-75: hsla(10, 35%, 93%, 0.75);
+  --ground-50: hsla(10, 35%, 93%, 0.5);
+  --ground-25: hsla(10, 35%, 93%, 0.25);
+  --ground-10: hsla(10, 35%, 93%, 0.1);
+  --ground-05: hsla(10, 35%, 93%, 0.05);
 
   --primary: hsla(20, 12%, 10%, 1);
   --primary-75: hsla(20, 12%, 10%, 0.75);
@@ -74,16 +74,16 @@
 h1,
 h2,
 h3 {
-  @apply font-heading font-normal;
+  @apply font-heading font-light;
 }
 
-p,
-ul,
-ol {
+.prose p,
+.prose ul,
+.prose ol {
   @apply mb-em;
 }
 
-* + h2 {
+.prose * + h2 {
   @apply mt-base;
 }
 

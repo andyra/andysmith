@@ -455,6 +455,7 @@ export async function getStaticProps(context) {
   return {
     props: {
       metaTitle: "New Hire Onboarding",
+      maxWidth: "max-w-screen-lg prose",
     },
   };
 }

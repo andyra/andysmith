@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Head from "next/head";
 import cn from "classnames";
-import Nav2 from "components/Nav2";
+import Nav from "components/Nav";
 import SkipLink from "components/SkipLink";
 
 // NOTE: Desktop layout starts at screen-lg
@@ -24,8 +24,8 @@ const Layout = ({ children, ...props }) => {
             : "Andy Smith • Product Designer"}
         </title>
       </Head>
-      {/* <SkipLink /> */}
-      {<Nav2 />}
+      <SkipLink />
+      {<Nav />}
       <main className="lg:flex-1 px-base">
         <div className={cn(maxWidth, "mx-auto")}>{children}</div>
       </main>

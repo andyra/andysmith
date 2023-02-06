@@ -178,6 +178,7 @@ export async function getStaticProps(context) {
   return {
     props: {
       metaTitle: "Pingboard Mobile App",
+      maxWidth: "max-w-screen-lg prose",
     },
   };
 }

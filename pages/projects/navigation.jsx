@@ -184,6 +184,7 @@ export async function getStaticProps(context) {
   return {
     props: {
       metaTitle: "Pingboard Nav Redesign",
+      maxWidth: "max-w-screen-lg prose",
     },
   };
 }

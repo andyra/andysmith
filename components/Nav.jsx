@@ -3,12 +3,18 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { useTheme } from "next-themes";
 import cn from "classnames";
-import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
-import ClientOnly from "components/ClientOnly";
-import { PROJECTS } from "../constants";
+import { Menu as MenuPrimitive } from "@headlessui/react";
+import ThemeSwitcher from "components/ThemeSwitcher";
+import { CONTACT_INFO, PROJECTS } from "../constants";
 
 // Subcomponents
 // ----------------------------------------------------------------------------
+
+const NAV_LINK_CLASSES = cn(
+  "flex items-center gap-12 hover:text-secondary",
+  "min-h-48 px-8",
+  "lg:min-h-32 lg:px-0"
+);
 
 const NavLink = ({ href, className, children }) => {
   const router = useRouter();
@@ -21,12 +27,7 @@ const NavLink = ({ href, className, children }) => {
   return (
     <Link
       href={href}
-      className={cn(
-        "flex items-center h-64 px-12 xs:px-24 hover:text-secondary",
-        "font-bold text-sm tracking-wider uppercase",
-        isCurrent && "text-secondary",
-        className
-      )}
+      className={cn(NAV_LINK_CLASSES, isCurrent && "text-secondary", className)}
       {...attrs}
     >
       {children}
@@ -34,41 +35,81 @@ const NavLink = ({ href, className, children }) => {
   );
 };
 
-const ThemeSwitcher = () => {
-  const { theme, resolvedTheme, setTheme } = useTheme();
-
-  return (
-    <ClientOnly>
-      <button
-        className="flex items-center justify-center h-64 px-12 -mr-12 xs:px-24 xs:-mr-24 hover:text-secondary transition"
-        onClick={() => {
-          setTheme(theme === "light" ? "dark" : "light");
-        }}
-      >
-        {resolvedTheme === "light" ? (
-          <SunIcon className="h-24 w-24" />
-        ) : (
-          <MoonIcon className="h-24 w-24" />
-        )}
-      </button>
-    </ClientOnly>
-  );
-};
+const ProjectMenu = () => (
+  <MenuPrimitive>
+    <MenuPrimitive.Button className={cn(NAV_LINK_CLASSES, "font-medium")}>
+      Projects
+    </MenuPrimitive.Button>
+    <MenuPrimitive.Items as="ul" className="absolute p-base bg-ground border">
+      {PROJECTS.map((project) => (
+        <MenuPrimitive.Item as="li" key={project.title}>
+          {({ active }) => (
+            <Link className={`${active && "bg-secondary"}`} href={project.href}>
+              {project.title}
+            </Link>
+          )}
+        </MenuPrimitive.Item>
+      ))}
+    </MenuPrimitive.Items>
+  </MenuPrimitive>
+);
 
 // Component
 // ----------------------------------------------------------------------------
 
-const Nav = () => (
-  <nav className="hidden sticky top-0 z-10 flex items-center justify-between gap-8 px-base bg-ground border-b print:hidden">
-    <NavLink href="/" className="-ml-12 xs:-ml-24">
-      Andy Smith
-    </NavLink>
-    <div className="flex items-center">
-      <NavLink href={PROJECTS[0].href}>Projects</NavLink>
-      <NavLink href="/about">About</NavLink>
-      <ThemeSwitcher />
-    </div>
-  </nav>
-);
+const Nav = () => {
+  const classes = cn(
+    "sticky top-0 flex text-sm bg-ground z-50 relative",
+    "items-center justify-between border-b",
+    "lg:flex-col lg:items-start lg:gap-base lg:h-screen lg:p-base lg:border-r"
+  );
+
+  return (
+    <nav className={classes}>
+      <div className="flex justify-between lg:w-full">
+        <NavLink href="/" className="pl-base lg:block">
+          <div className="font-heading text-base">Andy Smith</div>
+          <div className="hidden lg:block">Product Designer</div>
+        </NavLink>
+        <ThemeSwitcher className="hidden lg:flex lg:translate-x-1/2" />
+      </div>
+      <ul className="flex lg:flex-col lg:mb-auto">
+        <li className="lg:hidden">
+          <ProjectMenu />
+        </li>
+        <li className="hidden lg:block">
+          <NavLink href={PROJECTS[0].href} className="font-medium">
+            Projects
+          </NavLink>
+          <ul className="ml-16 text-xs mb-sm">
+            {PROJECTS.map((project) => (
+              <li key={project.href}>
+                <NavLink href={project.href}>{project.title}</NavLink>
+              </li>
+            ))}
+          </ul>
+        </li>
+        <li>
+          <NavLink href="/about" className="font-medium">
+            About
+          </NavLink>
+        </li>
+        <li className="lg:hidden">
+          <ThemeSwitcher />
+        </li>
+      </ul>
+      <ul className="hidden lg:block">
+        {CONTACT_INFO.map((item, i) => (
+          <li key={item.label}>
+            <NavLink href={item.href}>
+              {item.icon}
+              {item.value}
+            </NavLink>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+};
 
 export default Nav;

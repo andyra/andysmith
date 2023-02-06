@@ -31,15 +31,13 @@ const ProjectLayout = ({ children, description, link, title }) => {
   const router = useRouter();
 
   return (
-    <div class="px-base">
-      <div className="mx-auto max-w-screen-md">
-        <header className="py-base border-b text-secondary">
-          <h1 className="font-light text-2xl">{title}</h1>
-          <p className="text-lg">{description}</p>
-        </header>
-        {children}
-      </div>
-    </div>
+    <>
+      <header className="py-base border-b text-secondary">
+        <h1 className="font-light text-2xl">{title}</h1>
+        <p className="text-lg">{description}</p>
+      </header>
+      {children}
+    </>
   );
 };
 

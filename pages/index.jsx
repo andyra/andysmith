@@ -60,14 +60,14 @@ const Home = () => {
       </header>
 
       <section className="py-base">
-        <h2 className="text-xl font-light">How I Can Help</h2>
-        <p className="text-lg">
-          <span className="underline">Product Design</span> is a somewhat
-          amorphous term, but the gist is that it covers the entirety of the
-          design process, from conception to release. My specific
-          &ldquo;experience cocktail&rdquo; looks something like this:
+        <h2 className="text-xl font-light mb-sm">How I Can Help</h2>
+        <p className="text-lg mb-base">
+          Product Design is a somewhat amorphous term, but the gist is that it
+          covers the entirety of the design process, from conception to release.
+          My specific &ldquo;experience cocktail&rdquo; looks something like
+          this:
         </p>
-        <ul className="grid grid-cols-1 lg:grid-cols-3 gap-32 lg:gap-24">
+        <ul className="grid grid-cols-1 xl:grid-cols-3 gap-32 lg:gap-sm">
           {HOW_I_CAN_HELP.map((skill, i) => (
             <li
               className="flex flex-col border-t pt-24 lg:border-none lg:pt-0 relative"
@@ -80,7 +80,7 @@ const Home = () => {
                 {i + 1}
               </span>
               <h3 className="font-base font-semibold lg:mb-8">{skill.title}</h3>
-              <p className="mb-12">{skill.description}</p>
+              <p className="mb-12 hidden">{skill.description}</p>
               <p className="text-sm text-primary-75">{skill.notes}</p>
               {skill.logos.length > 0 && (
                 <ul className="flex gap-12 mt-24">
@@ -102,24 +102,24 @@ const Home = () => {
       </section>
 
       <section className="py-base">
-        <h2 className="text-xl font-light">Projects</h2>
+        <h2 className="text-xl font-light mb-sm">Projects</h2>
         <ul className="divide-y border-y">
           {PROJECTS.map((project) => (
             <li key={project.title}>
               <Link
                 href={project.href}
-                className="flex items-center py-16 group transition"
+                className="sm:flex items-center py-16 group transition"
               >
-                <div className="w-192">
-                  <span className="rounded-full px-8 bg-primary-10 text-sm">
-                    {project.category}
-                  </span>
-                </div>
                 <div className="flex-1">
                   <div className="font-medium group-hover:text-secondary transition">
                     {project.title}
                   </div>
-                  <div className="text-primary-75">{project.details}</div>
+                  <div className="text-sm text-primary-75">
+                    {project.details}
+                  </div>
+                  <span className="inline-block rounded-full px-8 -ml-8 bg-secondary-10 text-sm">
+                    {project.category}
+                  </span>
                 </div>
                 <span className="text-secondary opacity-0 -translate-x-8 transition group-hover:opacity-100 group-hover:translate-x-0">
                   →
@@ -129,52 +129,6 @@ const Home = () => {
           ))}
         </ul>
       </section>
-
-      <Section
-        title="Projects"
-        className="hidden flex items-center min-h-screen bg-secondary-05"
-      >
-        <p class="text-lg max-w-prose">
-          A smattering of projects—both professional and personal—to showcase a
-          few of my skills and interests.
-        </p>
-        <ul
-          className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-24"
-          role="list"
-        >
-          {PROJECTS.map((project) => (
-            <li className="h-full" key={project.title}>
-              <Link
-                href={project.href}
-                className={`flex flex-col justify-between h-full border-2 hover:border-secondary-25 p-24 rounded-xl space-y-24 group transition ${
-                  project.disabled && "opacity-25"
-                }`}
-              >
-                <div className="flex-1">
-                  <div className="flex items-center gap-8 -ml-8">
-                    {project.category && (
-                      <span className="rounded-full px-8 bg-primary-10 text-sm">
-                        {project.category}
-                      </span>
-                    )}
-                  </div>
-                  <h2 className="flex items-baseline justify-between font-medium text-lg leading-tight mb-4 group-hover:text-secondary transition">
-                    {project.title}
-                    <span className="text-secondary opacity-0 -translate-x-8 transition group-hover:opacity-100 group-hover:translate-x-0">
-                      →
-                    </span>
-                  </h2>
-                  <p className="text-sm text-primary-75">{project.details}</p>
-                </div>
-                <figure className="w-full h-128 bg-primary-10 rounded-lg" />
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <Button color="secondary" href="/resume">
-          Resumé
-        </Button>
-      </Section>
     </>
   );
 };
