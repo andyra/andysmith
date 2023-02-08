@@ -2,17 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Carousel from "components/Carousel";
 import ProjectHeader from "components/ProjectHeader";
-import {
-  Callout,
-  Divider,
-  Figure,
-  Highlight,
-  ListItem,
-  Meter,
-  OrderedList,
-  Section,
-  SubSection,
-} from "components/Content";
+import { Section } from "components/Content";
 
 import calendar from "public/projects/pingboard-mobile/calendar.png";
 import calendarEdit from "public/projects/pingboard-mobile/calendarEdit.png";
@@ -150,23 +140,23 @@ const PingboardMobile = ({ metaTitle }) => {
         title={metaTitle}
         description="The challenge: condense Pingboard's suite of tools to a useful, unfussy mobile app. Thanks to React Native, we could maintain a single code base across Android and Mobile."
       />
-      <Section title="Directory" columns>
+      <Section title="Directory">
         <Carousel className="max-w-320" images={DIRECTORY_IMAGES} transition />
       </Section>
 
-      <Section title="Profile" columns>
+      <Section title="Profile">
         <Carousel className="max-w-320" images={PROFILE_IMAGES} />
       </Section>
 
-      <Section title="Calendar" columns>
+      <Section title="Calendar">
         <Carousel className="max-w-320" images={CALENDAR_IMAGES} />
       </Section>
 
-      <Section title="Who's Who" columns>
+      <Section title="Who's Who">
         <Carousel className="max-w-320" images={WHOS_WHO_IMAGES} />
       </Section>
 
-      <Section title="1:1 Meetings" columns>
+      <Section title="1:1 Meetings">
         <Carousel className="max-w-320" images={MEETINGS_IMAGES} />
       </Section>
     </>

@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import Carousel from "components/Carousel";
 import ProjectHeader from "components/ProjectHeader";
-import { A, Callout, Divider, Section } from "components/Content";
+import { Section } from "components/Content";
 
 import andy01 from "public/projects/onboarding/andy01.webp";
 import andy02 from "public/projects/onboarding/andy02.webp";
@@ -183,11 +183,7 @@ const Onboarding = ({ metaTitle }) => {
         title={metaTitle}
         description="Pingboard was built to help people across diverse companies connect with each other. Helping companies onboard their new hires was a great fit for our product and an opportunity for growth. One problem, though: how do we know what to build?"
       />
-      <Section
-        title="Do people really need another tool?"
-        columns
-        className="hidden"
-      >
+      <Section title="Do people really need another tool?" className="hidden">
         <p>
           Before getting too far down the garden path, we had to ask what our
           product could bring to the table that other tools [bla]. A cursory
@@ -206,7 +202,7 @@ const Onboarding = ({ metaTitle }) => {
         </p>
       </Section>
 
-      <Section title="Exploratory interviews" columns>
+      <Section title="Exploratory interviews">
         <p>
           We set up interviews with 12 different customers to talk through their
           onboarding process. Where were the pain points? What was working well?
@@ -228,7 +224,7 @@ const Onboarding = ({ metaTitle }) => {
         />
       </Section>
 
-      <Section title="We've talked to a bunch of people; now what?" columns>
+      <Section title="We've talked to a bunch of people; now what?">
         <p>
           After interviewing, you end up with a lot of information:
           frustrations, anecdotes, half-baked ideas, problems both in-and-out of
@@ -310,7 +306,7 @@ const Onboarding = ({ metaTitle }) => {
         </figure>
       </Section>
 
-      <Section title="Cutting scope" columns>
+      <Section title="Cutting scope">
         <p>
           After sketching out what that fully-realized future might look like,
           it was clear that it was too ambitious for a single release. Instead,
@@ -365,11 +361,7 @@ const Onboarding = ({ metaTitle }) => {
         </figure>
       </Section>
 
-      <Section
-        columns
-        title="Where We Landed"
-        contentClassName="lg:col-span-2 lg:grid lg:grid-cols-[1fr,2fr] gap-base items-start"
-      >
+      <Section title="Where We Landed">
         <div className="relative hidden lg:block lg:col-span-2">
           <div className="z-10 absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
             <div className="flex items-center px-16 h-40 rounded-full bg-secondary text-ground">
@@ -383,7 +375,7 @@ const Onboarding = ({ metaTitle }) => {
         </div>
       </Section>
 
-      <Section title="Loose Threads" columns>
+      <Section title="Loose Threads">
         <p>
           A wrinkle came up during development: what if the person being
           onboarded has Admin privileges? Since Admins have a page dedicated to
