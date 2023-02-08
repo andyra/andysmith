@@ -44,15 +44,29 @@ module.exports = {
         "highlight-05": "var(--highlight-05)",
       },
       fontFamily: {
-        base: [
+        sans: [
           "Output Sans",
           "Metric",
           "Gothic A1",
           "Be Vietnam Pro Variable",
           "Maison Neue",
           "IA Writer Quattro V",
+          "ui-sans-serif",
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          '"Segoe UI"',
+          "Roboto",
+          '"Helvetica Neue"',
+          "Arial",
+          '"Noto Sans"',
+          "sans-serif",
+          '"Apple Color Emoji"',
+          '"Segoe UI Emoji"',
+          '"Segoe UI Symbol"',
+          '"Noto Color Emoji"',
         ],
-        heading: [
+        serif: [
           "Tiempos Headline",
           "Tiempos Fine",
           "Metric",
@@ -63,6 +77,12 @@ module.exports = {
           "Output Sans",
           "Gothic A1",
           "Roslindale Variable V2",
+          "ui-serif",
+          "Georgia",
+          "Cambria",
+          '"Times New Roman"',
+          "Times",
+          "serif",
         ],
         mono: ["ABC DiaType Semi-Mono Variable"],
       },
@@ -84,7 +104,7 @@ module.exports = {
     },
     // Overrides
     fontSize: {
-      "2xl": ["64px", { lineHeight: "1.5" }],
+      "2xl": ["64px", { lineHeight: "1.15" }],
       xl: ["42px", { lineHeight: "1.5" }],
       lg: ["26px", { lineHeight: "34px" }],
       base: ["22px", { lineHeight: "30px" }],

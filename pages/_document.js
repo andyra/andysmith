@@ -10,7 +10,7 @@ const Document = () => (
         crossOrigin=""
       />
     </Head>
-    <body className="bg-ground font-base text-base text-primary dark:antialiased">
+    <body className="bg-ground font-sans text-base text-primary dark:antialiased">
       <Main />
       <NextScript />
     </body>

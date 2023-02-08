@@ -36,7 +36,7 @@ const About = () => {
         <div className="flex-1 space-y-base">
           <hgroup className="hidden lg:block">
             <h1 className="text-xl">Andy Smith</h1>
-            <h2 className="font-base font-normal text-lg">Product Designer</h2>
+            <h2 className="font-sans font-normal text-lg">Product Designer</h2>
           </hgroup>
           <ul>
             {CONTACT_INFO.map((item, i) => (
@@ -70,7 +70,7 @@ const About = () => {
           {EXPERIENCE.map((item) => (
             <li key={item.company}>
               <hgroup className="mb-16">
-                <h3 className="flex items-center gap-12 font-base font-semibold text-lg relative">
+                <h3 className="flex items-center gap-12 font-sans font-semibold text-lg relative">
                   <Dot />
                   {item.company}
                 </h3>
@@ -93,7 +93,7 @@ const About = () => {
             </li>
           ))}
           <li className="text-sm">
-            <h3 className="flex items-baseline gap-12 font-base font-semibold text-lg mb-8 text-primary-75 relative">
+            <h3 className="flex items-baseline gap-12 font-sans font-semibold text-lg mb-8 text-primary-75 relative">
               <Dot subtle />
               Not important, but…
             </h3>
@@ -116,7 +116,7 @@ const About = () => {
         <h2 className="text-xl">Education</h2>
         <div className="grid grid-cols-1 gap-24 sm:grid-cols-2">
           <div>
-            <h3 className="flex items-baseline gap-12 font-base font-bold text-lg mb-8 relative">
+            <h3 className="flex items-baseline gap-12 font-sans font-bold text-lg mb-8 relative">
               <abbr title="Abilene Christian University">ACU</abbr>
             </h3>
             <h4 className="font-medium flex gap-12 items-baseline relative">
@@ -141,7 +141,7 @@ const About = () => {
         <ul className="grid grid-cols-1 gap-24">
           {TOOLS.map((tool, i) => (
             <li className="md:rounded-lg md:p-16 md:border-2" key={tool.title}>
-              <h3 className="font-base font-medium">{tool.title}</h3>
+              <h3 className="font-sans font-medium">{tool.title}</h3>
               <p className="text-sm text-primary-75">
                 {tool.notes.join(" • ")}
               </p>

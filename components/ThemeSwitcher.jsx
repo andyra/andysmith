@@ -20,15 +20,15 @@ const ThemeSwitcher = ({ className }) => {
   const THEMES = [
     {
       name: "system",
-      icon: <ComputerDesktopIcon className="h-24 w-24" />,
+      icon: <ComputerDesktopIcon className="h-em w-em" />,
     },
     {
       name: "light",
-      icon: <SunIcon className="h-24 w-24" />,
+      icon: <SunIcon className="h-em w-em" />,
     },
     {
       name: "dark",
-      icon: <MoonIcon className="h-24 w-24" />,
+      icon: <MoonIcon className="h-em w-em" />,
     },
   ];
 
@@ -44,7 +44,7 @@ const ThemeSwitcher = ({ className }) => {
         </MenuPrimitive.Button>
         <MenuPrimitive.Items
           as="ul"
-          className="absolute z-10 top-96 right-8 p-8 rounded bg-primary text-ground border w-256"
+          className="absolute z-10 top-base translate-y-40 right-8 p-8 rounded bg-primary text-ground border w-256 text-sm"
         >
           {THEMES.map((theme) => (
             <MenuPrimitive.Item as="li" key={theme.name}>

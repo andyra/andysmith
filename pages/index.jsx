@@ -4,7 +4,6 @@ import Link from "next/link";
 import cn from "classnames";
 import slugify from "slugify";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
-import { Divider, Dot, Section, TimeStamp } from "components/Content";
 import Button from "components/Button";
 import Tooltip from "components/Tooltip";
 
@@ -60,21 +59,12 @@ const Home = () => {
         </p>
         <ul className="grid grid-cols-1 xl:grid-cols-3 gap-32 lg:gap-sm">
           {HOW_I_CAN_HELP.map((skill, i) => (
-            <li
-              className="flex flex-col border-t pt-24 lg:border-none lg:pt-0 relative"
-              key={skill.title}
-            >
-              <span
-                className="absolute top-8 -left-8 -translate-x-full font-medium text-sm text-secondary opacity-75 lg:hidden"
-                aria-hidden
-              >
-                {i + 1}
-              </span>
-              <h3 className="font-base font-semibold lg:mb-8">{skill.title}</h3>
+            <li className="flex flex-col" key={skill.title}>
+              <h3 className="font-sans font-semibold lg:mb-8">{skill.title}</h3>
               <p className="mb-12 hidden">{skill.description}</p>
               <p className="text-sm text-primary-75">{skill.notes}</p>
               {skill.logos.length > 0 && (
-                <ul className="flex gap-12 mt-24">
+                <ul className="flex gap-12 mt-12">
                   {skill.logos.map((logo) => (
                     <li
                       className="hover:-translate-y-4 transition duration-300"
@@ -125,3 +115,11 @@ const Home = () => {
 };
 
 export default Home;
+
+export async function getStaticProps(context) {
+  return {
+    props: {
+      maxWidth: "max-w-screen-lg",
+    },
+  };
+}

@@ -40,11 +40,20 @@ const ProjectMenu = () => (
     <MenuPrimitive.Button className={cn(NAV_LINK_CLASSES, "font-medium")}>
       Projects
     </MenuPrimitive.Button>
-    <MenuPrimitive.Items as="ul" className="absolute p-base bg-ground border">
+    <MenuPrimitive.Items
+      as="ul"
+      className="absolute left-0 right-0 py-sm bg-ground shadow-2xl border"
+    >
       {PROJECTS.map((project) => (
         <MenuPrimitive.Item as="li" key={project.title}>
           {({ active }) => (
-            <Link className={`${active && "bg-secondary"}`} href={project.href}>
+            <Link
+              className={cn(
+                "flex items-center h-48 px-base",
+                active && "bg-secondary-05"
+              )}
+              href={project.href}
+            >
               {project.title}
             </Link>
           )}
@@ -72,12 +81,12 @@ const Nav = () => {
     <nav className={classes}>
       <div className="flex justify-between lg:w-full">
         <NavLink href="/" className="pl-base lg:block">
-          <div className="font-heading text-base">Andy Smith</div>
+          <div className="font-serif text-base">Andy Smith</div>
           <div className="hidden lg:block">Product Designer</div>
         </NavLink>
         <ThemeSwitcher className="hidden lg:flex lg:translate-x-1/2" />
       </div>
-      <ul className="flex lg:flex-col lg:mb-auto">
+      <ul className="flex lg:flex-col lg:mb-auto lg:w-full">
         <li className="lg:hidden">
           <ProjectMenu />
         </li>

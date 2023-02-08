@@ -326,7 +326,7 @@ const Onboarding = ({ metaTitle }) => {
           nicely into our market strategy.
         </p>
         <figure className="text-sm">
-          <ul className="rounded bg-secondary-05 border border-secondary-10 p-24 text-secondary">
+          <ul className="rounded bg-secondary-05 border border-secondary-10 p-24 text-secondary mb-16">
             <li className="font-medium mb-12">Useful and achievable!</li>
             {[
               "Checklists",

@@ -26,9 +26,9 @@ import wireframes from "public/projects/org-chart/wireframes.webp";
 // -----------------------------------------------------------------------------
 
 const TableRow = ({ percent, title }) => (
-  <li className="xs:flex xs:items-center xs:gap-16">
-    <div className="xs:w-1/3">{title}</div>
-    <div className="xs:flex-1 flex items-center gap-16 w-full">
+  <li className="sm:flex sm:items-center sm:gap-16">
+    <div className="sm:w-1/3">{title}</div>
+    <div className="sm:flex-1 flex items-center gap-16 w-full">
       <div className="flex-1 h-8 rounded-full bg-primary-10 relative">
         <div
           className={cn(
@@ -183,34 +183,37 @@ const OrgChart = ({ metaTitle }) => (
           addition, we started off with a round of internal testing so we could
           work out any obvious kinks before talking to other people.
         </p>
-        <figure className="border rounded p-16 space-y-16">
-          <ul className="flex items-center gap-8 text-center text-sm">
-            <li className="flex-1 p-16 rounded bg-highlight-10 text-highlight-75 space-y-8">
+        <figure className="flex sm:flex-col gap-16 border rounded p-16">
+          <ul className="flex-1 flex flex-col items-center sm:flex-row sm:items-center gap-8 text-center text-sm">
+            <li className="w-full flex-1 p-16 rounded bg-highlight-10 text-highlight-75 space-y-8">
               <div className="font-medium text-3xl">7</div>
               <div>Internal Sessions</div>
             </li>
             <li className="text-lg text-primary-50">
-              <ArrowRightIcon className="h-16 w-16" />
+              <ArrowRightIcon className="rotate-90 sm:rotate-0 h-16 w-16" />
             </li>
-            <li className="flex-1 p-16 rounded bg-secondary-10 text-secondary-75 space-y-8">
+            <li className="w-full flex-1 p-16 rounded bg-secondary-10 text-secondary-75 space-y-8">
               <div className="font-medium text-3xl">8</div>
               <div>Existing Customers</div>
             </li>
             <li className="text-lg text-primary-50">
-              <ArrowRightIcon className="h-16 w-16" />
+              <ArrowRightIcon className="rotate-90 sm:rotate-0 h-16 w-16" />
             </li>
-            <li className="flex-1 p-16 rounded bg-secondary-10 text-secondary-75 space-y-8">
+            <li className="w-full flex-1 p-16 rounded bg-secondary-10 text-secondary-75 space-y-8">
               <div className="font-medium text-3xl">6</div>
               <div>Potential Customers</div>
             </li>
           </ul>
-          <div className="text-sm relative">
-            <div className="flex items-center gap-16 text-primary-50">
-              <span>Low</span>
-              <hr className="border-t-2 border-primary-50 flex-1" />
-              <span>High</span>
-            </div>
-            <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 px-8 bg-ground">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-16 text-sm relative">
+            <span className="text-primary-50">Low</span>
+            <span className="w-2 h-full sm:w-full sm:h-2 bg-primary-25" />
+            <span>Confidence</span>
+            <span className="w-2 h-full sm:w-full sm:h-2 bg-primary-25" />
+            <span className="text-primary-50">High</span>
+
+            <hr className="hidden border-t-2 border-primary-50 flex-1" />
+            <hr className="hidden border-t-2 border-primary-50 flex-1" />
+            <div className="hidden absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 px-8 bg-ground">
               Confidence
             </div>
           </div>

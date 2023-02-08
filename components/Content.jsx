@@ -42,7 +42,7 @@ export const Section = ({ children, title }) => (
 
 export const SubSection = ({ children, count, title }) => (
   <>
-    <h2 className="font-bold font-base mb-24 relative">
+    <h2 className="font-bold font-sans mb-24 relative">
       {count && (
         <span className="absolute -left-12 top-2 -translate-x-full font-normal text-sm opacity-50">
           {count}
@@ -77,7 +77,7 @@ export const WideDude = ({
 };
 
 export const H2 = ({ children, count }) => (
-  <h2 className="font-medium font-base opacity-60 mb-24 relative">
+  <h2 className="font-medium font-sans opacity-60 mb-24 relative">
     {count && (
       <span className="absolute -left-12 top-2 -translate-x-full text-sm opacity-50">
         {count}

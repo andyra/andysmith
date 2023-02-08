@@ -41,7 +41,7 @@ const Typography = ({ metaTitle }) => {
             <li className="flex gap-16 py-base" key={item.size}>
               <div className="w-1/5">{item.size}</div>
               <div className="flex-1">
-                <h2 className="text-2xl font-light font-heading">{PHRASE}</h2>
+                <h2 className="text-2xl font-light font-serif">{PHRASE}</h2>
                 <div className={cn(item.size)}>{item.content}</div>
               </div>
             </li>
