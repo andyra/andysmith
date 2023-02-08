@@ -1,9 +1,10 @@
 import cn from "classnames";
 
 const BUTTON_COLORS = {
-  indigo: "border-indigo-25 bg-indigo-05 hover:border-indigo text-indigo",
-  green: "border-green-50 hover:border-green bg-green-10 text-green",
-  orange: "border-orange-50 hover:border-orange bg-orange-10 text-orange",
+  secondary:
+    "border-secondary-50 hover:border-secondary bg-secondary-10 text-secondary",
+  highlight:
+    "border-highlight-50 hover:border-highlight bg-highlight-10 text-highlight",
 };
 
 const Button = ({

@@ -1,17 +1,13 @@
 import Link from "next/link";
 import Callout from "components/Callout";
-import ProjectFooter from "components/ProjectFooter";
-import ProjectHeader from "components/ProjectHeader";
+import ProjectLayout from "components/ProjectLayout";
 import { Divider, Section } from "components/Content";
 
-const Meetings = () => {
+const Meetings = ({ metaTitle }) => {
   return (
-    <>
-      <ProjectHeader title="TES.fm" description="Placeholder" />
-
+    <ProjectLayout title={metaTitle} description="">
       <Section heading="What's the Problem?" i="01" columns={1}></Section>
-      <ProjectFooter />
-    </>
+    </ProjectLayout>
   );
 };
 
@@ -20,7 +16,8 @@ export default Meetings;
 export async function getStaticProps(context) {
   return {
     props: {
-      metaTitle: "TES.fm",
+      metaTitle: "Meetings",
+      maxWidth: "max-w-screen-lg prose",
     },
   };
 }

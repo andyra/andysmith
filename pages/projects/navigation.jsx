@@ -1,20 +1,17 @@
 import Link from "next/link";
 import Callout from "components/Callout";
-import ProjectFooter from "components/ProjectFooter";
-import ProjectHeader from "components/ProjectHeader";
+import ProjectLayout from "components/ProjectLayout";
 import { A, Divider, Section } from "components/Content";
 
-const Navigation = () => {
+const Navigation = ({ metaTitle }) => {
   return (
-    <>
-      <ProjectHeader
-        title="Pingboard Nav Redesign"
-        description="Since launching in 2014, Pingboard's horizontal navbar had been
-            more-or-less unchanged. Seven years and countless iterations later,
-            the navigation was due for a rethink. If we were building this from
-            scratch today, how would we do it differently?"
-      />
-
+    <ProjectLayout
+      title={metaTitle}
+      description="Since launching in 2014, Pingboard's horizontal navbar had been
+    more-or-less unchanged. Seven years and countless iterations later,
+    the navigation was due for a rethink. If we were building this from
+    scratch today, how would we do it differently?"
+    >
       <Section title="What's the Problem?">
         <div className="space-y-16">
           <ul className="list list-disc space-y-16 pl-16">
@@ -44,7 +41,7 @@ const Navigation = () => {
             feedback.
           </Callout>
         </div>
-        <figure className="bg-indigo-25 p-24 rounded-lg pointer-events-none">
+        <figure className="bg-secondary-25 p-24 rounded-lg pointer-events-none">
           <div className="bg-white rounded-lg h-256">
             <div className="flex items-center gap-16 p-8">
               <span className="bg-primary h-16 w-64 rounded-sm" />
@@ -98,7 +95,7 @@ const Navigation = () => {
             </li>
           </ul>
         </div>
-        <figure className="bg-indigo-25 p-24 rounded-lg pointer-events-none" />
+        <figure className="bg-secondary-25 p-24 rounded-lg pointer-events-none" />
       </Section>
 
       <Section title="Challenges">
@@ -125,7 +122,7 @@ const Navigation = () => {
             </li>
           </ul>
         </div>
-        <figure className="bg-indigo-25 p-24 rounded-lg pointer-events-none" />
+        <figure className="bg-secondary-25 p-24 rounded-lg pointer-events-none" />
       </Section>
 
       <Section title="Research &amp; Validation">
@@ -175,10 +172,9 @@ const Navigation = () => {
             navigate.
           </p>
         </div>
-        <figure className="bg-indigo-25 p-24 rounded-lg pointer-events-none" />
+        <figure className="bg-secondary-25 p-24 rounded-lg pointer-events-none" />
       </Section>
-      <ProjectFooter />
-    </>
+    </ProjectLayout>
   );
 };
 
@@ -188,6 +184,7 @@ export async function getStaticProps(context) {
   return {
     props: {
       metaTitle: "Pingboard Nav Redesign",
+      maxWidth: "max-w-screen-lg prose",
     },
   };
 }

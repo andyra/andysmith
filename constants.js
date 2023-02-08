@@ -1,3 +1,9 @@
+import {
+  CursorArrowRaysIcon,
+  InboxIcon,
+  PhoneIcon,
+} from "@heroicons/react/24/outline";
+
 import LogoAdobe from "./public/LogoAdobe.svg";
 import LogoCss from "./public/LogoCss.svg";
 import LogoFigma from "./public/LogoFigma.svg";
@@ -11,16 +17,19 @@ export const CONTACT_INFO = [
     label: "Portfolio",
     value: "andysmith.io",
     href: "https://andysmith.io",
+    icon: <CursorArrowRaysIcon className="h-em w-em opacity-50" />,
   },
   {
     label: "Email",
     value: "asmith.esq@gmail.com",
     href: "mailto:asmith.esq@gmail.com",
+    icon: <InboxIcon className="h-em w-em opacity-50" />,
   },
   {
     label: "Phone",
     value: "(512) 731–6063",
     href: "phone:5127316063",
+    icon: <PhoneIcon className="h-em w-em opacity-50" />,
   },
 ];
 
@@ -82,8 +91,7 @@ export const PROJECTS = [
     image: "",
     href: "/projects/org-chart-redesign",
     details: "",
-    category: "UI Redesign",
-    color: "indigo",
+    category: "UI Design",
   },
   {
     title: "TES.fm",
@@ -91,7 +99,6 @@ export const PROJECTS = [
     href: "/projects/tes",
     details: "Personal music player project built with React",
     category: "Front-End Build",
-    color: "orange",
   },
   {
     title: "New Hire Onboarding",
@@ -99,7 +106,6 @@ export const PROJECTS = [
     href: "/projects/onboarding",
     details: "Help new hires get up-to-speed faster",
     category: "UX Research",
-    color: "green",
   },
   {
     title: "Pingboard Mobile App",

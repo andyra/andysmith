@@ -13,16 +13,15 @@ const ProjectNavLink = ({ path, project }) => {
 
   return (
     <li key={project.title}>
-      <Link href={project.href}>
-        <a
-          className={cn(
-            "flex items-center gap-8 h-32 text-sm",
-            isCurrent && "text-indigo"
-          )}
-          {...attrs}
-        >
-          {project.title}
-        </a>
+      <Link
+        href={project.href}
+        className={cn(
+          "flex items-center gap-8 h-32 text-sm",
+          isCurrent && "text-secondary"
+        )}
+        {...attrs}
+      >
+        {project.title}
       </Link>
     </li>
   );
@@ -33,7 +32,7 @@ const ProjectNav = () => {
   const path = router.asPath;
 
   return (
-    <nav className="fixed top-page-lg left-page">
+    <nav className="fixed top-lg left-base">
       <ul>
         {PROJECTS.map((project) => (
           <ProjectNavLink path={path} project={project} key={project.href} />

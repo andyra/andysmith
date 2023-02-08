@@ -1,5 +1,85 @@
 import cn from "classnames";
+import styled from "styled-components";
 import slugify from "slugify";
+
+const BREAKPOINTS = {
+  xs: {
+    width: "w-screen-xs",
+    maxWidth: "max-w-screen-xs",
+  },
+  sm: {
+    width: "w-screen-sm",
+    maxWidth: "max-w-screen-sm",
+  },
+  md: {
+    width: "w-screen-md",
+    maxWidth: "max-w-screen-md",
+  },
+  lg: {
+    width: "w-screen-lg",
+    maxWidth: "max-w-screen-lg",
+  },
+  xl: {
+    width: "w-screen-xl",
+    maxWidth: "max-w-screen-xl",
+  },
+  "2xl": {
+    width: "w-screen-2xl",
+    maxWidth: "max-w-screen-2xl",
+  },
+  "3xl": {
+    width: "w-screen-3xl",
+    maxWidth: "max-w-screen-3xl",
+  },
+};
+
+export const Section2 = ({ children, title }) => (
+  <section className="py-lg border-b">
+    <h2 className="text-xl font-light">{title}</h2>
+    {children}
+  </section>
+);
+
+export const SubSection2 = ({ children, count, title }) => (
+  <>
+    <h2 className="font-bold font-base mb-24 relative">
+      {count && (
+        <span className="absolute -left-12 top-2 -translate-x-full text-sm opacity-50">
+          {count}
+        </span>
+      )}
+      {title}
+    </h2>
+    {children}
+  </>
+);
+
+export const H2 = ({ children, count }) => (
+  <h2 className="font-medium font-base opacity-60 mb-24 relative">
+    {count && (
+      <span className="absolute -left-12 top-2 -translate-x-full text-sm opacity-50">
+        {count}
+      </span>
+    )}
+    {children}
+  </h2>
+);
+
+export const WideDude = ({ as = "div", children, className, width = "xl" }) => {
+  const classes = cn(
+    "relative left-1/2 -translate-x-1/2 max-w-[calc(100vw-3vmax)]",
+    BREAKPOINTS[width].width,
+    className
+  );
+
+  const WideDudeStyled = styled.div``;
+
+  return (
+    <WideDudeStyled as={as} className={classes}>
+      {children}
+    </WideDudeStyled>
+  );
+};
 
 export const Divider = ({ className }) => (
   <hr className={cn("border-t-2 border-primary opacity-10", className)} />
@@ -18,23 +98,19 @@ export const Section = ({
 }) => {
   const id = title ? slugify(title, { lower: true }) : null;
 
-  const classes = cn(
-    "px-page",
-    noTopPadding ? "pb-page-lg" : "py-page-lg",
-    className
-  );
+  const classes = cn("px-base", noTopPadding ? "pb-lg" : "py-lg", className);
 
   const contentClasses = cn(contentClassName || "space-y-48");
 
   const containerClasses = cn(
-    "grid grid-cols-1 gap-page",
-    "max-w-screen-xl mx-auto",
+    "grid grid-cols-1 gap-base",
+    "max-w-screen-xl mx-auto py-base border-b",
     columns && "lg:grid-cols-[1fr,2fr] lg:items-start",
     !columns && contentClassName
   );
 
   const headingClasses = cn(
-    columns && "font-semibold text-2xl mb-page lg:mb-0 lg:sticky lg:top-96",
+    columns && "font-semibold text-2xl mb-base lg:mb-0 lg:sticky lg:top-96",
     !columns && "font-semibold text-3xl sm:text-5xl",
     headingClassName
   );
@@ -73,7 +149,7 @@ export const A = ({ children, newTab, href }) => {
 
   return (
     <a
-      className="underline underline-offset-2 decoration-primary-50 hover:decoration-indigo hover:text-indigo cursor-pointer transition"
+      className="underline underline-offset-2 decoration-primary-50 hover:decoration-secondary hover:text-secondary cursor-pointer transition"
       href={href}
       {...attrs}
     >
@@ -101,8 +177,8 @@ export const Dot = ({ subtle, border }) => (
       "absolute top-1/2 -left-16 -translate-x-1/2 -translate-y-1/2 z-10",
       "h-12 w-12 rounded-full",
       border && "bg-ground border-2",
-      !subtle && !border && "bg-indigo",
-      !subtle && border && "border-indigo-50",
+      !subtle && !border && "bg-secondary",
+      !subtle && border && "border-secondary-50",
       subtle && !border && "bg-primary-75",
       subtle && border && "border-primary-25"
     )}
@@ -111,9 +187,9 @@ export const Dot = ({ subtle, border }) => (
 
 const CALLOUT_COLORS = {
   default: "text-primary border-primary-50",
-  info: "text-indigo border-indigo-50",
-  positive: "text-green border-green-50",
-  warning: "text-orange border-orange-50",
+  info: "text-secondary border-secondary-50",
+  positive: "text-secondary border-secondary-50",
+  warning: "text-highlight border-highlight-50",
 };
 
 export const Callout = ({ children, className, color = "default" }) => (
@@ -146,6 +222,6 @@ export const Figure = ({ caption, children, className }) => (
 
 export const Highlight = ({ className }) => (
   <div
-    className={cn("border-2 border-orange rounded-md absolute ", className)}
+    className={cn("border-2 border-highlight rounded-md absolute ", className)}
   />
 );

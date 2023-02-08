@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Image from "next/future/image";
+import Image from "next/image";
 import Link from "next/link";
 import cn from "classnames";
 import slugify from "slugify";
@@ -33,59 +33,54 @@ const SectionLink = ({ color = "indigo", text }) => (
 const Home = () => {
   return (
     <>
-      <header className="px-page pb-page pt-page-lg flex items-center sm:h-screen bg-indigo-10">
-        <div className="max-w-screen-xl mx-auto flex flex-col lg:flex-row items-center gap-page">
-          <div className="lg:order-last w-192 sm:w-320">
-            <Image
-              alt="Picture of the author"
-              className="dark:invert"
-              placeholder="blur"
-              sizes="(min-width: 640px) 320w, 192px"
-              src={walkingGuy}
-            />
-            <div className="text-xs text-primary-50 text-center font-mono mt-8">
-              A photo of me
-            </div>
+      <header className="flex flex-col md:flex-row items-center gap-base py-lg text-secondary">
+        <div className="md:order-last w-192">
+          <Image
+            alt="Picture of the author"
+            className="dark:invert"
+            placeholder="blur"
+            sizes="(min-width: 640px) 320w, 192px"
+            src={walkingGuy}
+          />
+          <div className="text-xs text-primary-50 text-center font-mono mt-8">
+            A photo of me
           </div>
-          <div className="flex-1 space-y-page">
-            <p className="text-lg sm:text-xl">
-              Hiya! I&apos;m Andy, a product designer with an affinity for
-              front-end development.{" "}
-              <span className="opacity-60">
-                I have 12+ years experience, aspire for clarity in my work, and
-                believe that thoughtful design is essential to successful
-                digital products. I live in Austin with my dog, Ernie.
-              </span>
-            </p>
-            <SectionLink text="How I Can Help" />
-          </div>
+        </div>
+        <div className="flex-1 space-y-base">
+          <p className="text-lg">
+            Hiya! I&apos;m Andy, a product designer with an affinity for
+            front-end development.{" "}
+            <span className="opacity-60">
+              I have 12+ years experience, aspire for clarity in my work, and
+              believe that thoughtful design is essential to successful digital
+              products. I live in Austin with my dog, Ernie.
+            </span>
+          </p>
         </div>
       </header>
 
-      <Section
-        title="How I Can Help"
-        className="flex items-center min-h-screen"
-      >
-        <p className="text-lg max-w-prose">
-          <span className="underline">Product Design</span> is a somewhat
-          amorphous term, but the gist is that it covers the entirety of the
-          design process, from conception to release. My specific
-          &ldquo;experience cocktail&rdquo; looks something like this:
+      <section className="py-base">
+        <h2 className="text-xl font-light mb-sm">How I Can Help</h2>
+        <p className="text-lg mb-base">
+          Product Design is a somewhat amorphous term, but the gist is that it
+          covers the entirety of the design process, from conception to release.
+          My specific &ldquo;experience cocktail&rdquo; looks something like
+          this:
         </p>
-        <ul className="grid grid-cols-1 lg:grid-cols-3 gap-32 lg:gap-24">
+        <ul className="grid grid-cols-1 xl:grid-cols-3 gap-32 lg:gap-sm">
           {HOW_I_CAN_HELP.map((skill, i) => (
             <li
               className="flex flex-col border-t pt-24 lg:border-none lg:pt-0 relative"
               key={skill.title}
             >
               <span
-                className="absolute top-8 -left-8 -translate-x-full font-medium text-sm text-green opacity-75 lg:hidden"
+                className="absolute top-8 -left-8 -translate-x-full font-medium text-sm text-secondary opacity-75 lg:hidden"
                 aria-hidden
               >
                 {i + 1}
               </span>
-              <h3 className="font-medium text-lg lg:mb-12">{skill.title}</h3>
-              <p className="mb-12">{skill.description}</p>
+              <h3 className="font-base font-semibold lg:mb-8">{skill.title}</h3>
+              <p className="mb-12 hidden">{skill.description}</p>
               <p className="text-sm text-primary-75">{skill.notes}</p>
               {skill.logos.length > 0 && (
                 <ul className="flex gap-12 mt-24">
@@ -104,55 +99,36 @@ const Home = () => {
             </li>
           ))}
         </ul>
-        <SectionLink text="Projects" color="green" />
-      </Section>
+      </section>
 
-      <Section
-        title="Projects"
-        className="flex items-center min-h-screen bg-green-05"
-      >
-        <p class="text-lg max-w-prose">
-          A smattering of projects—both professional and personal—to showcase a
-          few of my skills and interests.
-        </p>
-        <ul
-          className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-24"
-          role="list"
-        >
+      <section className="py-base">
+        <h2 className="text-xl font-light mb-sm">Projects</h2>
+        <ul className="divide-y border-y">
           {PROJECTS.map((project) => (
-            <li className="h-full" key={project.title}>
-              <Link href={project.href}>
-                <a
-                  className={`flex flex-col justify-between h-full border-2 hover:border-green-25 p-24 rounded-xl space-y-24 group transition ${
-                    project.disabled && "opacity-25"
-                  }`}
-                >
-                  <div className="flex-1">
-                    <div className="flex items-center gap-8 -ml-8">
-                      {project.category && (
-                        <span className="rounded-full px-8 bg-primary-10 text-sm">
-                          {project.category}
-                        </span>
-                      )}
-                    </div>
-                    <h2 className="flex items-baseline justify-between font-medium text-lg leading-tight mb-4 group-hover:text-green transition">
-                      {project.title}
-                      <span className="text-green opacity-0 -translate-x-8 transition group-hover:opacity-100 group-hover:translate-x-0">
-                        →
-                      </span>
-                    </h2>
-                    <p className="text-sm text-primary-75">{project.details}</p>
+            <li key={project.title}>
+              <Link
+                href={project.href}
+                className="sm:flex items-center py-16 group transition"
+              >
+                <div className="flex-1">
+                  <div className="font-medium group-hover:text-secondary transition">
+                    {project.title}
                   </div>
-                  <figure className="w-full h-128 bg-primary-10 rounded-lg" />
-                </a>
+                  <div className="text-sm text-primary-75">
+                    {project.details}
+                  </div>
+                  <span className="inline-block rounded-full px-8 -ml-8 bg-secondary-10 text-sm">
+                    {project.category}
+                  </span>
+                </div>
+                <span className="text-secondary opacity-0 -translate-x-8 transition group-hover:opacity-100 group-hover:translate-x-0">
+                  →
+                </span>
               </Link>
             </li>
           ))}
         </ul>
-        <Button color="green" href="/resume">
-          Resumé
-        </Button>
-      </Section>
+      </section>
     </>
   );
 };

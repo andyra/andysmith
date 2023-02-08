@@ -1,11 +1,10 @@
 import Link from "next/link";
-import Image from "next/future/image";
+import Image from "next/image";
 import { useTheme } from "next-themes";
 
 import Button from "components/Button";
 import { Callout } from "components/Content";
-import ProjectFooter from "components/ProjectFooter";
-import ProjectHeader from "components/ProjectHeader";
+import ProjectLayout from "components/ProjectLayout";
 import { A, Divider, Section } from "components/Content";
 
 import homeLight from "public/projects/tes/homeLight.webp";
@@ -23,26 +22,23 @@ import mobileAlbumDark from "public/projects/tes/mobileAlbumDark.webp";
 import mobileCoolModeLight from "public/projects/tes/mobileCoolModeLight.webp";
 import mobileCoolModeDark from "public/projects/tes/mobileCoolModeDark.webp";
 
-const Tes = () => {
+const Tes = ({ metaTitle }) => {
   const { resolvedTheme } = useTheme();
 
   return (
-    <>
-      <ProjectHeader
-        title="TES.fm"
-        description="A site I designed and built to showcase various music projects some friends and I put together over the years. Includes fancy stuff like an audio player, queueing, full screen mode, search, and PWA support."
+    <ProjectLayout
+      title={metaTitle}
+      description="A site I designed and built to showcase various music projects some friends and I put together over the years. Includes fancy stuff like an audio player, queueing, full screen mode, search, and PWA support."
+    >
+      <Button
         color="orange"
+        href="https://tes.fm"
+        target="_blank"
+        rel="noopener noreferrer"
       >
-        <Button
-          color="orange"
-          href="https://tes.fm"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Check it out!
-          <span className="group-hover:translate-x-4 transition-all">→</span>
-        </Button>
-      </ProjectHeader>
+        Check it out!
+        <span className="group-hover:translate-x-4 transition-all">→</span>
+      </Button>
 
       <Section title="Yes, but Why?" columns>
         <p>
@@ -60,7 +56,7 @@ const Tes = () => {
           </strong>
           .
         </p>
-        <figure className="pt-page px-page lg:px-0">
+        <figure className="pt-base px-base lg:px-0">
           <div className="-rotate-1">
             <Image
               alt="TES albums page"
@@ -108,7 +104,7 @@ const Tes = () => {
           before, and I encountered more advanced JavaScript/React challenges
           than I normally do in my day-to-day work at Pingboard.
         </p>
-        <figure className="flex justify-center lg:justify-start pt-page px-page lg:px-0">
+        <figure className="flex justify-center lg:justify-start pt-base px-base lg:px-0">
           <div className="w-320 px-[10px] py-[2px] -rotate-2 relative">
             <Image
               alt="TES mobile full screen visualizer"
@@ -144,7 +140,7 @@ const Tes = () => {
           added the ability to insert &ldquobleeds&rdquo; between songs, which
           is a cue to blend two songs together
         </p>
-        <figure className="pt-page px-page lg:px-0">
+        <figure className="pt-base px-base lg:px-0">
           <div className="rotate-1">
             <Image
               alt="TES article page"
@@ -165,9 +161,7 @@ const Tes = () => {
           </div>
         </figure>
       </Section>
-
-      <ProjectFooter />
-    </>
+    </ProjectLayout>
   );
 };
 
@@ -177,6 +171,7 @@ export async function getStaticProps(context) {
   return {
     props: {
       metaTitle: "TES.fm",
+      maxWidth: "max-w-screen-lg prose",
     },
   };
 }
