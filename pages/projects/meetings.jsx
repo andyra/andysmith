@@ -1,13 +1,14 @@
 import Link from "next/link";
 import Callout from "components/Callout";
-import ProjectLayout from "components/ProjectLayout";
+import ProjectHeader from "components/ProjectHeader";
 import { Divider, Section } from "components/Content";
 
 const Meetings = ({ metaTitle }) => {
   return (
-    <ProjectLayout title={metaTitle} description="">
+    <>
+      <ProjectHeader title={metaTitle} description="" />
       <Section heading="What's the Problem?" i="01" columns={1}></Section>
-    </ProjectLayout>
+    </>
   );
 };
 

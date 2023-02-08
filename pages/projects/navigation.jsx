@@ -1,17 +1,18 @@
 import Link from "next/link";
 import Callout from "components/Callout";
-import ProjectLayout from "components/ProjectLayout";
+import ProjectHeader from "components/ProjectHeader";
 import { A, Divider, Section } from "components/Content";
 
 const Navigation = ({ metaTitle }) => {
   return (
-    <ProjectLayout
-      title={metaTitle}
-      description="Since launching in 2014, Pingboard's horizontal navbar had been
-    more-or-less unchanged. Seven years and countless iterations later,
-    the navigation was due for a rethink. If we were building this from
-    scratch today, how would we do it differently?"
-    >
+    <>
+      <ProjectHeader
+        title={metaTitle}
+        description="Since launching in 2014, Pingboard's horizontal navbar had been
+      more-or-less unchanged. Seven years and countless iterations later,
+      the navigation was due for a rethink. If we were building this from
+      scratch today, how would we do it differently?"
+      />
       <Section title="What's the Problem?">
         <div className="space-y-16">
           <ul className="list list-disc space-y-16 pl-16">
@@ -174,7 +175,7 @@ const Navigation = ({ metaTitle }) => {
         </div>
         <figure className="bg-secondary-25 p-24 rounded-lg pointer-events-none" />
       </Section>
-    </ProjectLayout>
+    </>
   );
 };
 

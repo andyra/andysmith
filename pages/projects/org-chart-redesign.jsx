@@ -2,17 +2,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import cn from "classnames";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import Button from "components/Button";
-import ProjectLayout from "components/ProjectLayout";
+import ProjectHeader from "components/ProjectHeader";
 import {
   Callout,
   Figure,
   Highlight,
   Section,
   SubSection,
-  WideDude,
-  Section2,
-  SubSection2,
   H2,
 } from "components/Content";
 
@@ -48,16 +46,17 @@ const TableRow = ({ percent, title }) => (
 // -----------------------------------------------------------------------------
 
 const OrgChart = ({ metaTitle }) => (
-  <ProjectLayout
-    title={metaTitle}
-    description="After months of design and research, we had landed on a set of global
-  design changes to update the look &amp; feel of Pingboard. While most
-  pages wouldn't need to be updated, there were a handful that
-  would need significant changes in order to work with the new layout,
-  chief among them the Org Chart."
-  >
-    <Section2 title="Challenges">
-      <SubSection2 title="Conflicting Panels" count="01">
+  <>
+    <ProjectHeader
+      title={metaTitle}
+      description="After months of design and research, we had landed on a set of global
+    design changes to update the look &amp; feel of Pingboard. While most
+    pages wouldn't need to be updated, there were a handful that
+    would need significant changes in order to work with the new layout,
+    chief among them the Org Chart."
+    />
+    <Section title="Challenges">
+      <SubSection title="Conflicting Panels" count="01">
         <p>
           The new nav designs use the left side of the screen for global
           navigation, but the org chart used that space for its own Build panel.
@@ -71,9 +70,9 @@ const OrgChart = ({ metaTitle }) => (
           />
           <Highlight className="top-[11%] left-0 right-[80.5%] bottom-0" />
         </Figure>
-      </SubSection2>
+      </SubSection>
 
-      <SubSection2 title="Accessing Private Org Charts" count="02">
+      <SubSection title="Accessing Private Org Charts" count="02">
         <p>
           Since the new design didn&apos;t provide a secondary nav layer, we
           would need to devise a way for customers to get to their private org
@@ -88,9 +87,9 @@ const OrgChart = ({ metaTitle }) => (
           />
           <Highlight className="top-[10%] left-[10%] right-[70%] bottom-[45%]" />
         </Figure>
-      </SubSection2>
+      </SubSection>
 
-      <SubSection2 title="Private Org Chart Toolbar" count="03">
+      <SubSection title="Private Org Chart Toolbar" count="03">
         <p>
           Private org charts have a custom toolbar that overrides the primary
           nav. Is there a way we can consolidate the title, collaborator list,
@@ -106,9 +105,9 @@ const OrgChart = ({ metaTitle }) => (
           />
           <Highlight className="top-0 left-0 right-0 bottom-1/2" />
         </Figure>
-      </SubSection2>
+      </SubSection>
 
-      <SubSection2 title="Filter & Search" count="04">
+      <SubSection title="Filter & Search" count="04">
         <p>
           A couple problems here! Filtering is a bit too subtle and it
           obfuscates the org chart title. Additionally, it&apos;s easy to get
@@ -124,11 +123,11 @@ const OrgChart = ({ metaTitle }) => (
           <Highlight className="top-[33%] left-0 right-[38%] bottom-[29%]" />
           <Highlight className="top-0 left-[72.7%] right-0 bottom-[66%]" />
         </Figure>
-      </SubSection2>
-    </Section2>
+      </SubSection>
+    </Section>
 
-    <Section2 title="Figuring it out">
-      <SubSection2 title="Start without (too much) judgement" count="01">
+    <Section title="Figuring it out">
+      <SubSection title="Start without (too much) judgement" count="01">
         <p>
           I like to brainstorm excessively to start with, in case any novel
           approaches jump out. Tools like Sketch and Figma are great at allowing
@@ -143,8 +142,8 @@ const OrgChart = ({ metaTitle }) => (
             sizes="(min-width: 1360px) 755px, (min-width: 960px) 55vw, 90vw"
           />
         </Figure>
-      </SubSection2>
-      <SubSection2 title="Narrow down on the good bits" count="02">
+      </SubSection>
+      <SubSection title="Narrow down on the good bits" count="02">
         <p>
           After working for a few days, I pruned out the ideas that were clumsy,
           required out-of-scope changes, or were simply too weird. I then worked
@@ -171,13 +170,13 @@ const OrgChart = ({ metaTitle }) => (
           </p>
         </Callout>
         <Button href="https://pingboard.github.io/pb-nav/org-chart" newTab>
-          View Prototype →
+          View Prototype <ArrowRightIcon className="h-16 w-16" />
         </Button>
-      </SubSection2>
-    </Section2>
+      </SubSection>
+    </Section>
 
-    <Section2 title="Validation">
-      <SubSection2 title="User Testing" count="01">
+    <Section title="Validation">
+      <SubSection title="User Testing" count="01">
         <p>
           We scheduled <strong>UI testing-sessions</strong> with a couple
           cohorts: existing customers who had developed musicle memory with our
@@ -191,12 +190,16 @@ const OrgChart = ({ metaTitle }) => (
               <div className="font-medium text-3xl">7</div>
               <div>Internal Sessions</div>
             </li>
-            <li className="text-lg text-primary-50">→</li>
+            <li className="text-lg text-primary-50">
+              <ArrowRightIcon className="h-16 w-16" />
+            </li>
             <li className="flex-1 p-16 rounded bg-secondary-10 text-secondary-75 space-y-8">
               <div className="font-medium text-3xl">8</div>
               <div>Existing Customers</div>
             </li>
-            <li className="text-lg text-primary-50">→</li>
+            <li className="text-lg text-primary-50">
+              <ArrowRightIcon className="h-16 w-16" />
+            </li>
             <li className="flex-1 p-16 rounded bg-secondary-10 text-secondary-75 space-y-8">
               <div className="font-medium text-3xl">6</div>
               <div>Potential Customers</div>
@@ -213,8 +216,8 @@ const OrgChart = ({ metaTitle }) => (
             </div>
           </div>
         </figure>
-      </SubSection2>
-      <SubSection2 title="First Round of Results" count="02">
+      </SubSection>
+      <SubSection title="First Round of Results" count="02">
         <p>
           We gave each person a series of tasks and asked them to say what was
           going through their heads as they completed (or attempted to
@@ -250,10 +253,10 @@ const OrgChart = ({ metaTitle }) => (
           prototype before the next cohort to make sure they actually solved the
           problem.
         </p>
-      </SubSection2>
-    </Section2>
+      </SubSection>
+    </Section>
 
-    <Section2
+    <Section
       title="Where We Landed"
       contentClassName="lg:col-span-2 lg:grid lg:grid-cols-[1fr,2fr] gap-base items-start"
     >
@@ -330,19 +333,20 @@ const OrgChart = ({ metaTitle }) => (
           newTab
         >
           <span className="hidden lg:flex">Open in New Tab</span>
-          <span className="lg:hidden">Play With Prototype</span>→
+          <span className="lg:hidden">Play With Prototype</span>
+          <ArrowRightIcon className="h-16 w-16" />
         </Button>
       </div>
-    </Section2>
+    </Section>
 
-    <Section2 title="Postmortem">
+    <Section title="Postmortem">
       <p>
         In order to ship on time, we decided to cut out updates to the
         individual settings panels. That felt like a good compromise since they
         weren&apos;t essential to the navigation updates.
       </p>
-    </Section2>
-  </ProjectLayout>
+    </Section>
+  </>
 );
 
 export default OrgChart;

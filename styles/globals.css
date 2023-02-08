@@ -1,10 +1,5 @@
 :root {
   @apply light;
-
-  --nav-height: 56px;
-  --nav-width: 360px;
-  --page-padding: 4vmax;
-  --z-nav: 100;
 }
 
 .light {

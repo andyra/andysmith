@@ -11,14 +11,14 @@ import { CONTACT_INFO, PROJECTS } from "../constants";
 // ----------------------------------------------------------------------------
 
 const NAV_LINK_CLASSES = cn(
-  "flex items-center gap-12 hover:text-secondary",
+  "flex items-center gap-12 hover:text-secondary relative",
   "min-h-48 px-8",
   "lg:min-h-32 lg:px-0"
 );
 
 const NavLink = ({ href, className, children }) => {
   const router = useRouter();
-  const isCurrent = href === router.asPath;
+  const isCurrent = href === router.pathname;
   const attrs = {};
   if (isCurrent) {
     attrs["aria-current"] = "page";
@@ -58,6 +58,9 @@ const ProjectMenu = () => (
 // ----------------------------------------------------------------------------
 
 const Nav = () => {
+  const router = useRouter();
+  const isProjectPage = router.pathname.includes("projects");
+
   const classes = cn(
     "sticky top-0 flex text-sm bg-ground z-50 relative",
     "items-center justify-between border-b",
@@ -81,13 +84,15 @@ const Nav = () => {
           <NavLink href={PROJECTS[0].href} className="font-medium">
             Projects
           </NavLink>
-          <ul className="ml-16 text-xs mb-sm">
-            {PROJECTS.map((project) => (
-              <li key={project.href}>
-                <NavLink href={project.href}>{project.title}</NavLink>
-              </li>
-            ))}
-          </ul>
+          {isProjectPage && (
+            <ul className="ml-16 text-xs mb-sm">
+              {PROJECTS.map((project) => (
+                <li key={project.href}>
+                  <NavLink href={project.href}>{project.title}</NavLink>
+                </li>
+              ))}
+            </ul>
+          )}
         </li>
         <li>
           <NavLink href="/about" className="font-medium">

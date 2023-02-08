@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import cn from "classnames";
 import slugify from "slugify";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import { Divider, Dot, Section, TimeStamp } from "components/Content";
 import Button from "components/Button";
 import Tooltip from "components/Tooltip";
@@ -122,7 +123,7 @@ const Home = () => {
                   </span>
                 </div>
                 <span className="text-secondary opacity-0 -translate-x-8 transition group-hover:opacity-100 group-hover:translate-x-0">
-                  →
+                  <ArrowRightIcon className="h-24 w-24" />
                 </span>
               </Link>
             </li>

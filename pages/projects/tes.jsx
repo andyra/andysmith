@@ -1,11 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
-
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import Button from "components/Button";
 import { Callout } from "components/Content";
-import ProjectLayout from "components/ProjectLayout";
-import { A, Divider, Section } from "components/Content";
+import ProjectHeader from "components/ProjectHeader";
+import { A, Section } from "components/Content";
 
 import homeLight from "public/projects/tes/homeLight.webp";
 import homeDark from "public/projects/tes/homeDark.webp";
@@ -26,10 +26,11 @@ const Tes = ({ metaTitle }) => {
   const { resolvedTheme } = useTheme();
 
   return (
-    <ProjectLayout
-      title={metaTitle}
-      description="A site I designed and built to showcase various music projects some friends and I put together over the years. Includes fancy stuff like an audio player, queueing, full screen mode, search, and PWA support."
-    >
+    <>
+      <ProjectHeader
+        title={metaTitle}
+        description="A site I designed and built to showcase various music projects some friends and I put together over the years. Includes fancy stuff like an audio player, queueing, full screen mode, search, and PWA support."
+      />
       <Button
         color="orange"
         href="https://tes.fm"
@@ -37,10 +38,12 @@ const Tes = ({ metaTitle }) => {
         rel="noopener noreferrer"
       >
         Check it out!
-        <span className="group-hover:translate-x-4 transition-all">→</span>
+        <span className="group-hover:translate-x-4 transition-all">
+          <ArrowRightIcon className="h-24 w-24" />
+        </span>
       </Button>
 
-      <Section title="Yes, but Why?" columns>
+      <Section title="Yes, but Why?">
         <p>
           This project started off as a tool to help my band build randomized
           setlists from the hundreds of songs we&apos;ve written over the years.
@@ -78,7 +81,7 @@ const Tes = ({ metaTitle }) => {
         </figure>
       </Section>
 
-      <Section title="Technical Notes" columns noTopPadding>
+      <Section title="Technical Notes">
         <p>
           I built this using{" "}
           <A href="https://nextjs.org/" newTab>
@@ -128,7 +131,7 @@ const Tes = ({ metaTitle }) => {
         </figure>
       </Section>
 
-      <Section title="Keep it interesting" columns noTopPadding>
+      <Section title="Keep it interesting">
         <p>
           We frequently create randomized setlists for practice, but wanted to
           find a way to insert an element of chance beyond the order of the
@@ -161,7 +164,7 @@ const Tes = ({ metaTitle }) => {
           </div>
         </figure>
       </Section>
-    </ProjectLayout>
+    </>
   );
 };
 
@@ -170,7 +173,7 @@ export default Tes;
 export async function getStaticProps(context) {
   return {
     props: {
-      metaTitle: "TES.fm",
+      metaTitle: "This Evening's Show",
       maxWidth: "max-w-screen-lg prose",
     },
   };

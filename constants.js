@@ -94,7 +94,7 @@ export const PROJECTS = [
     category: "UI Design",
   },
   {
-    title: "TES.fm",
+    title: "This Evening's Show",
     image: "",
     href: "/projects/tes",
     details: "Personal music player project built with React",

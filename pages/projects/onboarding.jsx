@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import Carousel from "components/Carousel";
-import ProjectLayout from "components/ProjectLayout";
+import ProjectHeader from "components/ProjectHeader";
 import { A, Callout, Divider, Section } from "components/Content";
 
 import andy01 from "public/projects/onboarding/andy01.webp";
@@ -178,10 +178,11 @@ const Onboarding = ({ metaTitle }) => {
   const { resolvedTheme } = useTheme();
 
   return (
-    <ProjectLayout
-      title={metaTitle}
-      description="Pingboard was built to help people across diverse companies connect with each other. Helping companies onboard their new hires was a great fit for our product and an opportunity for growth. One problem, though: how do we know what to build?"
-    >
+    <>
+      <ProjectHeader
+        title={metaTitle}
+        description="Pingboard was built to help people across diverse companies connect with each other. Helping companies onboard their new hires was a great fit for our product and an opportunity for growth. One problem, though: how do we know what to build?"
+      />
       <Section
         title="Do people really need another tool?"
         columns
@@ -445,7 +446,7 @@ const Onboarding = ({ metaTitle }) => {
           </Brackets>
         </figure>
       </Section>
-    </ProjectLayout>
+    </>
   );
 };
 

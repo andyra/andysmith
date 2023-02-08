@@ -33,14 +33,14 @@ const BREAKPOINTS = {
   },
 };
 
-export const Section2 = ({ children, title }) => (
+export const Section = ({ children, title }) => (
   <section className="py-lg border-b">
-    <h2 className="text-xl font-light">{title}</h2>
+    <h2 className="text-xl font-light mb-base">{title}</h2>
     {children}
   </section>
 );
 
-export const SubSection2 = ({ children, count, title }) => (
+export const SubSection = ({ children, count, title }) => (
   <>
     <h2 className="font-bold font-base mb-24 relative">
       {count && (
@@ -65,79 +65,8 @@ export const H2 = ({ children, count }) => (
   </h2>
 );
 
-export const WideDude = ({ as = "div", children, className, width = "xl" }) => {
-  const classes = cn(
-    "relative left-1/2 -translate-x-1/2 max-w-[calc(100vw-3vmax)]",
-    BREAKPOINTS[width].width,
-    className
-  );
-
-  const WideDudeStyled = styled.div``;
-
-  return (
-    <WideDudeStyled as={as} className={classes}>
-      {children}
-    </WideDudeStyled>
-  );
-};
-
 export const Divider = ({ className }) => (
   <hr className={cn("border-t-2 border-primary opacity-10", className)} />
-);
-
-// Note: Switches to stacked layout at `screen-lg`
-export const Section = ({
-  children,
-  className,
-  columns,
-  contentClassName,
-  headingClassName,
-  noTopPadding,
-  title,
-  titleActions,
-}) => {
-  const id = title ? slugify(title, { lower: true }) : null;
-
-  const classes = cn("px-base", noTopPadding ? "pb-lg" : "py-lg", className);
-
-  const contentClasses = cn(contentClassName || "space-y-48");
-
-  const containerClasses = cn(
-    "grid grid-cols-1 gap-base",
-    "max-w-screen-xl mx-auto py-base border-b",
-    columns && "lg:grid-cols-[1fr,2fr] lg:items-start",
-    !columns && contentClassName
-  );
-
-  const headingClasses = cn(
-    columns && "font-semibold text-2xl mb-base lg:mb-0 lg:sticky lg:top-96",
-    !columns && "font-semibold text-3xl sm:text-5xl",
-    headingClassName
-  );
-
-  return (
-    <section className={classes} id={id}>
-      <div className={containerClasses}>
-        {title && (
-          <>
-            <h2 className={headingClasses}>
-              {title}
-              {titleActions}
-            </h2>
-            {!columns && <Divider className="my-48" />}
-          </>
-        )}
-        <div className={contentClasses}>{children}</div>
-      </div>
-    </section>
-  );
-};
-
-export const SubSection = ({ children, title }) => (
-  <div className="space-y-16">
-    <h3 className="font-medium text-lg">{title}</h3>
-    {children}
-  </div>
 );
 
 export const A = ({ children, newTab, href }) => {
