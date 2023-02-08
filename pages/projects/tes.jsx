@@ -5,7 +5,7 @@ import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import Button from "components/Button";
 import { Callout } from "components/Content";
 import ProjectHeader from "components/ProjectHeader";
-import { A, Section } from "components/Content";
+import { A, Section, WideDude } from "components/Content";
 
 import homeLight from "public/projects/tes/homeLight.webp";
 import homeDark from "public/projects/tes/homeDark.webp";
@@ -30,18 +30,14 @@ const Tes = ({ metaTitle }) => {
       <ProjectHeader
         title={metaTitle}
         description="A site I designed and built to showcase various music projects some friends and I put together over the years. Includes fancy stuff like an audio player, queueing, full screen mode, search, and PWA support."
-      />
-      <Button
-        color="orange"
-        href="https://tes.fm"
-        target="_blank"
-        rel="noopener noreferrer"
       >
-        Check it out!
-        <span className="group-hover:translate-x-4 transition-all">
-          <ArrowRightIcon className="h-24 w-24" />
-        </span>
-      </Button>
+        <Button href="https://tes.fm" target="_blank" rel="noopener noreferrer">
+          Check it out!
+          <span className="group-hover:translate-x-4 transition-all">
+            <ArrowRightIcon className="h-24 w-24" />
+          </span>
+        </Button>
+      </ProjectHeader>
 
       <Section title="Yes, but Why?">
         <p>
@@ -59,7 +55,7 @@ const Tes = ({ metaTitle }) => {
           </strong>
           .
         </p>
-        <figure className="pt-base px-base lg:px-0">
+        <WideDude as="figure" className="pt-base px-base lg:px-0">
           <div className="-rotate-1">
             <Image
               alt="TES albums page"
@@ -78,7 +74,7 @@ const Tes = ({ metaTitle }) => {
               src={resolvedTheme === "dark" ? episodeLight : episodeDark}
             />
           </div>
-        </figure>
+        </WideDude>
       </Section>
 
       <Section title="Technical Notes">
@@ -143,7 +139,7 @@ const Tes = ({ metaTitle }) => {
           added the ability to insert &ldquobleeds&rdquo; between songs, which
           is a cue to blend two songs together
         </p>
-        <figure className="pt-base px-base lg:px-0">
+        <WideDude as="figure" className="pt-base px-base lg:px-0">
           <div className="rotate-1">
             <Image
               alt="TES article page"
@@ -162,7 +158,7 @@ const Tes = ({ metaTitle }) => {
               src={coolModeLight}
             />
           </div>
-        </figure>
+        </WideDude>
       </Section>
     </>
   );
@@ -174,7 +170,6 @@ export async function getStaticProps(context) {
   return {
     props: {
       metaTitle: "This Evening's Show",
-      maxWidth: "max-w-screen-lg prose",
     },
   };
 }

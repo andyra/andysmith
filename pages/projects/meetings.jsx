@@ -18,7 +18,6 @@ export async function getStaticProps(context) {
   return {
     props: {
       metaTitle: "Meetings",
-      maxWidth: "max-w-screen-lg prose",
     },
   };
 }

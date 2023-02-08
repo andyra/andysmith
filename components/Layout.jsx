@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useRouter } from "next/router";
 import Head from "next/head";
 import cn from "classnames";
 import Nav from "components/Nav";
@@ -7,7 +8,10 @@ import SkipLink from "components/SkipLink";
 // NOTE: Desktop layout starts at screen-lg
 
 const Layout = ({ children, ...props }) => {
-  const { maxWidth = "max-w-screen-lg", metaTitle } = props;
+  const router = useRouter();
+  const isProject = router.pathname.includes("projects");
+
+  const { maxWidth = "max-w-screen-md", metaTitle } = props;
 
   const nextClasses = cn("lg:flex lg:items-start");
 
@@ -27,7 +31,9 @@ const Layout = ({ children, ...props }) => {
       <SkipLink />
       {<Nav />}
       <main className="lg:flex-1 px-base">
-        <div className={cn(maxWidth, "mx-auto")}>{children}</div>
+        <div className={cn(maxWidth, "mx-auto", isProject && "prose")}>
+          {children}
+        </div>
       </main>
     </>
   );

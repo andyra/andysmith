@@ -10,7 +10,7 @@ const BUTTON_COLORS = {
 const Button = ({
   children,
   className,
-  color = "indigo",
+  color = "secondary",
   href,
   newTab,
   ...props
@@ -22,7 +22,8 @@ const Button = ({
   }
 
   const classes = cn(
-    "flex items-center gap-8 px-16 w-fit h-48 rounded-full border-2 font-normal text-base transition",
+    "flex items-center gap-8 px-16 w-fit h-48 rounded-md border-b-2 border-r-2 font-normal text-base transition",
+    "hover:scale-105",
     BUTTON_COLORS[color],
     className
   );

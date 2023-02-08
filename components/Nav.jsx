@@ -11,7 +11,7 @@ import { CONTACT_INFO, PROJECTS } from "../constants";
 // ----------------------------------------------------------------------------
 
 const NAV_LINK_CLASSES = cn(
-  "flex items-center gap-12 hover:text-secondary relative",
+  "flex items-center gap-12 hover:text-secondary transition relative",
   "min-h-48 px-8",
   "lg:min-h-32 lg:px-0"
 );
@@ -64,7 +64,8 @@ const Nav = () => {
   const classes = cn(
     "sticky top-0 flex text-sm bg-ground z-50 relative",
     "items-center justify-between border-b",
-    "lg:flex-col lg:items-start lg:gap-base lg:h-screen lg:p-base lg:border-r"
+    "lg:flex-col lg:items-start lg:gap-base lg:h-screen lg:border-r",
+    "lg:w-320 lg:px-48 lg:py-base"
   );
 
   return (
@@ -106,7 +107,7 @@ const Nav = () => {
       <ul className="hidden lg:block">
         {CONTACT_INFO.map((item, i) => (
           <li key={item.label}>
-            <NavLink href={item.href}>
+            <NavLink className="text-xs" href={item.href}>
               {item.icon}
               {item.value}
             </NavLink>

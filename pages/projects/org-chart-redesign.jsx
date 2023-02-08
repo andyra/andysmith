@@ -1,10 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import cn from "classnames";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import Button from "components/Button";
 import ProjectHeader from "components/ProjectHeader";
+import Prototype from "components/Prototype";
 import {
   Callout,
   Figure,
@@ -12,6 +12,7 @@ import {
   Section,
   SubSection,
   H2,
+  WideDude,
 } from "components/Content";
 
 import oldPanel from "public/projects/org-chart/old-panel.webp";
@@ -62,13 +63,14 @@ const OrgChart = ({ metaTitle }) => (
           navigation, but the org chart used that space for its own Build panel.
           To make matters worse, there was already a right panel in use!
         </p>
-        <Figure>
+        <Figure caption="The existing org chart design doesn't have room for the new primary nav menu">
           <Image
             src={oldPanel}
             alt="Legacy org chart build panel"
             sizes="(min-width: 1360px) 755px, (min-width: 960px) 55vw, 90vw"
           />
           <Highlight className="top-[11%] left-0 right-[80.5%] bottom-0" />
+          <Highlight className="top-[11%] right-0 left-[80.5%] bottom-0" />
         </Figure>
       </SubSection>
 
@@ -78,7 +80,7 @@ const OrgChart = ({ metaTitle }) => (
           would need to devise a way for customers to get to their private org
           charts.
         </p>
-        <Figure>
+        <Figure caption="The new nav design doesn't have a place for a dropdown like this">
           <Image
             className="rounded-sm"
             src={oldNav}
@@ -96,7 +98,7 @@ const OrgChart = ({ metaTitle }) => (
           and notifications with the existing toolbar and still keep the primary
           nav?
         </p>
-        <Figure>
+        <Figure caption="Can we remove this specialized toolbar on private org charts?">
           <Image
             className="rounded-sm"
             src={oldPrivate}
@@ -161,16 +163,13 @@ const OrgChart = ({ metaTitle }) => (
           automatically whenever I pushed changes to master. This ended up being
           a convenient way to quickly iterate and publish changes.
         </p>
-        <Callout color="info" className="text-sm">
-          <p>Why prototype with code?</p>
-          <p className="text-secondary-75 mix-blend-multiply">
-            I&apos;ve found that building prototypes in the browser gives people
-            a much better sense for what the app will actually feel like, in
-            addition to teaching useful programming skills.
-          </p>
-        </Callout>
-        <Button href="https://pingboard.github.io/pb-nav/org-chart" newTab>
-          View Prototype <ArrowRightIcon className="h-16 w-16" />
+        <Button
+          color="secondary"
+          href="https://pingboard.github.io/pb-nav/org-chart"
+          newTab
+        >
+          Play With the Prototype
+          <ArrowRightIcon className="h-16 w-16" />
         </Button>
       </SubSection>
     </Section>
@@ -256,32 +255,16 @@ const OrgChart = ({ metaTitle }) => (
       </SubSection>
     </Section>
 
-    <Section
-      title="Where We Landed"
-      contentClassName="lg:col-span-2 lg:grid lg:grid-cols-[1fr,2fr] gap-base items-start"
-    >
-      <div className="relative hidden lg:block lg:col-span-2">
-        <div className="z-10 absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <div className="flex items-center px-16 h-40 rounded-full bg-sec text-ground">
-            Try me!
-          </div>
-        </div>
-        <iframe
-          src="https://pingboard.github.io/pb-nav/org-chart"
-          className="w-full h-[75vh] border-4 border-sec rounded"
-        />
-      </div>
-      <Figure className="lg:hidden">
-        <Image
-          src={newFinal}
-          alt="Legacy org chart build panel"
-          sizes="(min-width: 1360px) 755px, (min-width: 960px) 55vw, 90vw"
-        />
-      </Figure>
-      <div className="lg:col-start-2">
-        <ul className="list-disc ml-16 space-y-16 mb-16">
+    <Section title="Where We Landed">
+      <Prototype
+        iframeSrc="https://pingboard.github.io/pb-nav/org-chart"
+        imageSrc={newFinal}
+        imageAlt="Legacy org chart build panel"
+      />
+      <SubSection title="Summary of Improvements">
+        <ul className="list-decimal ml-16 space-y-16 mb-16 mt-base">
           <li>
-            <strong className="font-semibold">
+            <strong className="font-medium">
               Collapsible Nav &amp; Panels
             </strong>
             <p className="text-primary-75">
@@ -291,7 +274,7 @@ const OrgChart = ({ metaTitle }) => (
             </p>
           </li>
           <li>
-            <strong className="font-semibold">Unified Toolbar</strong>
+            <strong className="font-medium">Unified Toolbar</strong>
             <p className="text-primary-75">
               By putting all the controls in the top bar, we can reduce the
               number of topbars as well as removing the special private org
@@ -299,7 +282,7 @@ const OrgChart = ({ metaTitle }) => (
             </p>
           </li>
           <li>
-            <strong className="font-semibold">
+            <strong className="font-medium">
               Consolidated Title and Secondary Nav
             </strong>
             <p className="text-primary-75">
@@ -308,7 +291,7 @@ const OrgChart = ({ metaTitle }) => (
             </p>
           </li>
           <li>
-            <strong className="font-semibold">
+            <strong className="font-medium">
               Search & Filter Improvements
             </strong>
             <p className="text-primary-75">
@@ -318,7 +301,7 @@ const OrgChart = ({ metaTitle }) => (
             </p>
           </li>
           <li>
-            <strong className="font-semibold">Move secondary controls</strong>
+            <strong className="font-medium">Move secondary controls</strong>
             <p className="text-primary-75">
               The zoom and Expand controls moved to the bottom of the screen.
               These have hotkeys associated with them, plus it&apos;s a fairly
@@ -327,16 +310,7 @@ const OrgChart = ({ metaTitle }) => (
             </p>
           </li>
         </ul>
-        <Button
-          color="secondary"
-          href="https://pingboard.github.io/pb-nav/org-chart"
-          newTab
-        >
-          <span className="hidden lg:flex">Open in New Tab</span>
-          <span className="lg:hidden">Play With Prototype</span>
-          <ArrowRightIcon className="h-16 w-16" />
-        </Button>
-      </div>
+      </SubSection>
     </Section>
 
     <Section title="Postmortem">
@@ -355,7 +329,6 @@ export async function getStaticProps(context) {
   return {
     props: {
       metaTitle: "Org Chart Redesign",
-      maxWidth: "max-w-screen-lg prose",
     },
   };
 }

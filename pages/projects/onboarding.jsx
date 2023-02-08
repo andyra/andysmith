@@ -3,9 +3,12 @@ import cn from "classnames";
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
+import Button from "components/Button";
 import Carousel from "components/Carousel";
 import ProjectHeader from "components/ProjectHeader";
-import { Section } from "components/Content";
+import Prototype from "components/Prototype";
+import { Section, WideDude } from "components/Content";
 
 import andy01 from "public/projects/onboarding/andy01.webp";
 import andy02 from "public/projects/onboarding/andy02.webp";
@@ -30,6 +33,7 @@ import mary10 from "public/projects/onboarding/mary10.webp";
 import navProblem from "public/projects/onboarding/navProblem.webp";
 import navWorseProblem from "public/projects/onboarding/navWorseProblem.webp";
 import navSolution from "public/projects/onboarding/navSolution.webp";
+import prototypeFallback from "public/projects/onboarding/prototypeFallback.png";
 
 const INTERVIEW_IMAGES = [
   {
@@ -239,7 +243,10 @@ const Onboarding = ({ metaTitle }) => {
           the interviews is important so the rest of the team doesn&apos;t have
           to wade through dozens of documents and notes.
         </p>
-        <figure className="flex flex-col xl:flex-row items-center gap-16 bg-secondary-05 rounded p-24 text-sm text-primary-50 relative">
+        <WideDude
+          as="figure"
+          className="flex flex-col xl:flex-row items-center gap-16 bg-secondary-05 border rounded p-24 text-sm text-primary-50 relative"
+        >
           <div className="h-256 w-full xl:h-auto xl:w-2/5 xl:self-stretch rounded overflow-hidden relative">
             <div className="bg-ground rounded p-24 space-y-8 absolute top-0 left-0 text-xs">
               <div className="font-medium text-sm text-primary-75">
@@ -303,7 +310,7 @@ const Onboarding = ({ metaTitle }) => {
               <li>Opportunity Z</li>
             </ol>
           </div>
-        </figure>
+        </WideDude>
       </Section>
 
       <Section title="Cutting scope">
@@ -318,9 +325,9 @@ const Onboarding = ({ metaTitle }) => {
           during the first few weeks of being at a company, which dovetails
           nicely into our market strategy.
         </p>
-        <figure className="rounded bg-secondary-05 p-24 space-y-24">
-          <ul className="text-secondary">
-            <li className="font-semibold">Useful and achievable!</li>
+        <figure className="text-sm">
+          <ul className="rounded bg-secondary-05 border border-secondary-10 p-24 text-secondary">
+            <li className="font-medium mb-12">Useful and achievable!</li>
             {[
               "Checklists",
               "Checklist Templates",
@@ -329,15 +336,15 @@ const Onboarding = ({ metaTitle }) => {
               "Calendar integration",
               "Introduce new hire to their team",
             ].map((item) => (
-              <li className="flex items-center gap-12" key={item}>
+              <li className="flex items-baseline gap-12" key={item}>
                 <span>✓</span>
                 {item}
               </li>
             ))}
           </ul>
-          <ul className="text-primary-75">
-            <li className="font-semibold">
-              Also useful, but not achievable in a single release
+          <ul className="rounded bg-primary-05 border p-24 text-primary-75">
+            <li className="font-medium mb-12">
+              Useful, but not achievable in a single release
             </li>
             {[
               "Multiple Checklists",
@@ -352,7 +359,7 @@ const Onboarding = ({ metaTitle }) => {
               "Tie employee onboarding and product onboarding together",
               "Integrate with 3rd parties",
             ].map((item) => (
-              <li className="flex items-center gap-12" key={item}>
+              <li className="flex items-baseline gap-12" key={item}>
                 <span>–</span>
                 {item}
               </li>
@@ -362,17 +369,11 @@ const Onboarding = ({ metaTitle }) => {
       </Section>
 
       <Section title="Where We Landed">
-        <div className="relative hidden lg:block lg:col-span-2">
-          <div className="z-10 absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <div className="flex items-center px-16 h-40 rounded-full bg-secondary text-ground">
-              Try me!
-            </div>
-          </div>
-          <iframe
-            src="https://pingboard.github.io/pb-nav/onboarding"
-            className="w-full h-[75vh] border-4 border-secondary-50 rounded"
-          />
-        </div>
+        <Prototype
+          iframeSrc="https://pingboard.github.io/pb-nav/onboarding"
+          imageSrc={prototypeFallback}
+          imageAlt="Onboarding"
+        />
       </Section>
 
       <Section title="Loose Threads">
@@ -396,7 +397,7 @@ const Onboarding = ({ metaTitle }) => {
             new hires
           </li>
         </ol>
-        <figure className="flex gap-8 bg-primary-05 rounded border overflow-hidden relative">
+        <figure className="flex gap-8 bg-primary-05 rounded border overflow-hidden relative mb-em">
           <Image
             className="w-1/4"
             alt="Too many nav items"
@@ -448,7 +449,6 @@ export async function getStaticProps(context) {
   return {
     props: {
       metaTitle: "New Hire Onboarding",
-      maxWidth: "max-w-screen-lg prose",
     },
   };
 }

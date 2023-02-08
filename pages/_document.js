@@ -2,7 +2,14 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 const Document = () => (
   <Html className="scroll-smooth" lang="en">
-    <Head />
+    <Head>
+      <link
+        rel="preload"
+        href="/fonts/output-sans-regular-subset.woff2"
+        as="font"
+        crossOrigin=""
+      />
+    </Head>
     <body className="bg-ground font-base text-base text-primary dark:antialiased">
       <Main />
       <NextScript />

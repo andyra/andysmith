@@ -44,7 +44,7 @@ export const SubSection = ({ children, count, title }) => (
   <>
     <h2 className="font-bold font-base mb-24 relative">
       {count && (
-        <span className="absolute -left-12 top-2 -translate-x-full text-sm opacity-50">
+        <span className="absolute -left-12 top-2 -translate-x-full font-normal text-sm opacity-50">
           {count}
         </span>
       )}
@@ -53,6 +53,28 @@ export const SubSection = ({ children, count, title }) => (
     {children}
   </>
 );
+
+export const WideDude = ({
+  as = "div",
+  children,
+  className,
+  maxWidth = "xl",
+}) => {
+  const StyledDude = styled.div``;
+
+  const classes = cn(
+    "relative left-1/2 -translate-x-1/2",
+    BREAKPOINTS[maxWidth].width,
+    "max-w-full lg:max-w-[calc(100vw-6vmax-320px)]",
+    className
+  );
+
+  return (
+    <StyledDude className={classes} as={as}>
+      {children}
+    </StyledDude>
+  );
+};
 
 export const H2 = ({ children, count }) => (
   <h2 className="font-medium font-base opacity-60 mb-24 relative">
@@ -143,14 +165,19 @@ export const Figure = ({ caption, children, className }) => (
     <div className="rounded-md border-2 relative overflow-hidden">
       {children}
     </div>
-    <figcaption className="text-xs text-primary-75 text-center">
-      {caption}
-    </figcaption>
+    {caption && (
+      <figcaption className="text-xs text-primary-75 text-center">
+        {caption}
+      </figcaption>
+    )}
   </figure>
 );
 
 export const Highlight = ({ className }) => (
   <div
-    className={cn("border-2 border-highlight rounded-md absolute ", className)}
+    className={cn(
+      "border-2 border-dashed bg-highlight-05 border-highlight-75 rounded-md absolute ",
+      className
+    )}
   />
 );

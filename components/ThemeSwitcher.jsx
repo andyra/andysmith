@@ -44,13 +44,13 @@ const ThemeSwitcher = ({ className }) => {
         </MenuPrimitive.Button>
         <MenuPrimitive.Items
           as="ul"
-          className="absolute right-8 p-8 rounded bg-ground border w-256"
+          className="absolute z-10 top-96 right-8 p-8 rounded bg-primary text-ground border w-256"
         >
           {THEMES.map((theme) => (
             <MenuPrimitive.Item as="li" key={theme.name}>
               {({ active }) => (
                 <button
-                  className="flex items-center gap-12 h-48 w-full px-8 rounded hover:bg-secondary-10 capitalize transition"
+                  className="flex items-center gap-12 h-48 w-full px-8 rounded hover:bg-ground-10 capitalize transition"
                   onClick={() => {
                     setTheme(theme.name);
                   }}

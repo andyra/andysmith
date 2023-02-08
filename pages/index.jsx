@@ -21,16 +21,6 @@ import {
 } from "../constants";
 import walkingGuy from "public/drawings/walkingGuy.webp";
 
-const SectionLink = ({ color = "indigo", text }) => (
-  <Button
-    className="group"
-    href={`#${slugify(text, { lower: true })}`}
-    color={color}
-  >
-    <span className="animate-float">↓</span> {text}
-  </Button>
-);
-
 const Home = () => {
   return (
     <>
