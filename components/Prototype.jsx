@@ -3,7 +3,7 @@ import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import Button from "./Button";
 import { Figure, WideDude } from "./Content";
 
-const Prototype = ({ iframeSrc, imageSrc, imageAlt }) => {
+const Prototype = ({ children, iframeSrc, imageSrc, imageAlt }) => {
   return (
     <WideDude maxWidth="2xl">
       <div className="relative hidden xl:block">
@@ -32,6 +32,7 @@ const Prototype = ({ iframeSrc, imageSrc, imageAlt }) => {
         <span className="xl:hidden">Play With the Prototype</span>
         <ArrowRightIcon className="h-16 w-16" />
       </Button>
+      {children}
     </WideDude>
   );
 };

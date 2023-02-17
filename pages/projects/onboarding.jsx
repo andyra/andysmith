@@ -8,7 +8,7 @@ import Button from "components/Button";
 import Carousel from "components/Carousel";
 import ProjectHeader from "components/ProjectHeader";
 import Prototype from "components/Prototype";
-import { Section, WideDude } from "components/Content";
+import { Figure, Section, WideDude } from "components/Content";
 
 import andy01 from "public/projects/onboarding/andy01.webp";
 import andy02 from "public/projects/onboarding/andy02.webp";
@@ -185,7 +185,7 @@ const Onboarding = ({ metaTitle }) => {
     <>
       <ProjectHeader
         title={metaTitle}
-        description="Pingboard was built to help people across diverse companies connect with each other. Helping companies onboard their new hires was a great fit for our product and an opportunity for growth. One problem, though: how do we know what to build?"
+        description="Pingboard was built to help people in distributed companies connect with each other. Helping to onboard new hires was a great fit for our product and an opportunity for growth, but how were we supposed to know what to build?"
       />
       <Section title="Do people really need another tool?" className="hidden">
         <p>
@@ -397,7 +397,10 @@ const Onboarding = ({ metaTitle }) => {
             new hires
           </li>
         </ol>
-        <figure className="flex gap-8 bg-primary-05 rounded border overflow-hidden relative mb-em">
+        <Figure
+          contentClassName="flex gap-8 bg-primary-05 rounded border overflow-hidden relative"
+          caption="How's a new hire supposed to know where to start?"
+        >
           <Image
             className="w-1/4"
             alt="Too many nav items"
@@ -414,14 +417,17 @@ const Onboarding = ({ metaTitle }) => {
             </div>
             <div className="w-24 border-t-2 border-highlight absolute r-0 bottom-[11%]" />
           </Brackets>
-        </figure>
+        </Figure>
         <p>
           In an ideal world, we would combine all three pages into a single
           place to get started, but the amount of work it would take was out of
           scope. Our solution here was to fold the last two items together under
           a collapsible nav item.
         </p>
-        <figure className="flex gap-8 bg-primary-05 rounded border overflow-hidden relative">
+        <Figure
+          contentClassName="flex gap-8 bg-primary-05 rounded border overflow-hidden relative"
+          caption="At least there are only two options here—Product and New Hire onboarding"
+        >
           <Image
             className="w-1/4"
             alt="Too many nav items"
@@ -437,7 +443,7 @@ const Onboarding = ({ metaTitle }) => {
               Not ideal, but better!
             </div>
           </Brackets>
-        </figure>
+        </Figure>
       </Section>
     </>
   );

@@ -33,8 +33,8 @@ const BREAKPOINTS = {
   },
 };
 
-export const Section = ({ children, title }) => (
-  <section className="py-lg border-b">
+export const Section = ({ children, className, title }) => (
+  <section className={cn("py-lg border-b", className)}>
     <h2 className="text-xl font-light mb-base">{title}</h2>
     {children}
   </section>
@@ -144,9 +144,11 @@ const CALLOUT_COLORS = {
 };
 
 export const Callout = ({ children, className, color = "default" }) => (
-  <div className={cn("pl-12 border-l-2", CALLOUT_COLORS[color], className)}>
+  <p
+    className={cn("pl-12 border-l-2 text-sm", CALLOUT_COLORS[color], className)}
+  >
     {children}
-  </div>
+  </p>
 );
 
 export const OrderedList = ({ children, className }) => (
@@ -160,9 +162,14 @@ export const ListItem = ({ children, className, title }) => (
   </li>
 );
 
-export const Figure = ({ caption, children, className }) => (
-  <figure className={cn("space-y-8", className)}>
-    <div className="rounded-md border-2 relative overflow-hidden">
+export const Figure = ({ caption, children, className, contentClassName }) => (
+  <figure className={cn("space-y-8 mb-em", className)}>
+    <div
+      className={cn(
+        "rounded-md border-2 relative overflow-hidden",
+        contentClassName
+      )}
+    >
       {children}
     </div>
     {caption && (
