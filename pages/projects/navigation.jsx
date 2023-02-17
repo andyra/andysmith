@@ -152,8 +152,9 @@ const Navigation = ({ metaTitle }) => {
             getting confused
           </p>
           <p>
-            Our initial IA involved separate "Company" and "Workspace" sections
-            to distinguish between public and private info. like this:
+            Our initial IA involved separate &ldquo;Company&rdquo; and
+            &ldquo;Workspace&rdquo; sections to distinguish between public and
+            private info. like this:
           </p>
           <figure className="bg-primary-05 rounded-lg h-128 w-full" />
           <p>
