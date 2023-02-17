@@ -1,12 +1,11 @@
 import Link from "next/link";
-import Image from "next/future/image";
+import Image from "next/image";
 import { useTheme } from "next-themes";
-
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import Button from "components/Button";
 import { Callout } from "components/Content";
-import ProjectFooter from "components/ProjectFooter";
 import ProjectHeader from "components/ProjectHeader";
-import { A, Divider, Section } from "components/Content";
+import { A, Section, WideDude } from "components/Content";
 
 import homeLight from "public/projects/tes/homeLight.webp";
 import homeDark from "public/projects/tes/homeDark.webp";
@@ -22,29 +21,27 @@ import mobileAlbumLight from "public/projects/tes/mobileAlbumLight.webp";
 import mobileAlbumDark from "public/projects/tes/mobileAlbumDark.webp";
 import mobileCoolModeLight from "public/projects/tes/mobileCoolModeLight.webp";
 import mobileCoolModeDark from "public/projects/tes/mobileCoolModeDark.webp";
+import setlistLight from "public/projects/tes/setlistLight.webp";
+import setlistDark from "public/projects/tes/setlistDark.webp";
 
-const Tes = () => {
+const Tes = ({ metaTitle }) => {
   const { resolvedTheme } = useTheme();
 
   return (
     <>
       <ProjectHeader
-        title="TES.fm"
+        title={metaTitle}
         description="A site I designed and built to showcase various music projects some friends and I put together over the years. Includes fancy stuff like an audio player, queueing, full screen mode, search, and PWA support."
-        color="orange"
       >
-        <Button
-          color="orange"
-          href="https://tes.fm"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <Button href="https://tes.fm" target="_blank" rel="noopener noreferrer">
           Check it out!
-          <span className="group-hover:translate-x-4 transition-all">→</span>
+          <span className="group-hover:translate-x-4 transition-all">
+            <ArrowRightIcon className="h-24 w-24" />
+          </span>
         </Button>
       </ProjectHeader>
 
-      <Section title="Yes, but Why?" columns>
+      <Section title="Yes, but why?">
         <p>
           This project started off as a tool to help my band build randomized
           setlists from the hundreds of songs we&apos;ve written over the years.
@@ -60,7 +57,7 @@ const Tes = () => {
           </strong>
           .
         </p>
-        <figure className="pt-page px-page lg:px-0">
+        <WideDude as="figure" className="pt-base px-base lg:px-0">
           <div className="-rotate-1">
             <Image
               alt="TES albums page"
@@ -79,10 +76,10 @@ const Tes = () => {
               src={resolvedTheme === "dark" ? episodeLight : episodeDark}
             />
           </div>
-        </figure>
+        </WideDude>
       </Section>
 
-      <Section title="Technical Notes" columns noTopPadding>
+      <Section title="Technical notes">
         <p>
           I built this using{" "}
           <A href="https://nextjs.org/" newTab>
@@ -99,16 +96,17 @@ const Tes = () => {
           changes in the CMS. The result: it&apos;s real snappy!
         </p>
         <p>
+          Besides some of the performance benefits of Next.js, it was really
+          convenient to not have to worry too much about image transforms; you
+          can point to the original image on the CMS and Next.js handles serving
+          and caching the smallest image size possible.
+        </p>
+        <p>
           I made this a <abbr title="Progressive Web App">PWA</abbr> so we could
           launch it from our mobile device&apos;s home screen; this gives it the
           feel of a native app without having to publish through the App Store.
         </p>
-        <p>
-          I had to learn a lot while working on this; I had never used GraphQL
-          before, and I encountered more advanced JavaScript/React challenges
-          than I normally do in my day-to-day work at Pingboard.
-        </p>
-        <figure className="flex justify-center lg:justify-start pt-page px-page lg:px-0">
+        <figure className="flex justify-center lg:justify-start pt-base px-base lg:px-0">
           <div className="w-320 px-[10px] py-[2px] -rotate-2 relative">
             <Image
               alt="TES mobile full screen visualizer"
@@ -132,7 +130,7 @@ const Tes = () => {
         </figure>
       </Section>
 
-      <Section title="Keep it interesting" columns noTopPadding>
+      <Section title="Create randomized setlists">
         <p>
           We frequently create randomized setlists for practice, but wanted to
           find a way to insert an element of chance beyond the order of the
@@ -141,10 +139,41 @@ const Tes = () => {
             Oblique Stratgegies
           </A>{" "}
           into the songs so we could perform them differently each time. I also
-          added the ability to insert &ldquobleeds&rdquo; between songs, which
-          is a cue to blend two songs together
+          added the ability to insert &ldquo;bleeds&rdquo; between songs, which
+          is a cue to blend two songs together.
         </p>
-        <figure className="pt-page px-page lg:px-0">
+        <p>
+          If a lead sheet is available for a song, you can expand it in place to
+          refresh your memory on the chords, tabs, lyrics, etc.
+        </p>
+        <WideDude as="figure" className="pt-base px-base lg:px-0">
+          <Image
+            alt="TES article page"
+            className="rounded-md"
+            placeholder="blur"
+            sizes="(min-width: 960px) 960w, 100vw"
+            src={resolvedTheme === "dark" ? setlistLight : setlistDark}
+          />
+        </WideDude>
+      </Section>
+      <Section title="What I learned">
+        <p>
+          The two main challenges were getting the backend and front-end talking
+          to each other reliably, and managing the audio player state. GraphQL
+          and Apollo Client (a library I used to work with the GraphQL data)
+          were new territory for me.
+        </p>
+        <p>
+          I can&apos;t say I mastered these technologies, but I no longer fear
+          them. And that&apos;s something.
+        </p>
+        <p>
+          <strong>Next up</strong>: wrangling GraphQL mutations so we can create
+          and update both public and private audio playlists. This will require
+          some form of authorization, so there&apos;s still a lot of territory
+          to cover!
+        </p>
+        <WideDude as="figure" className="pt-base px-base lg:px-0">
           <div className="rotate-1">
             <Image
               alt="TES article page"
@@ -163,10 +192,8 @@ const Tes = () => {
               src={coolModeLight}
             />
           </div>
-        </figure>
+        </WideDude>
       </Section>
-
-      <ProjectFooter />
     </>
   );
 };
@@ -176,7 +203,7 @@ export default Tes;
 export async function getStaticProps(context) {
   return {
     props: {
-      metaTitle: "TES.fm",
+      metaTitle: "This Evening's Show",
     },
   };
 }

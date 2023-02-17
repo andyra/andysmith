@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import Image from "next/future/image";
+import Image from "next/image";
 import cn from "classnames";
+import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import Button from "components/Button";
 
 // TODO
@@ -77,7 +78,7 @@ const Carousel = ({
             }}
             type="button"
           >
-            ←
+            <ArrowLeftIcon className="h-16 w-16" />
           </button>
           {[...Array(images.length)].map((item, i) => (
             <button
@@ -101,7 +102,7 @@ const Carousel = ({
             }}
             type="button"
           >
-            →
+            <ArrowRightIcon className="h-16 w-16" />
           </button>
         </div>
       )}

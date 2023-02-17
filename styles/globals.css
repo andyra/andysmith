@@ -1,89 +1,123 @@
 :root {
   @apply light;
-
-  --nav-height: 56px;
-  --nav-width: 360px;
-  --page-padding: 4vmax;
-  --z-nav: 100;
 }
 
 .light {
-  --ground: hsla(255, 0%, 100%, 1);
-  --ground-75: hsla(255, 0%, 100%, 0.75);
-  --ground-50: hsla(255, 0%, 100%, 0.5);
-  --ground-25: hsla(255, 0%, 100%, 0.25);
-  --ground-10: hsla(255, 0%, 100%, 0.1);
-  --ground-05: hsla(255, 0%, 100%, 0.05);
+  --ground: hsla(10, 35%, 93%, 1);
+  --ground-75: hsla(10, 35%, 93%, 0.75);
+  --ground-50: hsla(10, 35%, 93%, 0.5);
+  --ground-25: hsla(10, 35%, 93%, 0.25);
+  --ground-10: hsla(10, 35%, 93%, 0.1);
+  --ground-05: hsla(10, 35%, 93%, 0.05);
 
-  --primary: hsla(30, 8%, 10%, 1);
-  --primary-75: hsla(30, 8%, 10%, 0.65);
-  --primary-50: hsla(30, 8%, 10%, 0.5);
-  --primary-25: hsla(30, 8%, 10%, 0.25);
-  --primary-10: hsla(30, 8%, 10%, 0.1);
-  --primary-05: hsla(30, 8%, 10%, 0.03);
+  --primary: hsla(20, 12%, 10%, 1);
+  --primary-75: hsla(20, 12%, 10%, 0.75);
+  --primary-50: hsla(20, 12%, 10%, 0.5);
+  --primary-25: hsla(20, 12%, 10%, 0.25);
+  --primary-10: hsla(20, 12%, 10%, 0.1);
+  --primary-05: hsla(20, 12%, 10%, 0.05);
 
-  --indigo: hsla(235, 100%, 60%, 1);
-  --indigo-75: hsla(235, 100%, 60%, 0.75);
-  --indigo-50: hsla(235, 100%, 60%, 0.5);
-  --indigo-25: hsla(235, 100%, 60%, 0.25);
-  --indigo-10: hsla(235, 100%, 60%, 0.1);
-  --indigo-05: hsla(235, 100%, 60%, 0.05);
+  --secondary: hsla(224, 90%, 39%, 1);
+  --secondary-75: hsla(224, 90%, 39%, 0.75);
+  --secondary-50: hsla(224, 90%, 39%, 0.5);
+  --secondary-25: hsla(224, 90%, 39%, 0.25);
+  --secondary-10: hsla(224, 90%, 39%, 0.1);
+  --secondary-05: hsla(224, 90%, 39%, 0.05);
 
-  --green: hsla(184, 100%, 24%, 1);
-  --green-75: hsla(184, 100%, 24%, 0.75);
-  --green-50: hsla(184, 100%, 24%, 0.5);
-  --green-25: hsla(184, 100%, 24%, 0.25);
-  --green-10: hsla(184, 100%, 24%, 0.1);
-  --green-05: hsla(184, 100%, 24%, 0.05);
-
-  --orange: hsla(23, 97%, 43%, 1);
-  --orange-75: hsla(23, 97%, 43%, 0.75);
-  --orange-50: hsla(23, 97%, 43%, 0.5);
-  --orange-25: hsla(23, 97%, 43%, 0.25);
-  --orange-10: hsla(23, 97%, 43%, 0.1);
-  --orange-05: hsla(23, 97%, 43%, 0.05);
+  --highlight: hsla(16, 100%, 55%, 1);
+  --highlight-75: hsla(16, 100%, 55%, 0.75);
+  --highlight-50: hsla(16, 100%, 55%, 0.5);
+  --highlight-25: hsla(16, 100%, 55%, 0.25);
+  --highlight-10: hsla(16, 100%, 55%, 0.1);
+  --highlight-05: hsla(16, 100%, 55%, 0.05);
 }
 
 .dark {
-  --ground: hsla(262, 8%, 8%, 1);
-  --ground-75: hsla(262, 8%, 10%, 0.75);
-  --ground-50: hsla(262, 8%, 10%, 0.5);
-  --ground-25: hsla(262, 8%, 10%, 0.25);
-  --ground-10: hsla(262, 8%, 10%, 0.1);
-  --ground-05: hsla(262, 8%, 10%, 0.07);
+  --ground: hsla(20, 12%, 10%, 1);
+  --ground-75: hsla(20, 12%, 10%, 0.75);
+  --ground-50: hsla(20, 12%, 10%, 0.5);
+  --ground-25: hsla(20, 12%, 10%, 0.25);
+  --ground-10: hsla(20, 12%, 10%, 0.1);
+  --ground-05: hsla(20, 12%, 10%, 0.05);
 
-  --primary: hsla(30, 4%, 90%, 1);
-  --primary-75: hsla(30, 4%, 90%, 0.75);
-  --primary-50: hsla(30, 4%, 90%, 0.5);
-  --primary-25: hsla(30, 4%, 90%, 0.25);
-  --primary-10: hsla(30, 4%, 90%, 0.1);
-  --primary-05: hsla(30, 4%, 90%, 0.05);
+  --primary: hsla(10, 21%, 95%, 1);
+  --primary-75: hsla(10, 21%, 95%, 0.75);
+  --primary-50: hsla(10, 21%, 95%, 0.5);
+  --primary-25: hsla(10, 21%, 95%, 0.25);
+  --primary-10: hsla(10, 21%, 95%, 0.1);
+  --primary-05: hsla(10, 21%, 95%, 0.05);
 
-  --indigo: hsla(235, 100%, 70%, 1);
-  --indigo-75: hsla(235, 100%, 70%, 0.75);
-  --indigo-50: hsla(235, 100%, 70%, 0.5);
-  --indigo-25: hsla(235, 100%, 70%, 0.25);
-  --indigo-10: hsla(235, 100%, 70%, 0.1);
-  --indigo-05: hsla(235, 100%, 70%, 0.05);
+  --secondary: hsla(223, 62%, 71%, 1);
+  --secondary-75: hsla(223, 62%, 71%, 0.75);
+  --secondary-50: hsla(223, 62%, 71%, 0.5);
+  --secondary-25: hsla(223, 62%, 71%, 0.25);
+  --secondary-10: hsla(223, 62%, 71%, 0.1);
+  --secondary-05: hsla(223, 62%, 71%, 0.05);
 
-  --green: hsla(184, 48%, 48%, 1);
-  --green-75: hsla(184, 48%, 48%, 0.75);
-  --green-50: hsla(184, 48%, 48%, 0.5);
-  --green-25: hsla(184, 48%, 48%, 0.25);
-  --green-10: hsla(184, 48%, 48%, 0.1);
-  --green-05: hsla(184, 48%, 48%, 0.05);
-
-  --orange: hsla(23, 97%, 53%, 1);
-  --orange-75: hsla(23, 97%, 53%, 0.75);
-  --orange-50: hsla(23, 97%, 53%, 0.5);
-  --orange-25: hsla(23, 97%, 53%, 0.25);
-  --orange-10: hsla(23, 97%, 53%, 0.1);
-  --orange-05: hsla(23, 97%, 53%, 0.05);
+  --highlight: hsla(23, 97%, 53%, 1);
+  --highlight-75: hsla(23, 97%, 53%, 0.75);
+  --highlight-50: hsla(23, 97%, 53%, 0.5);
+  --highlight-25: hsla(23, 97%, 53%, 0.25);
+  --highlight-10: hsla(23, 97%, 53%, 0.1);
+  --highlight-05: hsla(23, 97%, 53%, 0.05);
 }
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-display: swap;
+  font-family: "Output Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/output-sans-regular-subset.woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Output Sans";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fonts/output-sans-medium-subset.woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Output Sans";
+  font-style: normal;
+  font-weight: 700;
+  src: url("/fonts/output-sans-bold-subset.woff2");
+}
+
+@font-face {
+  font-display: swap;
+  font-family: "Tiempos Fine";
+  font-style: normal;
+  font-weight: 300;
+  src: url("/fonts/tiempos-fine-light-subset.woff2");
+}
+@font-face {
+  font-display: swap;
+  font-family: "Tiempos Headline";
+  font-style: normal;
+  font-weight: 300;
+  src: url("/fonts/tiempos-headline-light-subset.woff2");
+}
+
+h1,
+h2,
+h3 {
+  @apply font-serif font-light;
+}
+
+.prose p,
+.prose ul:not(figure ul),
+.prose ol {
+  @apply mb-em;
+}
+
+.prose * + h2 {
+  @apply mt-base;
+}
 
 strong {
   @apply font-semibold;

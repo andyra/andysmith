@@ -21,7 +21,7 @@ const SensorCooking = ({}) => {
 
   return (
     <section className="bg-gray-300">
-      <h3 className="text-lg italic py-16 text-green-800">Sensor Cooking</h3>
+      <h3 className="text-lg italic py-16 text-secondary-800">Sensor Cooking</h3>
       <ul className="grid grid-cols-3 leading-none">
         {BUTTONS.map((label) => (
           <li
@@ -57,7 +57,7 @@ const MoreFromYourMicrowave = ({}) => {
 
   return (
     <section>
-      <h3 className="text-lg italic py-16 text-green-800">
+      <h3 className="text-lg italic py-16 text-secondary-800">
         More from your Microwave
       </h3>
       <ul className="grid grid-cols-3 leading-none">
@@ -115,7 +115,7 @@ const NumberPad = ({}) => {
           <span className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-1/2 h-2 bg-primary" />
         </li>
         <li className={buttonClasses}>
-          <div className="text-lg text-green-800 text-center">Start</div>
+          <div className="text-lg text-secondary-800 text-center">Start</div>
           Touch On
           <span className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 w-1/2 h-2 bg-primary" />
         </li>

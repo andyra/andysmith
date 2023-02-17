@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import Image from "next/future/image";
+import Image from "next/image";
 import cn from "classnames";
 import Divider from "components/Divider";
 import { Dot, Section, TimeStamp } from "components/Content";
@@ -37,7 +37,7 @@ const Resume = () => {
           />
         </figure>
         <div className="flex-1">
-          <div className="bg-indigo-05 border border-indigo-50 rounded p-24 mb-16 print:hidden">
+          <div className="bg-secondary-05 border border-secondary-50 rounded p-24 mb-16 print:hidden">
             This page is meant to be printed, so it may look funky on a computer
             screen.
           </div>

@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import cn from "classnames";
 import Link from "next/link";
-import Image from "next/future/image";
+import Image from "next/image";
 import { useTheme } from "next-themes";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
+import Button from "components/Button";
 import Carousel from "components/Carousel";
-import ProjectFooter from "components/ProjectFooter";
 import ProjectHeader from "components/ProjectHeader";
-import { A, Callout, Divider, Section } from "components/Content";
+import Prototype from "components/Prototype";
+import { Figure, Section, WideDude } from "components/Content";
 
 import andy01 from "public/projects/onboarding/andy01.webp";
 import andy02 from "public/projects/onboarding/andy02.webp";
@@ -31,6 +33,7 @@ import mary10 from "public/projects/onboarding/mary10.webp";
 import navProblem from "public/projects/onboarding/navProblem.webp";
 import navWorseProblem from "public/projects/onboarding/navWorseProblem.webp";
 import navSolution from "public/projects/onboarding/navSolution.webp";
+import prototypeFallback from "public/projects/onboarding/prototypeFallback.png";
 
 const INTERVIEW_IMAGES = [
   {
@@ -175,21 +178,16 @@ const Brackets = ({
   );
 };
 
-const Onboarding = () => {
+const Onboarding = ({ metaTitle }) => {
   const { resolvedTheme } = useTheme();
 
   return (
     <>
       <ProjectHeader
-        title="New Hire Onboarding"
-        description="Pingboard was built to help people across diverse companies connect with each other. Helping companies onboard their new hires was a great fit for our product and an opportunity for growth. One problem, though: how do we know what to build?"
+        title={metaTitle}
+        description="Pingboard was built to help people in distributed companies connect with each other. Helping to onboard new hires was a great fit for our product and an opportunity for growth, but how were we supposed to know what to build?"
       />
-
-      <Section
-        title="Do people really need another tool?"
-        columns
-        className="hidden"
-      >
+      <Section title="Do people really need another tool?" className="hidden">
         <p>
           Before getting too far down the garden path, we had to ask what our
           product could bring to the table that other tools [bla]. A cursory
@@ -208,7 +206,7 @@ const Onboarding = () => {
         </p>
       </Section>
 
-      <Section title="Exploratory interviews" columns>
+      <Section title="Exploratory interviews">
         <p>
           We set up interviews with 12 different customers to talk through their
           onboarding process. Where were the pain points? What was working well?
@@ -230,7 +228,7 @@ const Onboarding = () => {
         />
       </Section>
 
-      <Section title="We've talked to a bunch of people; now what?" columns>
+      <Section title="We've talked to a bunch of people; now what?">
         <p>
           After interviewing, you end up with a lot of information:
           frustrations, anecdotes, half-baked ideas, problems both in-and-out of
@@ -245,7 +243,10 @@ const Onboarding = () => {
           the interviews is important so the rest of the team doesn&apos;t have
           to wade through dozens of documents and notes.
         </p>
-        <figure className="flex flex-col xl:flex-row items-center gap-16 bg-indigo-05 rounded p-24 text-sm text-primary-50 relative">
+        <WideDude
+          as="figure"
+          className="flex flex-col xl:flex-row items-center gap-16 bg-secondary-05 border rounded p-24 text-sm text-primary-50 relative"
+        >
           <div className="h-256 w-full xl:h-auto xl:w-2/5 xl:self-stretch rounded overflow-hidden relative">
             <div className="bg-ground rounded p-24 space-y-8 absolute top-0 left-0 text-xs">
               <div className="font-medium text-sm text-primary-75">
@@ -285,7 +286,10 @@ const Onboarding = () => {
           <ul className="w-full xl:w-auto flex-1 flex gap-16 xl:flex-col">
             {["A", "B", "C"].map((item) => (
               <li
-                className="flex-1 xl:flex-none border-2 border-primary-25 p-16 rounded"
+                className={cn(
+                  "flex-1 xl:flex-none border-2 border-primary-25 p-16 rounded",
+                  item === "C" && "hidden xs:block"
+                )}
                 key={item}
               >
                 <div className="font-medium text-primary-75">
@@ -301,7 +305,7 @@ const Onboarding = () => {
             ))}
           </ul>
           <Brackets horizontalBreakpoint="xl" />
-          <div className="flex-1 border-2 border-indigo-25 p-16 space-y-8 text-indigo-75 rounded">
+          <div className="flex-1 border-2 border-secondary-25 p-16 space-y-8 text-secondary-75 rounded">
             <div className="font-medium">😀 Takeaways</div>
             <ol className="list-decimal ml-20">
               <li>Frustrated by X</li>
@@ -309,10 +313,10 @@ const Onboarding = () => {
               <li>Opportunity Z</li>
             </ol>
           </div>
-        </figure>
+        </WideDude>
       </Section>
 
-      <Section title="Cutting scope" columns>
+      <Section title="Cutting scope">
         <p>
           After sketching out what that fully-realized future might look like,
           it was clear that it was too ambitious for a single release. Instead,
@@ -324,9 +328,9 @@ const Onboarding = () => {
           during the first few weeks of being at a company, which dovetails
           nicely into our market strategy.
         </p>
-        <figure className="rounded bg-green-05 p-24 space-y-24">
-          <ul className="text-green">
-            <li className="font-semibold">Useful and achievable!</li>
+        <figure className="text-sm">
+          <ul className="rounded bg-secondary-05 border border-secondary-10 p-24 text-secondary mb-16">
+            <li className="font-medium mb-12">Useful and achievable!</li>
             {[
               "Checklists",
               "Checklist Templates",
@@ -335,15 +339,15 @@ const Onboarding = () => {
               "Calendar integration",
               "Introduce new hire to their team",
             ].map((item) => (
-              <li className="flex items-center gap-12" key={item}>
+              <li className="flex items-baseline gap-12" key={item}>
                 <span>✓</span>
                 {item}
               </li>
             ))}
           </ul>
-          <ul className="text-primary-75">
-            <li className="font-semibold">
-              Also useful, but not achievable in a single release
+          <ul className="rounded bg-primary-05 border p-24 text-primary-75">
+            <li className="font-medium mb-12">
+              Useful, but not achievable in a single release
             </li>
             {[
               "Multiple Checklists",
@@ -358,7 +362,7 @@ const Onboarding = () => {
               "Tie employee onboarding and product onboarding together",
               "Integrate with 3rd parties",
             ].map((item) => (
-              <li className="flex items-center gap-12" key={item}>
+              <li className="flex items-baseline gap-12" key={item}>
                 <span>–</span>
                 {item}
               </li>
@@ -367,25 +371,15 @@ const Onboarding = () => {
         </figure>
       </Section>
 
-      <Section
-        columns
-        title="Where We Landed"
-        contentClassName="lg:col-span-2 lg:grid lg:grid-cols-[1fr,2fr] gap-page items-start"
-      >
-        <div className="relative hidden lg:block lg:col-span-2">
-          <div className="z-10 absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <div className="flex items-center px-16 h-40 rounded-full bg-green text-ground">
-              Try me!
-            </div>
-          </div>
-          <iframe
-            src="https://pingboard.github.io/pb-nav/onboarding"
-            className="w-full h-[75vh] border-4 border-green-50 rounded"
-          />
-        </div>
+      <Section title="Where We Landed">
+        <Prototype
+          iframeSrc="https://pingboard.github.io/pb-nav/onboarding"
+          imageSrc={prototypeFallback}
+          imageAlt="Onboarding"
+        />
       </Section>
 
-      <Section title="Loose Threads" columns>
+      <Section title="Loose Threads">
         <p>
           A wrinkle came up during development: what if the person being
           onboarded has Admin privileges? Since Admins have a page dedicated to
@@ -406,7 +400,10 @@ const Onboarding = () => {
             new hires
           </li>
         </ol>
-        <figure className="flex gap-8 bg-primary-05 rounded border overflow-hidden relative">
+        <Figure
+          contentClassName="flex gap-8 bg-primary-05 rounded border overflow-hidden relative"
+          caption="How's a new hire supposed to know where to start?"
+        >
           <Image
             className="w-1/4"
             alt="Too many nav items"
@@ -415,22 +412,25 @@ const Onboarding = () => {
             src={navWorseProblem}
           />
           <Brackets
-            borderColor="border-orange"
+            borderColor="border-highlight"
             className="relative mt-[4%] mb-[7.5%]"
           >
-            <div className="pl-12 text-sm lg:text-base text-orange">
+            <div className="pl-12 text-sm lg:text-base text-highlight">
               Not ideal!
             </div>
-            <div className="w-24 border-t-2 border-orange absolute r-0 bottom-[11%]" />
+            <div className="w-24 border-t-2 border-highlight absolute r-0 bottom-[11%]" />
           </Brackets>
-        </figure>
+        </Figure>
         <p>
           In an ideal world, we would combine all three pages into a single
           place to get started, but the amount of work it would take was out of
           scope. Our solution here was to fold the last two items together under
           a collapsible nav item.
         </p>
-        <figure className="flex gap-8 bg-primary-05 rounded border overflow-hidden relative">
+        <Figure
+          contentClassName="flex gap-8 bg-primary-05 rounded border overflow-hidden relative"
+          caption="At least there are only two options here—Product and New Hire onboarding"
+        >
           <Image
             className="w-1/4"
             alt="Too many nav items"
@@ -439,17 +439,15 @@ const Onboarding = () => {
             src={navSolution}
           />
           <Brackets
-            borderColor="border-green"
+            borderColor="border-secondary"
             className="relative mt-[4%] mb-[7.5%]"
           >
-            <div className="pl-12 text-sm lg:text-base text-green">
+            <div className="pl-12 text-sm lg:text-base text-secondary">
               Not ideal, but better!
             </div>
           </Brackets>
-        </figure>
+        </Figure>
       </Section>
-
-      <ProjectFooter />
     </>
   );
 };
