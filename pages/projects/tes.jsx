@@ -161,8 +161,11 @@ const Tes = ({ metaTitle }) => {
           The two main challenges were getting the backend and front-end talking
           to each other reliably, and managing the audio player state. GraphQL
           and Apollo Client (a library I used to work with the GraphQL data)
-          were new territory for me. I can&apos;t say I mastered these
-          technologies, but I no longer fear them. And that&apos;s something.
+          were new territory for me.
+        </p>
+        <p>
+          I can&apos;t say I mastered these technologies, but I no longer fear
+          them. And that&apos;s something.
         </p>
         <p>
           <strong>Next up</strong>: wrangling GraphQL mutations so we can create

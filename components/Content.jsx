@@ -44,7 +44,7 @@ export const SubSection = ({ children, count, title }) => (
   <>
     <h2 className="font-bold font-sans mb-24 relative">
       {count && (
-        <span className="absolute -left-12 top-2 -translate-x-full font-normal text-sm opacity-50">
+        <span className="absolute -left-12 top-2 -translate-x-full font-normal text-sm opacity-50 hidden xs:block">
           {count}
         </span>
       )}

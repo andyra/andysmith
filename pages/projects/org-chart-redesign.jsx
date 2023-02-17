@@ -80,7 +80,7 @@ const OrgChart = ({ metaTitle }) => (
           </span>
           <span className="bg-secondary-75 h-12 w-48" />
           <span className="bg-secondary-75 h-12 w-64" />
-          <span className="bg-secondary-75 h-12 w-96" />
+          <span className="bg-secondary-75 h-12 w-96 hidden xs:block" />
           <span className="bg-primary-10 h-20 w-20 rounded-full flex-shrink-0 ml-auto" />
           <span className="bg-primary-10 h-20 w-20 rounded-full flex-shrink-0" />
         </nav>
@@ -198,10 +198,13 @@ const OrgChart = ({ metaTitle }) => (
       <SubSection title="Private Org Chart Toolbar" count="04">
         <p>
           Private org charts include additional controls in a toolbar that
-          overrides the old primary nav. Is there a way we can consolidate these
-          additional controls with the existing org chart toolbar and still keep
-          the primary nav? This would make the experience more consistent
-          between public and private org charts and remove one of the toolbars.
+          overrides the old primary nav.
+        </p>
+        <p>
+          Is there a way we can consolidate these additional controls with the
+          existing org chart toolbar and still keep the primary nav? This would
+          make the experience more consistent between public and private org
+          charts and remove one of the toolbars.
         </p>
         <Figure caption="Can we remove this specialized toolbar on private org charts?">
           <Image

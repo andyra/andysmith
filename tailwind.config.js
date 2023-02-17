@@ -105,7 +105,7 @@ module.exports = {
     // Overrides
     fontSize: {
       "2xl": ["64px", { lineHeight: "1.15" }],
-      xl: ["42px", { lineHeight: "1.5" }],
+      xl: ["42px", { lineHeight: "1.15" }],
       lg: ["26px", { lineHeight: "34px" }],
       base: ["22px", { lineHeight: "30px" }],
       sm: ["18px", { lineHeight: "26px" }],

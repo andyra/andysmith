@@ -16,7 +16,7 @@ const NAV_LINK_CLASSES = cn(
   "lg:min-h-32 lg:px-0"
 );
 
-const NavLink = ({ href, className, children }) => {
+const NavLink = ({ disabled, href, className, children }) => {
   const router = useRouter();
   const isCurrent = href === router.pathname;
   const attrs = {};
@@ -27,7 +27,12 @@ const NavLink = ({ href, className, children }) => {
   return (
     <Link
       href={href}
-      className={cn(NAV_LINK_CLASSES, isCurrent && "text-secondary", className)}
+      className={cn(
+        NAV_LINK_CLASSES,
+        isCurrent && "text-secondary",
+        disabled && "opacity-25 pointer-events-none",
+        className
+      )}
       {...attrs}
     >
       {children}
@@ -42,19 +47,22 @@ const ProjectMenu = () => (
     </MenuPrimitive.Button>
     <MenuPrimitive.Items
       as="ul"
-      className="absolute left-0 right-0 py-sm bg-ground shadow-2xl border"
+      className="absolute left-0 right-0 bg-ground shadow-2xl border divide-y"
     >
       {PROJECTS.map((project) => (
         <MenuPrimitive.Item as="li" key={project.title}>
-          {({ active }) => (
+          {({ active, close }) => (
             <Link
               className={cn(
-                "flex items-center h-48 px-base",
-                active && "bg-secondary-05"
+                "block px-base py-16",
+                active && "bg-secondary-05",
+                project.disabled && "pointer-events-none opacity-25"
               )}
               href={project.href}
+              onClick={close}
             >
-              {project.title}
+              <div className="font-medium">{project.title}</div>
+              <div className="text-primary-75">{project.details}</div>
             </Link>
           )}
         </MenuPrimitive.Item>
@@ -98,7 +106,9 @@ const Nav = () => {
             <ul className="ml-16 text-xs mb-sm">
               {PROJECTS.map((project) => (
                 <li key={project.href}>
-                  <NavLink href={project.href}>{project.title}</NavLink>
+                  <NavLink href={project.href} disabled={project.disabled}>
+                    {project.title}
+                  </NavLink>
                 </li>
               ))}
             </ul>

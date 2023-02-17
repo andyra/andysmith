@@ -63,7 +63,7 @@ export const HOW_I_CAN_HELP = [
   {
     title: "Front-End Development",
     description: `Connect the dots between static designs and fully functioning applications`,
-    notes: `Building it right from the beginning reduces back-and-forth iteration between design and development. I can help define, build, and document design systems using a variety of CSS-in-JS frameworks. I also help to champion accessibilty best practices and speed up development. OH AND RESPONSIVE DESIGN`,
+    notes: `Building it right from the beginning reduces back-and-forth iteration between design and development. I can help define, build, and document design systems. I also help to champion accessibilty best practices and make sure designs work well across mobile and desktop devices.`,
     logos: [
       {
         title: "CSS",
@@ -90,7 +90,8 @@ export const PROJECTS = [
     title: "Org Chart Redesign",
     image: "",
     href: "/projects/org-chart-redesign",
-    details: "",
+    details:
+      "Rejigger a complex part of the app to work with a global redesign",
     category: "UI Design",
   },
   {
@@ -104,7 +105,7 @@ export const PROJECTS = [
     title: "New Hire Onboarding",
     image: "",
     href: "/projects/onboarding",
-    details: "Help new hires get up-to-speed faster",
+    details: "Help companies welcome new hires to the team",
     category: "UX Research",
   },
   {
@@ -113,13 +114,13 @@ export const PROJECTS = [
     href: "/projects/pingboard-mobile",
     details: "A cross-platform mobile app for Pingboard customers",
     category: "Mobile UI",
-    disabled: true,
   },
   {
     title: "1:1 Meetings",
     image: "",
     href: "/projects/meetings",
-    details: "1:1s • Surveys • Applause • Mobile App",
+    details:
+      "A 1:1 meeting tool to help managers and their reports work better together",
     category: "UI Design",
     disabled: true,
   },

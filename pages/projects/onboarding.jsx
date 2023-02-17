@@ -286,7 +286,10 @@ const Onboarding = ({ metaTitle }) => {
           <ul className="w-full xl:w-auto flex-1 flex gap-16 xl:flex-col">
             {["A", "B", "C"].map((item) => (
               <li
-                className="flex-1 xl:flex-none border-2 border-primary-25 p-16 rounded"
+                className={cn(
+                  "flex-1 xl:flex-none border-2 border-primary-25 p-16 rounded",
+                  item === "C" && "hidden xs:block"
+                )}
                 key={item}
               >
                 <div className="font-medium text-primary-75">

@@ -5,6 +5,7 @@ import cn from "classnames";
 import slugify from "slugify";
 import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import Button from "components/Button";
+import { WideDude } from "components/Content";
 import Tooltip from "components/Tooltip";
 
 // TODO: Button/link component
@@ -57,11 +58,14 @@ const Home = () => {
           My specific &ldquo;experience cocktail&rdquo; looks something like
           this:
         </p>
-        <ul className="grid grid-cols-1 xl:grid-cols-3 gap-32 lg:gap-sm">
+        <WideDude
+          as="ul"
+          className="grid grid-cols-1 xl:grid-cols-3 gap-32 lg:gap-sm"
+        >
           {HOW_I_CAN_HELP.map((skill, i) => (
             <li className="flex flex-col" key={skill.title}>
               <h3 className="font-sans font-semibold lg:mb-8">{skill.title}</h3>
-              <p className="mb-12 hidden">{skill.description}</p>
+              <p className="mb-12 ">{skill.description}</p>
               <p className="text-sm text-primary-75">{skill.notes}</p>
               {skill.logos.length > 0 && (
                 <ul className="flex gap-12 mt-12">
@@ -79,7 +83,7 @@ const Home = () => {
               )}
             </li>
           ))}
-        </ul>
+        </WideDude>
       </section>
 
       <section className="py-base">
@@ -89,21 +93,25 @@ const Home = () => {
             <li key={project.title}>
               <Link
                 href={project.href}
-                className="sm:flex items-center py-16 group transition"
+                className={cn(
+                  "block py-16",
+                  "sm:flex items-center group transition",
+                  project.disabled && "opacity-25 pointer-events-none"
+                )}
               >
                 <div className="flex-1">
-                  <div className="font-medium group-hover:text-secondary transition">
+                  <div className="flex items-center gap-12 font-medium group-hover:text-secondary transition">
                     {project.title}
+                    <span className="text-secondary opacity-0 -translate-x-8 transition group-hover:opacity-100 group-hover:translate-x-0">
+                      <ArrowRightIcon className="h-24 w-24" />
+                    </span>
                   </div>
                   <div className="text-sm text-primary-75">
                     {project.details}
                   </div>
-                  <span className="inline-block rounded-full px-8 -ml-8 bg-secondary-10 text-sm">
-                    {project.category}
-                  </span>
                 </div>
-                <span className="text-secondary opacity-0 -translate-x-8 transition group-hover:opacity-100 group-hover:translate-x-0">
-                  <ArrowRightIcon className="h-24 w-24" />
+                <span className="inline-block rounded-full px-8 -ml-8 bg-secondary-10 text-sm">
+                  {project.category}
                 </span>
               </Link>
             </li>
