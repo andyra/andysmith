@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import cn from "classnames";
@@ -15,12 +16,16 @@ import {
   WideDude,
 } from "components/Content";
 
-import oldPanel from "public/projects/org-chart/old-panel.webp";
-import oldNav from "public/projects/org-chart/old-nav.webp";
-import oldPrivate from "public/projects/org-chart/old-private.webp";
-import oldFilterSearch from "public/projects/org-chart/old-filter-search.webp";
-import newFinal from "public/projects/org-chart/new-final.webp";
-import wireframes from "public/projects/org-chart/wireframes.webp";
+import newFinal from "public/projects/org-chart/newFinal.png";
+import newNav from "public/projects/org-chart/newNav.png";
+import oldDropdown from "public/projects/org-chart/oldDropdown.png";
+import oldFilterSearch from "public/projects/org-chart/oldFilterSearch.png";
+import oldNav from "public/projects/org-chart/oldNav.png";
+import oldPanel from "public/projects/org-chart/oldPanel.png";
+import oldPrivate from "public/projects/org-chart/oldPrivate.png";
+import orgAfter from "public/projects/org-chart/orgAfter.png";
+import orgBefore from "public/projects/org-chart/orgBefore.png";
+import wireframes from "public/projects/org-chart/wireframes.png";
 
 // Page-level Components
 // -----------------------------------------------------------------------------
@@ -43,6 +48,47 @@ const TableRow = ({ percent, title }) => (
   </li>
 );
 
+const BeforeAfter = () => {
+  const [showNew, setShowNew] = useState(true);
+
+  return (
+    <WideDude>
+      <Figure>
+        <Image
+          className={showNew && "hidden"}
+          src={orgBefore}
+          alt="Legacy org chart design"
+          sizes="(min-width: 1360px) 755px, (min-width: 960px) 55vw, 90vw"
+        />
+        <Image
+          className={!showNew && "hidden"}
+          src={orgAfter}
+          alt="New org chart design"
+          sizes="(min-width: 1360px) 755px, (min-width: 960px) 55vw, 90vw"
+        />
+      </Figure>
+      <div className="flex items-center justify-center gap-8">
+        <Button
+          active={!showNew}
+          onClick={() => {
+            setShowNew(false);
+          }}
+        >
+          Before
+        </Button>
+        <Button
+          active={showNew}
+          onClick={() => {
+            setShowNew(true);
+          }}
+        >
+          After
+        </Button>
+      </div>
+    </WideDude>
+  );
+};
+
 // Page
 // -----------------------------------------------------------------------------
 
@@ -50,96 +96,52 @@ const OrgChart = ({ metaTitle }) => (
   <>
     <ProjectHeader
       title={metaTitle}
-      description="After months of design and research, we had landed on a set of global
-    design changes to update the look &amp; feel of Pingboard. While most
-    pages wouldn't need to be updated, there were a handful that
-    would need significant changes in order to work with the new layout,
-    chief among them the Org Chart."
+      description="We had a fresh set of designs to update the navigation and
+    look &amp; feel of Pingboard. While most pages wouldn't need to be updated,
+    there were a handful that would need significant changes in order to work
+    with the new layout, chief among them the Org Chart."
     />
-    <Section title="Where are we headed?">
+    <Section title="Why redesign the nav in the first place?">
       <p>
-        The whole deal is to move away from a top-of-the-page navigation in
-        favor of a left sidebar. This will give us more real estate for adding
-        new features, make search more prominent, and give us more room for
-        product onboarding, trial reminders, upgrade promos, etc.
+        Since launching in 2015, Pingboard had used a global navigation bar
+        across the top of the page. That approach had served us well for years,
+        but it was starting to show its limits as we continued to build new
+        features—the width required to house all those fun new parts of
+        Pingboard would soon outpace the available real estate of even larger
+        desktop displays.
       </p>
-      <p>So instead of this:</p>
-      <Figure
-        className="rounded text-primary-75 mb-24"
-        caption="Hmm, not much room to add new features…"
-      >
-        <nav className="flex items-center gap-12 h-32 px-12 border-b text-xs">
-          <span className="w-[104px]">Pingboard</span>
-          <span className="bg-secondary-75 h-12 w-64" />
-          <span className="bg-secondary-75 h-12 w-96 relative">
-            <ul className="absolute top-20 left-0 border border-secondary-50 bg-ground rounded text-xs text-secondary-50 p-8 space-y-8">
-              <li className="h-8 w-96 bg-secondary-25" />
-              <li className="h-8 w-64 bg-secondary-25" />
-              <li className="h-8 w-96 bg-secondary-25" />
-            </ul>
-          </span>
-          <span className="bg-secondary-75 h-12 w-48" />
-          <span className="bg-secondary-75 h-12 w-64" />
-          <span className="bg-secondary-75 h-12 w-96 hidden xs:block" />
-          <span className="bg-primary-10 h-20 w-20 rounded-full flex-shrink-0 ml-auto" />
-          <span className="bg-primary-10 h-20 w-20 rounded-full flex-shrink-0" />
-        </nav>
-        <div className="p-24">
-          <div className="mb-24">Page Title</div>
-          <div className="h-128 bg-primary-05 rounded-sm" />
-        </div>
+      <Figure caption="The horizontal nav doesn't leave a lot of wiggle room.">
+        <Image
+          className="rounded-sm"
+          src={oldNav}
+          alt="Legacy nav"
+          sizes="(min-width: 1360px) 755px, (min-width: 960px) 55vw, 90vw"
+        />
       </Figure>
-      <p>We&apos;re moving to this:</p>
-      <Figure
-        className="rounded text-primary-75"
-        contentClassName="grid grid-cols-[96px,1fr]"
-        caption="Hey, now there's room and a consistent left sidebar!"
-      >
-        <nav className="col-span-2 flex items-center justify-between gap-12 h-32 px-12 border-b text-xs">
-          <span>Pingboard</span>
-          <span className="flex items-center h-20 w-1/3 rounded-full bg-primary-05 px-12 text-xs text-primary-50">
-            Search
-          </span>
-          <div className="flex gap-8">
-            <span className="bg-primary-10 h-20 w-20 rounded-full flex-shrink-0 ml-auto" />
-            <span className="bg-primary-10 h-20 w-20 rounded-full flex-shrink-0" />
-          </div>
-        </nav>
-        <aside className="flex flex-col gap-8 p-24">
-          <span className="bg-secondary-75 h-8 w-64" />
-          <span className="bg-secondary-75 h-8 w-64" />
-          <span className="bg-secondary-75 h-8 w-64" />
-          <span className="bg-secondary-75 h-8 w-64" />
-          <span className="bg-secondary-75 h-8 w-64" />
-          <span className="bg-secondary-75 h-8 w-64" />
-          <span className="bg-secondary-75 h-8 w-64" />
-        </aside>
-        <div className="p-24">
-          <div className="mb-24">Page Title</div>
-          <ul className="flex gap-12 text-xs text-secondary-50 mb-12">
-            <li className="h-8 w-96 bg-secondary-25" />
-            <li className="h-8 w-64 bg-secondary-25" />
-            <li className="h-8 w-96 bg-secondary-25" />
-          </ul>
-          <div className="h-128 bg-primary-05 rounded-sm" />
-        </div>
+      <p>
+        The new nav design used another road-tested pattern: the sidebar nav.
+        While this approach solved a lot of problems (more real estate for
+        features, more prominent global search, etc.), each page in the app
+        needed to reserve space for this new sidebar.
+      </p>
+      <Figure caption="Much better! A vertical nav gives more real estate.">
+        <Image
+          className="rounded-sm"
+          src={newNav}
+          alt="Redesigned nav"
+          sizes="(min-width: 1360px) 755px, (min-width: 960px) 55vw, 90vw"
+        />
       </Figure>
-      <dl className="hidden flex items-center gap-24 text-sm">
-        <div className="flex items-center gap-4">
-          <dt
-            className="h-12 w-12 rounded-full bg-secondary-75"
-            aria-label="dark-blue"
-          />
-          <dt>Primary Nav</dt>
-        </div>
-        <div className="flex items-center gap-4">
-          <dt
-            className="h-12 w-12 rounded-full bg-secondary-25"
-            aria-label="dark-blue"
-          />
-          <dt>Secondary Nav</dt>
-        </div>
-      </dl>
+      <p>
+        This wasn&apos;t a problem for most pages, but the org chart was a
+        special case since—it required the full width of the browser, and had
+        its own sets of toolbars and panels which didn&apos;t work well with the
+        new nav layout.
+      </p>
+      <p>
+        Our challenge: what strategic design changes can we make so the org
+        chart can live seamlessly within the new layout? Let&apos;s dig in!
+      </p>
     </Section>
     <Section title="Challenges">
       <SubSection title="Conflicting Panels" count="01">
@@ -161,15 +163,15 @@ const OrgChart = ({ metaTitle }) => (
 
       <SubSection title="Accessing Private Org Charts" count="02">
         <p>
-          Private org charts used to be accessed via a dropdown from the primary
-          nav. Since the new designs require secondary nav to be handled within
-          the page content, we need to devise a way for customers to get to
-          their private org charts.
+          Private org charts used to be accessed via a dropdown. Since the new
+          designs require the secondary nav to be handled within the page
+          context, we need to devise a way for customers to get to their private
+          org charts.
         </p>
-        <Figure caption="The new nav design doesn't have a place for a dropdown like this">
+        <Figure caption="The new nav design doesn't have a place for dropdowns.">
           <Image
             className="rounded-sm"
-            src={oldNav}
+            src={oldDropdown}
             alt="Legacy org chart build panel"
             sizes="(min-width: 1360px) 755px, (min-width: 960px) 55vw, 90vw"
           />
@@ -242,9 +244,10 @@ const OrgChart = ({ metaTitle }) => (
       </SubSection>
       <SubSection title="Narrow down on the good bits" count="02">
         <p>
-          After working for a few days, I pruned out the ideas that were clumsy,
-          required out-of-scope changes, or were simply too weird. I then worked
-          with the VP of Product to flesh out in more detail.
+          After getting to a good stopping plcae in the ideation process, I
+          pruned out the ideas that were clumsy, required out-of-scope changes,
+          or were simply too weird. I then worked with the VP of Product to
+          flesh out the stronger versions in more detail.
         </p>
         <p>
           After narrowing in on a couple of solid options, we wanted to get a
@@ -258,18 +261,20 @@ const OrgChart = ({ metaTitle }) => (
           automatically whenever I pushed changes to master. This ended up being
           a convenient way to quickly iterate and publish changes.
         </p>
-        <Button
-          color="secondary"
-          href="https://pingboard.github.io/pb-nav/org-chart"
-          newTab
-        >
-          Play With the Prototype
-          <ArrowRightIcon className="h-16 w-16" />
-        </Button>
+        <Callout color="info">
+          <strong>Tip</strong>: check out the prototype further down the page!
+        </Callout>
       </SubSection>
     </Section>
 
     <Section title="Validation">
+      <p>
+        We wanted to ensure that the design changes would not only work for new
+        customers who haven&apos;t used Pingboard before, but were intuitive for
+        our existing customers. The org chart had been our flagship features for
+        years, and we didn&apos;t want to disrupt our loyal customers&apos;
+        workflows.
+      </p>
       <SubSection title="User Testing" count="01">
         <p>
           We scheduled <strong>UI testing-sessions</strong> with a couple
@@ -357,12 +362,17 @@ const OrgChart = ({ metaTitle }) => (
 
     <Section title="Where We Landed">
       <Prototype
+        className="mb-base"
         iframeSrc="https://pingboard.github.io/pb-nav/org-chart"
         imageSrc={newFinal}
         imageAlt="Legacy org chart build panel"
       />
+      <Callout color="info">
+        <strong>Tip</strong>: Try expanding/collapsing the primary nav, opening
+        the Build panel on the right, and clicking cards.
+      </Callout>
       <SubSection title="Summary of Improvements">
-        <ul className="list-decimal ml-16 space-y-16 mb-16 mt-base">
+        <ul className="list-decimal ml-16 space-y-16 mb-16">
           <li>
             <strong className="font-medium">Collapsible Primary Nav</strong>
             <p className="text-primary-75">
@@ -410,6 +420,7 @@ const OrgChart = ({ metaTitle }) => (
           </li>
         </ul>
       </SubSection>
+      <BeforeAfter />
     </Section>
 
     <Section title="Compromises">
