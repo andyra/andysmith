@@ -46,11 +46,6 @@ module.exports = {
       fontFamily: {
         sans: [
           "Output Sans",
-          "Metric",
-          "Gothic A1",
-          "Be Vietnam Pro Variable",
-          "Maison Neue",
-          "IA Writer Quattro V",
           "ui-sans-serif",
           "system-ui",
           "-apple-system",
@@ -68,15 +63,6 @@ module.exports = {
         ],
         serif: [
           "Tiempos Headline",
-          "Tiempos Fine",
-          "Metric",
-          "Maison Neue",
-          "Editorial New",
-          "Be Vietnam Pro Variable",
-          "Gothic A1",
-          "Output Sans",
-          "Gothic A1",
-          "Roslindale Variable V2",
           "ui-serif",
           "Georgia",
           "Cambria",
@@ -84,7 +70,6 @@ module.exports = {
           "Times",
           "serif",
         ],
-        mono: ["ABC DiaType Semi-Mono Variable"],
       },
       keyframes: {
         float: {

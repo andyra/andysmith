@@ -157,7 +157,7 @@ export const OrderedList = ({ children, className }) => (
 
 export const ListItem = ({ children, className, title }) => (
   <li className={cn("space-y-1/2em", className)}>
-    <h3 className="font-semibold">{title}</h3>
+    <h3 className="font-bold">{title}</h3>
     <div className="space-y-em">{children}</div>
   </li>
 );

@@ -64,7 +64,7 @@ const Home = () => {
         >
           {HOW_I_CAN_HELP.map((skill, i) => (
             <li className="flex flex-col" key={skill.title}>
-              <h3 className="font-sans font-semibold lg:mb-8">{skill.title}</h3>
+              <h3 className="font-sans font-bold lg:mb-8">{skill.title}</h3>
               <p className="mb-12 ">{skill.description}</p>
               <p className="text-sm text-primary-75">{skill.notes}</p>
               {skill.logos.length > 0 && (

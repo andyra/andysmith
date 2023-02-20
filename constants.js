@@ -37,8 +37,7 @@ export const HOW_I_CAN_HELP = [
   {
     title: "Product/UX Design",
     description: `The high-level "what should we build and why?" phase that balances product strategy and customer needs.`,
-    notes: `I help with interviews, panel discussions, and market research get a handle on customer problems. With that in mind, I sketch out different approaches to solving those problems, work with PMs and Engineers to decide what the first version looks like, and write up feature pitches.
-     `,
+    notes: `I help with interviews, panel discussions, and market research get a handle on customer problems. With that in mind, I sketch out different approaches to solving those problems, work with PMs and Engineers to decide what the first version looks like, and write up feature pitches.`,
     logos: [],
   },
   {
@@ -151,7 +150,7 @@ export const EXPERIENCE = [
           Worked closely with the head of product on a B2B company directory tool.
           Designed interfaces for all our products across web, iOS, and Android platforms.
           Developed and maintained a CSS component system, and regularly contributed to front-end development in the Rails app.
-          Designed an internal support app to help the effeciency of the support team.
+          Designed an internal support app to help the efficiency of the support team.
           Designed and maintained the marketing site and blog, along with other marketing materials.
         `,
       },
@@ -159,7 +158,7 @@ export const EXPERIENCE = [
     responsibilities: [],
   },
   {
-    company: "ReturnPath",
+    company: "Return Path",
     notes:
       "B2B email analytics and devliverability tools; acquired by Validity",
     duration: "3 years",
@@ -168,7 +167,7 @@ export const EXPERIENCE = [
         title: "UX Designer",
         years: "2012–2015",
         notes: `
-          Worked with a small UX team to design ReturnPath's large suite of enterprise email analytics tools.
+          Worked with a small UX team to design Return Path's large suite of enterprise email analytics tools.
           Maintained OtherInbox B2C products, including developing new apps for both web and mobile.
           Improved UX by running user-testing sessions.
         `,
@@ -178,7 +177,7 @@ export const EXPERIENCE = [
   },
   {
     company: "OtherInbox",
-    notes: "B2C email tools; acquired by ReturnPath",
+    notes: "B2C email tools; acquired by Return Path",
     duration: "2 years",
     jobs: [
       {
@@ -240,13 +239,13 @@ export const TOOLS = [
   {
     title: "UX",
     notes: [
-      "User Research",
       "UX Writing",
-      "Usability Testing",
       "Prototyping",
       "InVision",
       "Marvel",
       "FullStory",
+      "User Research",
+      "Usability Testing",
     ],
   },
   {

@@ -79,7 +79,7 @@ const Nav = () => {
   const isProjectPage = router.pathname.includes("projects");
 
   const classes = cn(
-    "sticky top-0 flex text-sm bg-ground z-50 relative",
+    "sticky top-0 flex text-sm bg-ground z-50 relative print:hidden",
     "items-center justify-between border-b",
     "lg:flex-col lg:items-start lg:gap-base lg:h-screen lg:border-r",
     "lg:w-320 lg:px-48 lg:py-base"
