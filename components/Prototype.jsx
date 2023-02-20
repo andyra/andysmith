@@ -3,9 +3,9 @@ import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import Button from "./Button";
 import { Figure, WideDude } from "./Content";
 
-const Prototype = ({ children, iframeSrc, imageSrc, imageAlt }) => {
+const Prototype = ({ children, className, iframeSrc, imageSrc, imageAlt }) => {
   return (
-    <WideDude maxWidth="2xl">
+    <WideDude className={className} maxWidth="2xl">
       <div className="relative hidden xl:block">
         <div className="flex items-center px-16 h-40 rounded-full bg-secondary text-ground z-10 absolute top-0 left-1/2 -translate-x-1/2 -translate-y-3/4">
           Try me!
