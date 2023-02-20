@@ -79,7 +79,7 @@ const Resume = () => {
                         <span>{job.title}</span>
                         <TimeStamp time={job.years} className="text-print-sm" />
                       </h4>
-                      <p className="font-normal text-print-sm opacity-60">
+                      <p className="font-normal text-print-sm text-primary-75">
                         {job.notes}
                       </p>
                     </li>
@@ -112,7 +112,7 @@ const Resume = () => {
           {TOOLS.map((tool, i) => (
             <li className="flexXXX" key={tool.title}>
               <div className="w-[1in] font-bold">{tool.title}</div>
-              <span className="text-print-sm opacity-60">
+              <span className="text-print-sm text-primary-75">
                 {tool.notes.join(", ")}
               </span>
             </li>
