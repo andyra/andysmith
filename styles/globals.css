@@ -120,7 +120,7 @@ h3 {
 }
 
 strong {
-  @apply font-semibold;
+  @apply font-bold;
 }
 
 /* Hide the file name and time stamp when printing */

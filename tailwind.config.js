@@ -46,6 +46,7 @@ module.exports = {
       fontFamily: {
         sans: [
           "Output Sans",
+          "Courier New",
           "Metric",
           "Gothic A1",
           "Be Vietnam Pro Variable",

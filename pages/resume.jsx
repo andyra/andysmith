@@ -10,7 +10,7 @@ import walkingGuy from "public/drawings/walkingGuy.webp";
 const ResumeSection = ({ children, className, contentClassName, h1, h2 }) => (
   <section className={cn("flex", className)}>
     <hgroup className="w-1/4">
-      {h1 ? h1 : <h2 className="font-medium">{h2}</h2>}
+      {h1 ? h1 : <h2 className="font-medium text-print-xl">{h2}</h2>}
     </hgroup>
     <div className={cn("flex-1", contentClassName)}>{children}</div>
   </section>
@@ -47,9 +47,9 @@ const Resume = () => {
             aspire for clarity in my work, and believe that thoughtful design is
             essential to successful digital products.
           </p>
-          <p className="font-semibold mt-[8pt]">
+          <p className="font-bold mt-[8pt]">
             {CONTACT_INFO.map((item, i) => (
-              <>
+              <React.Fragment key={item.value}>
                 <a
                   className="underline underline-offset-2"
                   href={item.href}
@@ -58,7 +58,7 @@ const Resume = () => {
                   {item.value}
                 </a>
                 {i < 2 && <span className="px-[8pt]">•</span>}
-              </>
+              </React.Fragment>
             ))}
           </p>
         </div>
@@ -70,7 +70,7 @@ const Resume = () => {
         <ul className="list-disc space-y-[8pt]">
           {EXPERIENCE.map((item) => (
             <li key={item.company}>
-              <h3 className="font-semibold mb-[4pt]">{item.company}</h3>
+              <h3 className="font-sans font-bold mb-[4pt]">{item.company}</h3>
               {item.jobs && (
                 <ul className="space-y-[4pt]">
                   {item.jobs.map((job) => (
@@ -79,7 +79,9 @@ const Resume = () => {
                         <span>{job.title}</span>
                         <TimeStamp time={job.years} className="text-print-sm" />
                       </h4>
-                      <p className="text-print-sm opacity-60">{job.notes}</p>
+                      <p className="font-normal text-print-sm opacity-60">
+                        {job.notes}
+                      </p>
                     </li>
                   ))}
                 </ul>
@@ -92,7 +94,7 @@ const Resume = () => {
       <ResumeSection h2="Education">
         <ul className="list-disc space-y-[8pt]">
           <li>
-            <h3 className="font-semibold">ACU</h3>
+            <h3 className="font-sans font-bold">ACU</h3>
             <ul className="space-y-[4pt]">
               <li className="relative">
                 <h4 className="font-medium space-x-[8pt]">
@@ -109,7 +111,7 @@ const Resume = () => {
         <ul className="list-disc space-y-[4pt]">
           {TOOLS.map((tool, i) => (
             <li className="flexXXX" key={tool.title}>
-              <div className="w-[1in] font-semibold">{tool.title}</div>
+              <div className="w-[1in] font-bold">{tool.title}</div>
               <span className="text-print-sm opacity-60">
                 {tool.notes.join(", ")}
               </span>

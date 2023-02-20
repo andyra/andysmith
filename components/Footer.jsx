@@ -11,7 +11,7 @@ const Footer = () => (
   <footer className="p-base bg-secondary-25 print:hidden">
     <div className="max-w-screen-xl mx-auto flex gap-16">
       <div className="flex-1">
-        <strong className="font-semibold">Andy Smith</strong>
+        <strong className="font-bold">Andy Smith</strong>
         <div className="text-sm whitespace-nowrap">Product Designer</div>
         <div className="flex flex-col items-start gap-12 md:flex-row md:items-center my-base text-sm text-left lg:text-base">
           {CONTACT_INFO.map((item, i) => (

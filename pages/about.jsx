@@ -52,9 +52,9 @@ const About = () => {
             ))}
           </ul>
           <Button
-            href="/Andy Smith • Product Designer Resumé.pdf"
-            target="_blank"
+            href="/Andy-Smith-Resume.pdf"
             rel="noopener noreferrer"
+            target="_blank"
           >
             Resumé PDF
           </Button>
@@ -70,7 +70,7 @@ const About = () => {
           {EXPERIENCE.map((item) => (
             <li key={item.company}>
               <hgroup className="mb-16">
-                <h3 className="flex items-center gap-12 font-sans font-semibold text-lg relative">
+                <h3 className="flex items-center gap-12 font-sans font-bold text-lg relative">
                   <Dot />
                   {item.company}
                 </h3>
@@ -80,7 +80,7 @@ const About = () => {
                 <ul className="space-y-16">
                   {item.jobs.map((job) => (
                     <li className="text-sm relative" key={job.title}>
-                      <h4 className="font-semibold flex gap-12 items-baseline relative">
+                      <h4 className="font-bold flex gap-12 items-baseline relative">
                         <Dot border />
                         {job.title}
                         <TimeStamp time={job.years} />
@@ -93,7 +93,7 @@ const About = () => {
             </li>
           ))}
           <li className="text-sm">
-            <h3 className="flex items-baseline gap-12 font-sans font-semibold text-lg mb-8 text-primary-75 relative">
+            <h3 className="flex items-baseline gap-12 font-sans font-bold text-lg mb-8 text-primary-75 relative">
               <Dot subtle />
               Not important, but…
             </h3>
