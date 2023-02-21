@@ -134,9 +134,9 @@ const OrgChart = ({ metaTitle }) => (
       </Figure>
       <p>
         This wasn&apos;t a problem for most pages, but the org chart was a
-        special case since—it required the full width of the browser, and had
-        its own sets of toolbars and panels which didn&apos;t work well with the
-        new nav layout.
+        special case—it required the full width of the browser, and had its own
+        sets of toolbars and panels which didn&apos;t work well with the new nav
+        layout.
       </p>
       <p>
         Our challenge: what strategic design changes can we make so the org
@@ -244,7 +244,7 @@ const OrgChart = ({ metaTitle }) => (
       </SubSection>
       <SubSection title="Narrow down on the good bits" count="02">
         <p>
-          After getting to a good stopping plcae in the ideation process, I
+          After getting to a good stopping place in the ideation process, I
           pruned out the ideas that were clumsy, required out-of-scope changes,
           or were simply too weird. I then worked with the VP of Product to
           flesh out the stronger versions in more detail.
